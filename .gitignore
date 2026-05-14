@@ -51,3 +51,7 @@ temp/
 
 # sentence-transformers cache
 .cache/
+
+# uv — el lockfile sí se versiona, el entorno no
+.venv/
+# uv.lock se commitea para reproducibilidad
