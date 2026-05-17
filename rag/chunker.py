@@ -1,10 +1,12 @@
 import json
 import os
 
+from pypdf import PdfReader
+
 
 def load_document(file_path: str) -> str:
     """
-    Supports .txt, .md and .json files.
+    Supports .pdf, .txt, .md and .json files.
     JSON annotated examples are serialized to a readable text block
     so they can be chunked and embedded like any other document.
     """
@@ -22,7 +24,10 @@ def load_document(file_path: str) -> str:
             data = json.load(f)
         return _json_to_text(data)
 
-    raise ValueError(f"Formato no soportado: '{ext}'. Use .txt, .md o .json")
+    if ext == ".pdf":
+        return _pdf_to_text(file_path)
+
+    raise ValueError(f"Formato no soportado: '{ext}'. Use .pdf, .txt, .md o .json")
 
 
 def chunk_text(text: str, chunk_size: int = 512, overlap: int = 64) -> list[str]:
@@ -57,6 +62,12 @@ def chunk_text(text: str, chunk_size: int = 512, overlap: int = 64) -> list[str]
 # ---------------------------------------------------------------------------
 # Helpers internos
 # ---------------------------------------------------------------------------
+
+def _pdf_to_text(file_path: str) -> str:
+    reader = PdfReader(file_path)
+    pages = [page.extract_text() or "" for page in reader.pages]
+    return "\n\n".join(p.strip() for p in pages if p.strip())
+
 
 def _json_to_text(data) -> str:
     """

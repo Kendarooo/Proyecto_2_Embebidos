@@ -7,5 +7,6 @@ dependencies = [
     "sentence-transformers==3.4.1",
     "chromadb==0.6.3",
     "requests==2.32.3",
+    "pypdf>=4.0.0",
 ]
 

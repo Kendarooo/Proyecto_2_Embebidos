@@ -1,0 +1,110 @@
+[
+  {
+    "error_raw": "M1.S.1: Metal1 minimum spacing < 0.23 µm",
+    "celda": "NAND2",
+    "capa": "MET1",
+    "tipo": "Spacing",
+    "explicacion": "Dos segmentos de MET1 están más cerca de 0.23 µm entre sí. Ocurre frecuentemente al trazar conexiones entre el drain compartido de los PMOS y la salida Q, o al rutar las entradas A y B sobre poly. Confirmado en documento: 'no hay suficiente espaciado entre dos MET1, ya que este debe ser de mínimo 0,23 µm' (pág. 34).",
+    "correccion": "Separar los rectángulos de MET1 al menos 0.23 µm. Usar el atajo K (Ruler) para medir antes de dibujar. Verificar especialmente en zonas donde confluyen las conexiones de salida Q y vdd!.",
+    "error_comun": "Al conectar el drain del pe (PMOS) hacia el pin Q usando MET1, el diseñador tiende a colocar trazas paralelas demasiado juntas. El tutorial muestra este error explícitamente en la sección 5 (DRC)."
+  },
+  {
+    "error_raw": "CO.S.1: Contact minimum spacing < 0.25 µm",
+    "celda": "NAND2",
+    "capa": "CONT",
+    "tipo": "Spacing",
+    "explicacion": "Dos contactos (CONT) colocados manualmente en los rieles vdd!/gnd! o en la difusión de los transistores están separados por menos de 0.25 µm entre sus bordes (pág. 26-29).",
+    "correccion": "Al colocar múltiples CONTs en el riel, respetar el spacing mínimo de 0.25 µm entre bordes de contacto. La herramienta Create → Via de Virtuoso ya pre-dimensiona el CONT correctamente; el problema ocurre cuando se copian y pegan manualmente.",
+    "error_comun": "El tutorial indica copiar dimensiones de la celda base NA2HDLLX0 para los rieles de alimentación. Si el diseñador espacía los CONTs manualmente sin medir, este error es muy probable."
+  },
+  {
+    "error_raw": "CO.E.1: Contact enclosure by Metal1 < 0.005 µm (recomendado 0.06 µm)",
+    "celda": "NAND2",
+    "capa": "CONT",
+    "tipo": "Enclosure",
+    "explicacion": "El rectángulo de MET1 no cubre completamente al CONT con el enclosure mínimo en todos sus lados. Ocurre cuando se dibuja el MET1 del riel vdd!/gnd! y no se extiende suficientemente alrededor de los contactos (pág. 28-30).",
+    "correccion": "Extender el rectángulo de MET1 al menos el enclosure mínimo más allá del borde del CONT en todos los lados. Verificar usando la tecla Q sobre el CONT para ver sus coordenadas exactas y ajustar el MET1 en consecuencia.",
+    "error_comun": "El tutorial dibuja rieles de MET1 con dimensiones de 0.8 µm de altura y 2.24 µm de ancho basándose en NA2HDLLX0. Si el CONT queda en el borde del MET1 sin enclosure suficiente, Pegasus reporta este error."
+  },
+  {
+    "error_raw": "CO.E.2: Contact enclosure by Active (DIFF) < 0.06 µm",
+    "celda": "NAND2",
+    "capa": "CONT",
+    "tipo": "Enclosure",
+    "explicacion": "El área de difusión activa (DIFF) no encierra completamente al contacto (CONT) con el margen mínimo de 0.06 µm. Se produce cuando el DIFF del riel de alimentación no es suficientemente grande (pág. 26-27).",
+    "correccion": "Asegurarse de que el rectángulo DIFF se extienda al menos 0.06 µm más allá de cada borde del CONT. Usar K para medir antes de finalizar el rectángulo.",
+    "error_comun": "El tutorial indica agregar DIFF en los rieles vdd! y gnd! copiando medidas de NA2HDLLX0. Si el diseñador dibuja el DIFF demasiado ajustado al tamaño del CONT sin dejar el enclosure requerido, Pegasus lo marca."
+  },
+  {
+    "error_raw": "NW.S.1: Nwell minimum spacing to Nwell < 0.84 µm",
+    "celda": "NAND2",
+    "capa": "NWELL",
+    "tipo": "Spacing",
+    "explicacion": "Dos regiones NWELL separadas están demasiado cerca. En esta celda solo hay un NWELL, pero si el diseñador lo fragmenta accidentalmente en dos rectángulos al editar, se genera este error (pág. 25-26).",
+    "correccion": "Verificar en el Navigator que solo existe un objeto NWELL. Si hay dos, unirlos en un solo rectángulo. El NWELL debe cubrir completamente la zona PMOS (pe) con los enclosures correctos.",
+    "error_comun": "El tutorial indica colocar el NWELL extendiéndolo fuera del límite de la celda para que se traslape con celdas adyacentes. Un error común es dibujar dos rectángulos NWELL separados en lugar de uno continuo, generando un gap que viola el spacing mínimo."
+  },
+  {
+    "error_raw": "NW.E.1: Nwell enclosure of Pdiff < 0.31 µm",
+    "celda": "NAND2",
+    "capa": "NWELL",
+    "tipo": "Enclosure",
+    "explicacion": "La región NWELL no encierra la difusión P del transistor PMOS (pe) con el margen mínimo de 0.31 µm en alguno de sus lados (pág. 25-26).",
+    "correccion": "El NWELL debe extenderse al menos 0.31 µm más allá del borde de la difusión P del transistor pe en todos los lados. Usar el atajo K para medir el gap entre el borde del transistor pe y el borde del NWELL.",
+    "error_comun": "El tutorial menciona copiar el tamaño del NWELL de NA2HDLLX0 como base. Si el diseñador ajusta el NWELL sin verificar el enclosure sobre el transistor pe, este error aparece especialmente en el lado inferior donde limita con la zona NMOS."
+  },
+  {
+    "error_raw": "NIMP.E.1: Nimplant enclosure of Ndiff < 0.11 µm",
+    "celda": "NAND2",
+    "capa": "NIMP",
+    "tipo": "Enclosure",
+    "explicacion": "La capa de implante N (NIMP) no cubre completamente la difusión N de los transistores NMOS (ne) con el margen mínimo de 0.11 µm (pág. 25-26).",
+    "correccion": "Redimensionar el rectángulo NIMP para que encierre completamente los transistores ne con al menos 0.11 µm de margen en todos los lados. Verificar especialmente los bordes superior e inferior donde limita con el riel gnd!.",
+    "error_comun": "El tutorial indica agregar NIMP y PIMP basándose en las dimensiones de NA2HDLLX0. Si se copia el rectángulo sin ajustarlo al tamaño exacto de los ne del diseño actual, la cobertura puede ser insuficiente."
+  },
+  {
+    "error_raw": "PO.S.1: Poly minimum spacing < 0.30 µm",
+    "celda": "NAND2",
+    "capa": "POLY",
+    "tipo": "Spacing",
+    "explicacion": "Dos líneas de poly (gates de transistores) están separadas por menos de 0.30 µm. Ocurre cuando los transistores ne o pe se acercan demasiado al fusionar conexiones (pág. 27-28).",
+    "correccion": "Al fusionar transistores, verificar con K que la distancia entre los bordes de poly de transistores adyacentes sea ≥ 0.30 µm. La fusión del drain es en DIFF, no implica necesariamente que los polys se acerquen, pero debe confirmarse.",
+    "error_comun": "El tutorial describe explícitamente la técnica de fusionar los transistores pe girando uno horizontalmente (Flip Horizontal) y acercándolos para compartir el nodo Q (pág. 27). Si se acercan demasiado, los gates de poly pueden violar el spacing mínimo."
+  },
+  {
+    "error_raw": "P1C.E.1: Poly-to-Metal1 via (P1_C) enclosure by Poly < 0.12 µm",
+    "celda": "NAND2",
+    "capa": "POLY",
+    "tipo": "Enclosure",
+    "explicacion": "La vía P1_C (poly a MET1) no está completamente encerrada por la capa POLY con el margen mínimo de 0.12 µm. Se genera cuando el pin A o B se conecta al gate poly con una vía pero el poly no se extiende suficientemente alrededor de ella (pág. 28-29).",
+    "correccion": "Después de colocar la vía P1_C, extender el rectángulo de POLY al menos 0.12 µm más allá del borde de la vía en todos los lados. El poly que viene del gate del transistor suele ser suficiente si la vía se coloca sobre él correctamente.",
+    "error_comun": "El tutorial indica usar Create → Via → P1_C para conectar los pines A y B desde MET1 hasta poly. La vía viene pre-dimensionada por Virtuoso, pero si el diseñador no extiende el poly suficientemente alrededor, Pegasus reporta este error."
+  },
+  {
+    "error_raw": "DENSITY.M1.MIN: Metal1 minimum density < 20%",
+    "celda": "NAND2",
+    "capa": "MET1",
+    "tipo": "Density",
+    "explicacion": "La cobertura de MET1 en la celda es inferior al 20% mínimo requerido para garantizar uniformidad en el CMP. Aparece en la sección Density RDB del reporte Pegasus (pág. 33). Para una celda de tutorial individual no suele ser crítico corregirla.",
+    "correccion": "Esta regla típicamente se exime (waive) a nivel de celda individual y se resuelve con metal fill automático a nivel de chip. En Pegasus se puede usar DUMMY_FILL para generar fill automático. Verificar si el instructor requiere corregirla o basta con documentarla.",
+    "error_comun": "El reporte DRC del tutorial (pág. 33) incluye una sección Density RDB con múltiples reglas. En una celda pequeña como esta NAND, el área de MET1 puede ser insuficiente para cumplir el density mínimo si no se agregan dummy fills."
+  },
+  {
+    "error_raw": "LVS-SHORT: Short circuit entre nets (ej. net4 y Q)",
+    "celda": "NAND2",
+    "capa": "MET1",
+    "tipo": "LVS_short",
+    "explicacion": "Error LVS: dos nodos que deben estar separados (ej. net4 y Q) están cortocircuitados en el layout por un fragmento de metal o difusión que los une involuntariamente (pág. 35-36).",
+    "correccion": "En Pegasus LVS Results Viewer, hacer doble click sobre el short para localizarlo en el layout. Eliminar o recortar la geometría que une las dos nets. Usar Connectivity → Net Tracer para trazar ambas nets y encontrar el puente.",
+    "error_comun": "El tutorial describe la operación Flatten para eliminar metales extra internos (pág. 31-32). Si después del flatten quedan fragmentos de MET1 o DIFF que tocan dos nets distintas, el LVS reporta un short. Es especialmente probable en la zona donde el source del ne superior y el drain del ne inferior se fusionan (net4)."
+  },
+  {
+    "error_raw": "LVS-OPEN: Red abierta, pin sin conectar en layout (A, B, Q, vdd!, gnd!)",
+    "celda": "NAND2",
+    "capa": "MET1",
+    "tipo": "LVS_open",
+    "explicacion": "Un pin del esquemático (A, B, Q, vdd!, gnd!) no tiene su equivalente conectado correctamente en el layout. Pegasus LVS lo reporta como net abierta (pág. 35-36).",
+    "correccion": "Verificar que cada label (A, B, Q, vdd!, gnd!) esté en capa MET1 TXT, tenga el nombre exacto con mayúsculas y signos de exclamación donde corresponda, y esté posicionado sobre el pin de MET1 correspondiente. El tutorial indica tamaño 0.2 y justificación centerCenter.",
+    "error_comun": "El tutorial requiere crear labels de texto MET1 TXT sobre cada pin con nombres exactamente iguales a los del esquemático. Si el label tiene un typo (ej. 'vdd' en lugar de 'vdd!') o está sobre la capa incorrecta, LVS no puede asociar el pin y reporta un open."
+  }
+]
