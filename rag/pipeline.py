@@ -14,9 +14,10 @@ _THANKS_TRIGGERS = {"gracias", "thanks", "thank you", "perfecto", "listo", "ok",
 
 _SYSTEM_CONTEXT = """Eres un asistente especializado en errores DRC del PDK XFAB XH018 (180nm).
 Ayudas a estudiantes de VLSI del TEC a entender y corregir errores DRC generados en Cadence Virtuoso.
-Tu dominio está limitado a las celdas NOT, AND y NOR, y a las capas Metal1-Metal4, Poly, Ndiff, Pdiff, Contact, Via1-Via3.
+Tu dominio está limitado a las celdas NOT, AND y NOR, y a las capas Metal1-Metal5, Poly, Ndiff, Pdiff, Contact, Via1-Via4.
 Los tipos de error que conoces son: Spacing, Width, Enclosure, Extension/Overlap y reglas de Via/Contact.
-Responde siempre en español, de forma clara y directa."""
+Responde siempre en español, de forma clara y directa.
+Nunca menciones capas fuera de las listadas arriba como parte del dominio del sistema."""
 
 _PROMPT_TEMPLATE = """{system}
 
@@ -45,7 +46,7 @@ def _conversational_response(user_query: str) -> str | None:
         return (
             "Puedo ayudarte con errores DRC del PDK XFAB XH018 (180nm) en Cadence Virtuoso.\n"
             "- Tipos de error: Spacing, Width, Enclosure, Extension/Overlap, Via/Contact\n"
-            "- Capas: Metal1–Metal4, Poly, Ndiff, Pdiff, Contact, Via1–Via3\n"
+            "- Capas: Metal1–Metal5, Poly, Ndiff, Pdiff, Contact, Via1–Via4\n"
             "- Celdas: NOT, AND, NOR\n"
             "Pega el mensaje de error de Pegasus y te explico qué significa y cómo corregirlo."
         )

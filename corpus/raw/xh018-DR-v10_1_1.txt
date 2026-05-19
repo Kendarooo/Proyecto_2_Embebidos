@@ -1,29 +1,5 @@
 General → 2.6 Geometric relations and rule code
 
-# Geometric relations and rule code
-
-The rule codes, in general, use the description of the geometric relation (e.g. "S" for spacing) and also the design layer/ definition code (e.g. "M1" for Metal 1). Rule codes are intended for short design rule check error messages.
-Design rules that are not checked by DRC are indicated by printing the rule code in red underlined italics. The designer must ensure manually that these rules are adhered to.
-'QnA(B)' - Query/ warning based rules are not considered to be DRC failures.
-The rule types M_A, N_A, G_A are used to check that predefined devices adhere to the following statement: "The layout of the device is predefined and must not be changed". Please note, that for these devices, it is a requirement that the layout is not to be changed (except for the described conditions). The checks related to the rule codes M_A, N_A, G_A are a supporting tool to achieve this requirement. These rules are available for viewing only via the SpecXplorer website.
-Rule text | Description | Rule code
-(arbitrary text) | Illegal construct | BnA(B)
-A crossing B edge is not allowed | Not allowed for layer A polygon to have portions both inside and outside layer B | BnA
-A width | Distance inside_A - inside_A | WnA
-A size | (Distance inside_A - inside_A) x (Distance inside_A - inside_A) | WnA
-A spacing / notch | Distance outside_A - outside_A | SnA
-A spacing to B | Distance outside_A - outside_B | SnAB or SnBA
-A enclosure of B | Distance inside_A - outside_B (A contains B) | EnAB or EnBA
-A extension beyond B | Distance inside_A - outside_B (A must intersect B) | EnAB or EnBA
-A overlap of B | Distance inside_A - inside_B | OnAB or OnBA
-A area | Area | AnA
-A enclosed area | Area of opening enclosed by A | AnA
-ratio of A to B | Ratio | RnAB
-(arbitrary text) | Recommend investigation (query or warning) | QnA(B)
-A radius / angle | Curvature | CnA
-Predefined area must have A | Area restriction | M_A
-Predefined area must not have A | Area restriction | N_A
-Predefined geometry of A violated | Area restriction | G_A
 
 # General requirements
 
@@ -40,71 +16,48 @@ since ‘snapping to grid’ can occur at mask generation. Self intersecting pol
 Off-grid data points are checked by X-FAB at GDS tape-in. Off-grid elements will be snapped on-grid for mask generation.
 Layer and Device rules
 
-# LPMOS main module
-
-
-### Layer rules
-
-
 #### NWELL
 
-This layer is also relevant to the NLEAK/ PLEAK guidelines. It is required to follow the NLEAK/ PLEAK guidelines to ensure functionality of the circuit design.
 Name | Description | Value | Unit
 W1NW | Minimum NWELL width (except nedia) | 0.86 | μm
 S1NW | Minimum NWELL spacing/notch | 0.6 | μm
 S2NW | Minimum NWELL spacing (different net) | 1.4 | μm
 S3NW | Minimum NWELL spacing (different net) | 2.0 | μm
- | Note: Valid if one NWELL to PSUB voltage is less than 1 V.
 A1NW | Minimum NWELL area | 2.25 | μm²
-3. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ NWELL1, NWELL2, PWEL...
 
 #### NWELL1, NWELL2, PWELL1, PWELL2
 
 These rules are related to a combination of design layers (refer to section "2.4 Definitions").
 Name | Description | Value | Unit
 W1W1 | Minimum NWELL1 width (except nedia) | 0.86 | μm
- | Note: Not valid between adjacent corners if the virtual line which joins them is orthogonal with respect to the coordinate system axes. The minimum length of this line is 0.56μm.
 W1W2 | Minimum PWELL1 width | 0.6 | μm
- | Note: Not valid between adjacent corners if the virtual line which joins them is orthogonal with respect to the coordinate system axes. The minimum length of this line is 0.56μm.
 W1W3 | Minimum NWELL2 width | 0.86 | μm
 W1W4 | Minimum PWELL2 width | 0.6 | μm
 A1W1 | Minimum NWELL1 area | 2.25 | μm²
 A1W2 | Minimum PWELL1 area | 2.25 | μm²
 A1W3 | Minimum NWELL2 area | 2.25 | μm²
 A1W4 | Minimum PWELL2 area | 2.25 | μm²
-3. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ DIFFDUMMY
 
 #### POLY1
 
-This layer is also relevant to the NLEAK/ PLEAK guidelines. It is required to follow the NLEAK/ PLEAK guidelines to ensure functionality of the circuit design.
 Name | Description | Value | Unit
 B1GA | 90 degree bent GATE is not allowed | - | -
- | Note: Only valid for POLY1 over DIFF or for DIFF over POLY1 structures with > 4 vertices.
 B1P1 | (POLY1 and SBLK and not (HRES or MRES)) without NIMP or PIMP is not allowed (except dpol, davl#) | - | -
- | Note: NIMP touching PIMP under (POLY1 and SBLK and not (HRES or MRES)) is not allowed.
 B2GA | Illegal GATE construct | - | -
- | Note: GATE region has been identified as having no association with supported devices.
 BDP1 | Not allowed to be used by customers | - | -
- | Note: Only valid for POLY1 purpose NOBLK. Reserved layer.
 W1P1 | Minimum POLY1 width | 0.18 | μm
 W2P1 | Minimum POLY1 width (for 45 degree bent GATE) | 0.21 | μm
 S1P1 | Minimum POLY1 spacing/notch | 0.25 | μm
 S3P1 | Minimum POLY1 spacing (different net, tag_60v) | 0.5 | μm
- | Note: Valid for spacing of all POLY1 shapes with label tag_60v to all POLY1 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S1P1DF | Minimum POLY1 spacing to DIFF | 0.1 | μm
 S5P1DF | Minimum POLY1 spacing to DIFF (different net, tag_60v) | 0.5 | μm
- | Note: Valid for spacing of all POLY1/DIFF shapes with label tag_60v to all DIFF/POLY1 shapes having lower voltage classes. Refer to the design related guideline “Voltage class definitions”.
 E1DFGA | Minimum DIFF extension beyond GATE (except davl#) | 0.32 | μm
 E1P1GA | Minimum POLY1 extension beyond GATE (except davl#) | 0.22 | μm
 A1P1 | Minimum POLY1 area | 0.118 | μm²
 A2P1 | Maximum (POLY1 and not SBLK) area | 17000.0 | μm²
 R1P1 | Minimum ratio of POLY1 area to EXTENT area | 14.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2P1 | Maximum ratio of POLY1 area to connected GATE area | 200.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1P1 | Resistor terminal net without VLABEL | - | -
- | Note: Resistor having VLABEL at one terminal only is not allowed. Refer to the design related guideline “Voltage class definitions”.
-3. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ CONT
 
 #### CONT
 
@@ -114,11 +67,9 @@ B1CTGA | CONT overlap of GATE is not allowed (except davl#) | - | -
 B1CTSB | CONT overlap of SBLK is not allowed | - | -
 B3CT | CONT stripes are only allowed to bend at 135 degrees | - | -
 W2CT | Fixed CONT stripe width | 0.22 | μm
- | Note: Stripes are only allowed for use with photodiodes or other optical purposes.
 W1CT | Fixed CONT size (except dphoc#, dphod#, DIFF within PHODIO) | 0.22 x0.22 | µm x µm
 S1CT | Minimum CONT spacing | 0.25 | μm
 S2CT | Minimum CONT spacing (for contact arrays containing more than 4x4 elements) | 0.28 | μm
- | Note: Two contact regions within 0.3 μm spacing are considered to be in the same array.
 S3CT | Minimum CONT stripe to CONT spacing | 0.39 | μm
 S4CT | Minimum CONT stripe spacing/notch | 0.67 | μm
 S1CTDF | Minimum CONT spacing to DIFF | 0.2 | μm
@@ -128,39 +79,27 @@ E1CTIP | Minimum PIMP enclosure of DIFFCON | 0.12 | μm
 E1DFCT | Minimum DIFF enclosure of CONT | 0.1 | μm
 E1P1CT | Minimum POLY1 enclosure of CONT (except davl#) | 0.1 | μm
 R1CT | Maximum ratio of CONT area to connected GATE area | 10.0 | -
-3. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ MET1
 
 #### MET1
 
-This layer is also relevant to the NLEAK/ PLEAK guidelines. It is required to follow the NLEAK/ PLEAK guidelines to ensure functionality of the circuit design.
 Name | Description | Value | Unit
 B1CTM1 | CONT must be covered by MET1 | - | -
 B1M1 | All MET1 tracks > 35µm wide to be slotted (except Pads) | - | -
 W1M1 | Minimum MET1 width | 0.23 | μm
 W4M1 | Minimum MET1 width joining wide MET1 track (> 35 μm) | 10.0 | μm
- | Note: No slot is allowed opposite the join. It is recommended to maintain this width for at least 1 μm from the main track prior to narrowing it.
 W5M1 | Maximum MET1 region size | 17.0 x17.0 | µm x µm
- | Note: MET1 regions are defined as MET1 shapes (single MET1 shapes or a bundle of MET1 shapes, with width > 2.0µm, inclusive of the spacing if the spacing is <= 1.0µm) without any other metal layer above.For further information and design guidelines, please refer to the application note about IMD popping on “my X-FAB”.
- | Note: Not checked with standard DRC, option for check is available.
 S1M1 | Minimum MET1 spacing/notch | 0.23 | μm
 S4M1 | Minimum MET1 spacing (different net, tag_60v) | 0.38 | μm
- | Note: Valid for spacing of all MET1 shapes with label tag_60v to all MET1 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S2M1 | Minimum MET1 spacing to WIDE_MET1 | 0.6 | μm
 E1M1CT | Minimum MET1 enclosure of CONT | 0.005 | μm
 E2M1CT | Minimum MET1 enclosure of CONT (in one direction of CONT corner) | 0.06 | μm
 E3M1CT | Minimum MET1 enclosure of CONT stripe | 0.07 | μm
 A1M1 | Minimum MET1 area | 0.202 | μm²
 R1M1 | Minimum ratio of MET1 area to EXTENT area | 30.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2M1 | Maximum ratio of MET1 area to EXTENT area | 65.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R1M1P1 | Maximum ratio of MET1 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 R2M1P1 | Maximum ratio of MET1 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1M1 | Resistor terminal net without VLABEL | - | -
- | Note: Resistor having VLABEL at one terminal only is not allowed. Refer to the design related guideline “Voltage class definitions”.
-W2M 1W2M 13. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ M1SLOT
 
 #### VIA1
 
@@ -168,7 +107,6 @@ Name | Description | Value | Unit
 B1V1 | VIA1 must be covered by MET1 and MET2 | - | -
 B2V1 | VIA1 stripes are only allowed to bend at 135 degrees | - | -
 W2V1 | Fixed VIA1 stripe width | 0.26 | μm
- | Note: Stripes are only allowed for use with photodiodes or other optical purposes.
 W1V1 | Fixed VIA1 size (except dphoc#, dphod#, OPTOVIA1, PHODIO) | 0.26 x0.26 | µm x µm
 S1V1 | Minimum VIA1 spacing | 0.26 | μm
 S3V1 | Minimum VIA1 stripe to VIA1 spacing | 1.0 | μm
@@ -180,11 +118,6 @@ E4M1V1 | Minimum MET1 enclosure of VIA1 stripe | 0.07 | μm
 E7M2V1 | Minimum MET2 enclosure of VIA1 stripe | 0.07 | μm
 R1V1 | Maximum ratio of VIA1 area to connected GATE area | 20.0 | -
 Q20V1 | Check for the right usage of OPTOVIA1 | - | -
- | Note: VIA1 stripes must only be used for light shielding purpose.
- | Note: DRC reports this check request whenever this layer is present.
-Note: Bond pads require interconnecting vias between the metal layers. See section "Bond Pad".
-3. Layer and Device rules → 3.1 LPMOS main module→ 3.1.1 Layer rules→ VIA1
-W2M 1W2M 13. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.1 Layer rules→ M1SLOT
 
 #### VIA1
 
@@ -192,7 +125,6 @@ Name | Description | Value | Unit
 B1V1 | VIA1 must be covered by MET1 and MET2 | - | -
 B2V1 | VIA1 stripes are only allowed to bend at 135 degrees | - | -
 W2V1 | Fixed VIA1 stripe width | 0.26 | μm
- | Note: Stripes are only allowed for use with photodiodes or other optical purposes.
 W1V1 | Fixed VIA1 size (except dphoc#, dphod#, OPTOVIA1, PHODIO) | 0.26 x0.26 | µm x µm
 S1V1 | Minimum VIA1 spacing | 0.26 | μm
 S3V1 | Minimum VIA1 stripe to VIA1 spacing | 1.0 | μm
@@ -204,75 +136,34 @@ E4M1V1 | Minimum MET1 enclosure of VIA1 stripe | 0.07 | μm
 E7M2V1 | Minimum MET2 enclosure of VIA1 stripe | 0.07 | μm
 R1V1 | Maximum ratio of VIA1 area to connected GATE area | 20.0 | -
 Q20V1 | Check for the right usage of OPTOVIA1 | - | -
- | Note: VIA1 stripes must only be used for light shielding purpose.
- | Note: DRC reports this check request whenever this layer is present.
-Note: Bond pads require interconnecting vias between the metal layers. See section "Bond Pad".
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.1 Layer rules→ VIA1
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.1 Layer rules→ MET2
 
 #### MET2
 
-This layer is also relevant to the NLEAK/ PLEAK guidelines. It is required to follow the NLEAK/ PLEAK guidelines to ensure functionality of the circuit design.
 Name | Description | Value | Unit
 B1M2 | All MET2 tracks > 35μm wide to be slotted (except Pads, dphoc0, dphod0) | - | -
 W1M2 | Minimum MET2 width | 0.28 | μm
 W4M2 | Minimum MET2 width joining wide MET2 track (> 35 μm) | 10.0 | μm
- | Note: No slot is allowed opposite the join. It is recommended to maintain this width for at least 1 μm from the main track prior to narrowing it.
 W5M2 | Maximum MET2 region size | 17.0 x17.0 | µm x µm
- | Note: MET2 regions are defined as MET2 shapes (single MET2 shapes or a bundle of MET2 shapes, with width > 2.0µm, inclusive of the spacing if the spacing is <= 1.0µm) without any other metal layer above.For further information and design guidelines, please refer to the application note about IMD popping on “my X-FAB”.
- | Note: Not checked with standard DRC, option for check is available.
 S1M2 | Minimum MET2 spacing/notch | 0.28 | μm
 S4M2 | Minimum MET2 spacing (different net, tag_60v) | 0.4 | μm
- | Note: Valid for spacing of all MET2 shapes with label tag_60v to all MET2 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S2M2 | Minimum MET2 spacing to WIDE_MET2 | 0.6 | μm
 A1M2 | Minimum MET2 area | 0.202 | μm²
 R1M2 | Minimum ratio of MET2 area to EXTENT area | 30.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2M2 | Maximum ratio of MET2 area to EXTENT area | 65.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R1M2P1 | Maximum ratio of MET2 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 R2M2P1 | Maximum ratio of MET2 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1M2 | Resistor terminal net without VLABEL | - | -
- | Note: Resistor having VLABEL at one terminal only is not allowed. Refer to the design related guideline “Voltage class definitions”.
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.1 Layer rules→ M2SLOT
-
-
-### 3.2.2Device rules
-
-
-##### nn3
-
-Name | Description | Value | Unit
-B3GA | Only rectangular GATE inside PWBLK is allowed | - | -
-W4DF | Minimum GATE width | 1.0 | μm
-W5P1 | Minimum GATE length | 1.0 | μm
-Q1GA | Recommended minimum GATE length | 2.0 | μm
- | Note: It is strongly recommended to use a channel length of ≥ 2μm when nn3 is operated in the sub-threshold region.
-Note: MV is necessary for nn3.
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.2 Device rules→ ne3, pe3
 
 ##### ne3, pe3
 
 Name | Description | Value | Unit
 W3DF | Minimum GATE width | 0.22 | μm
- | Note: The design rule check error message W3DF is also used generally for GATE areas (of any devices or shapes) having smaller GATE width than 0.22μm.
 W6P1 | Minimum GATE length | 0.35 | μm
 W7P1 | Minimum GATE length | 0.3 | μm
-Note: MV is necessary for ne3 and pe3.
-Note: For more extensive LVS, it is recommended to use the related 5 or 6 terminal device.
- | ne3 |  |  | pe3 | 
-Bulk | Source | Gate | Drain | Bulk | SourceGate | Drain
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.2 Device rules→ pe3_5
-pe3_5
+
 Name | Description | Value | Unit
 W3DF | Minimum GATE width | 0.22 | μm
- | Note: The design rule check error message W3DF is also used generally for GATE areas (of any devices or shapes) having smaller GATE width than 0.22μm.
 W7P1 | Minimum GATE length | 0.3 | μm
-Note: pe3_5 device must be labeled “5T” using POLY1 (VERIFICATION) layer over the GATE.
-Note: MV is necessary for pe3_5.
-3. Layer and Device rules → 3.2 MOS3LP main module→ 3.2.2 Device rules→ qpva3, qpvb3, qpvc3
 
 #### VIA2
 
@@ -280,7 +171,6 @@ Name | Description | Value | Unit
 B1V2 | VIA2 must be covered by MET2 and MET3 | - | -
 B2V2 | VIA2 stripes are only allowed to bend at 135 degrees | - | -
 W2V2 | Fixed VIA2 stripe width | 0.26 | μm
- | Note: Stripes are only allowed for use with photodiodes or other optical purposes.
 W1V2 | Fixed VIA2 size (except dphoc#, dphod#, OPTOVIA2, PHODIO) | 0.26 x0.26 | µm x µm
 S1V2 | Minimum VIA2 spacing | 0.26 | μm
 S9V2 | Minimum VIA2 stripe to VIA2 spacing | 1.0 | μm
@@ -292,10 +182,6 @@ E3M3V2 | Minimum MET3 enclosure of VIA2 stripe | 0.1 | μm
 E8M2V2 | Minimum MET2 enclosure of VIA2 stripe | 0.1 | μm
 R1V2 | Maximum ratio of VIA2 area to connected GATE area | 20.0 | -
 Q20V2 | Check for the right usage of OPTOVIA2 | - | -
- | Note: VIA2 stripes must only be used for light shielding purpose.
- | Note: DRC reports this check request whenever this layer is present.
-Note: Bond pads require interconnecting vias between the metal layers. See section "Bond Pad".
-3. Layer and Device rules → 3.3 MET3 module→ 3.3.1 Layer rules→ MET3
 
 #### MET3
 
@@ -303,26 +189,17 @@ Name | Description | Value | Unit
 B1M3 | All MET3 tracks > 35μm wide to be slotted (except Pads) | - | -
 W1M3 | Minimum MET3 width | 0.28 | μm
 W4M3 | Minimum MET3 width joining wide MET3 track (> 35 μm) | 10.0 | μm
- | Note: No slot is allowed opposite the join. It is recommended to maintain this width for at least 1 μm from the main track prior to narrowing it.
 W5M3 | Maximum MET3 region size | 17.0 x17.0 | µm x µm
- | Note: MET3 regions are defined as MET3 shapes (single MET3 shapes or a bundle of MET3 shapes, with width > 2.0µm, inclusive of the spacing if the spacing is <= 1.0µm) without any other metal layer above.For further information and design guidelines, please refer to the application note about IMD popping on “my X-FAB”.
- | Note: Not checked with standard DRC, option for check is available.
 S1M3 | Minimum MET3 spacing/notch | 0.28 | μm
 S4M3 | Minimum MET3 spacing (different net, tag_60v) | 0.4 | μm
- | Note: Valid for spacing of all MET3 shapes with label tag_60v to all MET3 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S2M3 | Minimum MET3 spacing to WIDE_MET3 | 0.6 | μm
 A1M3 | Minimum MET3 area | 0.202 | μm²
 R1M3 | Minimum ratio of MET3 area to EXTENT area | 30.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2M3 | Maximum ratio of MET3 area to EXTENT area | 65.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R1M3P1 | Maximum ratio of MET3 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 R2M3P1 | Maximum ratio of MET3 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1M3 | Resistor terminal net without VLABEL | - | -
- | Note: Resistor having VLABEL at one terminal only is not allowed. Refer to the design related guideline “Voltage class definitions”.
-3. Layer and Device rules → 3.3 MET3 module→ 3.3.1 Layer rules→ M3SLOT
+
 
 #### VIA3
 
@@ -330,7 +207,6 @@ Name | Description | Value | Unit
 B1V3 | VIA3 must be covered by MET3 and MET4 | - | -
 B2V3 | VIA3 stripes are only allowed to bend at 135 degrees | - | -
 W2V3 | Fixed VIA3 stripe width | 0.26 | μm
- | Note: Stripes are only allowed for use with photodiodes or other optical purposes.
 W1V3 | Fixed VIA3 size (except dphoc#, dphod#, OPTOVIA3, PHODIO) | 0.26 x0.26 | µm x µm
 S1V3 | Minimum VIA3 spacing | 0.26 | μm
 S9V3 | Minimum VIA3 stripe to VIA3 spacing | 1.0 | μm
@@ -342,11 +218,6 @@ E4M4V3 | Minimum MET4 enclosure of VIA3 stripe | 0.1 | μm
 E8M3V3 | Minimum MET3 enclosure of VIA3 stripe | 0.1 | μm
 R1V3 | Maximum ratio of VIA3 area to connected GATE area | 20.0 | -
 Q20V3 | Check for the right usage of OPTOVIA3 | - | -
- | Note: VIA3 stripes must only be used for light shielding purpose.
- | Note: DRC reports this check request whenever this layer is present.
-Note: Bond pads require interconnecting vias between the metal layers. See section "Bond Pad".
-3. Layer and Device rules → 3.4 MET4 module→ 3.4.1 Layer rules→ VIA3
-3. Layer and Device rules → 3.4 MET4 module→ 3.4.1 Layer rules→ MET4
 
 #### MET4
 
@@ -354,23 +225,15 @@ Name | Description | Value | Unit
 B1M4 | All MET4 tracks > 35μm wide to be slotted (except Pads) | - | -
 W1M4 | Minimum MET4 width | 0.28 | μm
 W4M4 | Minimum MET4 width joining wide MET4 track (> 35 μm) | 10.0 | μm
- | Note: No slot is allowed opposite the join. It is recommended to maintain this width for at least 1 μm from the main track prior to narrowing it.
 W5M4 | Maximum MET4 region size | 17.0 x17.0 | µm x µm
- | Note: MET4 regions are defined as MET4 shapes (single MET4 shapes or a bundle of ME4 shapes, with width > 2.0µm, inclusive of the spacing if the spacing is <= 1.0µm) without any other metal layer above.For further information and design guidelines, please refer to the application note about IMD popping on “my X-FAB”.
- | Note: Not checked with standard DRC, option for check is available.
 S1M4 | Minimum MET4 spacing/notch | 0.28 | μm
 S4M4 | Minimum MET4 spacing (different net, tag_60v) | 0.4 | μm
- | Note: Valid for spacing of all MET4 shapes with label tag_60v to all MET4 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S2M4 | Minimum MET4 spacing to WIDE_MET4 | 0.6 | μm
 A1M4 | Minimum MET4 area | 0.202 | μm²
 R1M4 | Minimum ratio of MET4 area to EXTENT area | 30.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2M4 | Maximum ratio of MET4 area to EXTENT area | 65.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R1M4P1 | Maximum ratio of MET4 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 R2M4P1 | Maximum ratio of MET4 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1M4 | Resistor terminal net without VLABEL | - | -
 
 #### MET5
@@ -379,22 +242,13 @@ Name | Description | Value | Unit
 B1M5 | All MET5 tracks > 35μm wide to be slotted (except Pads) | - | -
 W1M5 | Minimum MET5 width | 0.28 | μm
 W4M5 | Minimum MET5 width joining wide MET5 track (> 35 μm) | 10.0 | μm
- | Note: No slot is allowed opposite the join. It is recommended to maintain this width for at least 1 μm from the main track prior to narrowing it.
 W5M5 | Maximum MET5 region size | 17.0 x17.0 | µm x µm
- | Note: MET5 regions are defined as MET5 shapes (single MET5 shapes or a bundle of MET5 shapes, with width > 2.0µm, inclusive of the spacing if the spacing is <= 1.0µm) without any other metal layer above.For further information and design guidelines, please refer to the application note about IMD popping on “my X-FAB”.
- | Note: Not checked with standard DRC, option for check is available.
 S1M5 | Minimum MET5 spacing/notch | 0.28 | μm
 S4M5 | Minimum MET5 spacing (different net, tag_60v) | 0.4 | μm
- | Note: Valid for spacing of all MET5 shapes with label tag_60v to all MET5 shapes having lower voltage classes.Refer to the design related guideline “Voltage class definitions”.
 S2M5 | Minimum MET5 spacing to WIDE_MET5 | 0.6 | μm
 A1M5 | Minimum MET5 area | 0.202 | μm²
 R1M5 | Minimum ratio of MET5 area to EXTENT area | 30.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R2M5 | Maximum ratio of MET5 area to EXTENT area | 65.0 | %
- | Note: Not checked with standard DRC, option for check is available.
 R1M5P1 | Maximum ratio of MET5 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 R2M5P1 | Maximum ratio of MET5 area to connected GATE area | 400.0 | -
- | Note: Refer to section "Antenna Rule definitions" as well.
 Q1M5 | Resistor terminal net without VLABEL | - | -
-

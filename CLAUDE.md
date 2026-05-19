@@ -11,7 +11,7 @@ Sistema RAG (Retrieval-Augmented Generation) local para asistir a estudiantes de
 ## Stack
 - **Hardware:** Jetson Nano 4GB
 - **SO:** Linux via Yocto Project
-- **LLM:** Phi-3 mini Q4 via llama.cpp + Ollama (host local: http://localhost:11434)
+- **LLM:** gemma3:4b via Ollama (host local: http://localhost:11434)
 - **Embeddings:** all-MiniLM-L6-v2 (sentence-transformers, ~80MB)
 - **Vector store:** ChromaDB (persistente en disco)
 - **Interfaz:** Terminal CLI
@@ -39,7 +39,7 @@ Proyecto_2_Embebidos/
 ## Dominio delimitado
 - **PDK:** XFAB XH018 (180nm)
 - **Celdas:** NOT, AND, NOR
-- **Capas:** Metal1–Metal4, Poly, Ndiff, Pdiff, Contact (CT), Via1–Via3
+- **Capas:** Metal1–Metal5, Poly, Ndiff, Pdiff, Contact (CT), Via1–Via4
 - **Tipos de error:** Spacing, Width, Enclosure, Extension/Overlap, Via/Contact rules
 - **Fuera de scope:** Antenna rules, LVS, Density global, Well rules, Notch
 
