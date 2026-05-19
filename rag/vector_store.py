@@ -21,6 +21,7 @@ def index_chunks(
     chunks: list[str],
     embeddings: list[list[float]],
     collection: Collection,
+    source: str = "",
 ) -> None:
     """
     Inserta chunks con sus embeddings en la colección.
@@ -42,7 +43,16 @@ def index_chunks(
         ids=[ids[i] for i in new_indices],
         embeddings=[embeddings[i] for i in new_indices],
         documents=[chunks[i] for i in new_indices],
+        metadatas=[{"source": source} for i in new_indices],
     )
+
+
+def delete_by_source(source: str, collection: Collection) -> int:
+    results = collection.get(where={"source": source})
+    if not results["ids"]:
+        return 0
+    collection.delete(ids=results["ids"])
+    return len(results["ids"])
 
 
 def search_relevant_chunks(

@@ -5,7 +5,7 @@ from chromadb.api.models.Collection import Collection
 
 from rag.chunker import load_document, chunk_text
 from rag.embeddings import generate_embedding
-from rag.vector_store import index_chunks
+from rag.vector_store import index_chunks, delete_by_source
 
 
 def add_document(
@@ -27,7 +27,7 @@ def add_document(
         return
 
     embeddings = [generate_embedding(chunk, embedder) for chunk in chunks]
-    index_chunks(chunks, embeddings, collection)
+    index_chunks(chunks, embeddings, collection, source=file_path)
     print(f"Indexados {len(chunks)} chunks de '{file_path}'.")
 
 
@@ -58,6 +58,14 @@ def update_example(
         documents=[new_content],
     )
     print(f"Chunk actualizado. Nuevo ID: {new_id}")
+
+
+def remove_document(file_path: str, collection: Collection) -> None:
+    removed = delete_by_source(file_path, collection)
+    if removed == 0:
+        print(f"No se encontraron chunks de '{file_path}' en el corpus.")
+    else:
+        print(f"Eliminados {removed} chunks de '{file_path}'.")
 
 
 def delete_example(example_id: str, collection: Collection) -> None:

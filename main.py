@@ -7,7 +7,7 @@ import sys
 from rag.embeddings import load_embedding_model
 from rag.vector_store import init_vector_store
 from rag.pipeline import process_query
-from rag.corpus_admin import add_document, delete_example
+from rag.corpus_admin import add_document, delete_example, remove_document
 
 # ---------------------------------------------------------------------------
 # Configuración
@@ -67,6 +67,9 @@ def modo_admin(args, embedder, collection) -> None:
     if args.add:
         add_document(args.add, collection, embedder)
 
+    elif args.remove:
+        remove_document(args.remove, collection)
+
     elif args.delete:
         try:
             delete_example(args.delete, collection)
@@ -79,7 +82,7 @@ def modo_admin(args, embedder, collection) -> None:
         print(f"Chunks indexados en ChromaDB: {total}")
 
     else:
-        print("Modo admin: use --add <archivo>, --delete <id> o --stats.")
+        print("Modo admin: use --add <archivo>, --remove <archivo>, --delete <id> o --stats.")
 
 
 # ---------------------------------------------------------------------------
@@ -94,6 +97,11 @@ def main() -> None:
         "--add",
         metavar="ARCHIVO",
         help="Agrega un documento al corpus (modo admin).",
+    )
+    parser.add_argument(
+        "--remove",
+        metavar="ARCHIVO",
+        help="Elimina todos los chunks de un documento del corpus (modo admin).",
     )
     parser.add_argument(
         "--delete",
@@ -127,7 +135,7 @@ def main() -> None:
         print(f"Error al inicializar ChromaDB: {e}")
         sys.exit(1)
 
-    if args.add or args.delete or args.stats:
+    if args.add or args.remove or args.delete or args.stats:
         modo_admin(args, embedder, collection)
     else:
         modo_consulta(embedder, collection)
