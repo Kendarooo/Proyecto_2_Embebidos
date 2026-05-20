@@ -31,8 +31,11 @@ Proyecto_2_Embebidos/
 │   └── annotated/          # Ejemplos anotados en JSON
 ├── data/
 │   └── chroma_db/          # Base de datos vectorial persistente (NO versionar)
-├── models/                 # Modelos descargados (NO versionar)
+├── docs/                   # Documentación del proyecto (PDF propuesta)
 ├── logs/                   # Logs de consultas (NO versionar)
+├── instructions.md         # Instrucciones de uso y despliegue
+├── pyproject.toml          # Dependencias del proyecto
+├── README.md
 └── main.py                 # Punto de entrada CLI
 ```
 
@@ -47,8 +50,8 @@ Proyecto_2_Embebidos/
 
 ### Módulo 1 — chunker.py
 ```python
-load_document(file_path: str) -> str
-chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]
+load_document(file_path: str) -> str          # soporta .pdf, .txt, .md, .json
+chunk_text(text: str, chunk_size: int = 512, overlap: int = 64) -> list[str]
 ```
 
 ### Módulo 2 — embeddings.py
@@ -60,8 +63,9 @@ generate_embedding(text: str, model: SentenceTransformer) -> list[float]
 ### Módulo 3 — vector_store.py
 ```python
 init_vector_store(path: str) -> Collection
-index_chunks(chunks: list[str], embeddings: list[list[float]], collection: Collection) -> None
-search_relevant_chunks(query_embedding: list[float], collection: Collection, n: int) -> list[str]
+index_chunks(chunks: list[str], embeddings: list[list[float]], collection: Collection, source: str = "") -> None
+search_relevant_chunks(query_embedding: list[float], collection: Collection, n: int = 3) -> list[str]
+delete_by_source(source: str, collection: Collection) -> int   # retorna chunks eliminados
 ```
 
 ### Módulo 4 — pipeline.py
@@ -73,9 +77,20 @@ process_query(user_query: str, collection: Collection, embedder: SentenceTransfo
 
 ### Módulo 5 — corpus_admin.py
 ```python
-add_document(file_path: str, collection: Collection, embedder: SentenceTransformer) -> None
+add_document(file_path: str, collection: Collection, embedder: SentenceTransformer, chunk_size: int = 512, overlap: int = 64) -> None
 update_example(example_id: str, new_content: str, collection: Collection, embedder: SentenceTransformer) -> None
-delete_example(example_id: str, collection: Collection) -> None
+remove_document(file_path: str, collection: Collection) -> None   # elimina todos los chunks de un archivo por source
+delete_example(example_id: str, collection: Collection) -> None   # elimina un chunk por ID SHA-1
+```
+
+## CLI — main.py
+```
+python main.py                          # modo consulta interactiva
+python main.py --add <archivo>          # indexa un documento al corpus
+python main.py --remove <archivo>       # elimina todos los chunks de un archivo
+python main.py --delete <id_sha1>       # elimina un chunk por ID
+python main.py --stats                  # muestra total de chunks indexados
+python main.py --model <ruta_o_nombre>  # override del modelo de embeddings
 ```
 
 ## Restricciones críticas

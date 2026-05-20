@@ -9,7 +9,10 @@ def init_vector_store(path: str) -> Collection:
     Inicializa ChromaDB persistente en disco.
     Si ya existe la colección, la retorna tal cual — los chunks previos se conservan.
     """
-    client = chromadb.PersistentClient(path=path)
+    client = chromadb.PersistentClient(
+        path=path,
+        settings=chromadb.Settings(anonymized_telemetry=False),
+    )
     collection = client.get_or_create_collection(
         name="drc_corpus",
         metadata={"hnsw:space": "cosine"},
