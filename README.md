@@ -2,8 +2,6 @@
 
 Sistema RAG (Retrieval-Augmented Generation) de borde para asistir a estudiantes del curso Diseño mediante VLSI del Instituto Tecnológico de Costa Rica en la interpretación y corrección de errores DRC generados en Cadence Virtuoso con el PDK XFAB XH018 (180nm). Opera completamente de forma local sobre una NVIDIA Jetson Nano 4GB, sin conexión a internet ni dependencia de servicios externos.
 
-**Equipo:** Alexandra Alfaro Elizondo · Jose Pablo Esquetini Fallas · Kendall Madrigal Campos
-
 ---
 
 ## Descripción del sistema
