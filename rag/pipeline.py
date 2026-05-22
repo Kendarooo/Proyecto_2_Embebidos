@@ -5,7 +5,7 @@ from chromadb.api.models.Collection import Collection
 from rag.embeddings import generate_embedding
 from rag.vector_store import search_relevant_chunks
 
-MODEL_NAME = "gemma3:4b"
+MODEL_NAME = "qwen3:4b"
 OUT_OF_SCOPE_MARKER = "[FUERA_DE_ALCANCE]"
 
 _GREETINGS = {"hola", "hi", "hey", "buenas", "buenos días", "buenas tardes", "buenas noches", "buen día"}

@@ -4,6 +4,8 @@ import datetime
 import os
 import sys
 
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
 from rag.embeddings import load_embedding_model
 from rag.vector_store import init_vector_store
 from rag.pipeline import process_query

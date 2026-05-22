@@ -3,6 +3,12 @@ import hashlib
 import chromadb
 from chromadb.api.models.Collection import Collection
 
+try:
+    import chromadb.telemetry.product.posthog as _posthog
+    _posthog.Posthog.capture = lambda *a, **kw: None
+except Exception:
+    pass
+
 
 def init_vector_store(path: str) -> Collection:
     """
