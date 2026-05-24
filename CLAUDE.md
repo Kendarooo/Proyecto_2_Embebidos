@@ -11,7 +11,7 @@ Sistema RAG (Retrieval-Augmented Generation) local para asistir a estudiantes de
 ## Stack
 - **Hardware:** Jetson Nano 4GB
 - **SO:** Linux via Yocto Project
-- **LLM:** qwen3:4b via Ollama (host local: http://localhost:11434)
+- **LLM:** phi4-mini via Ollama (host local: http://localhost:11434)
 - **Embeddings:** all-MiniLM-L6-v2 (sentence-transformers, ~80MB)
 - **Vector store:** ChromaDB (persistente en disco)
 - **Interfaz:** Terminal CLI

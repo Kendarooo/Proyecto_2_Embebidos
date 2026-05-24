@@ -1,0 +1,112 @@
+[
+  {
+    "id": "DEF-001",
+    "error_raw": "MET1_W: WIDTH < 0.23",
+    "celda": "General",
+    "capa": "Metal1",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, el ancho mínimo de Metal1 para conexiones a contactos es 230nm (0.23um), según las reglas NONDEFAULTRULES del PDK XH018 observadas en layouts de compuertas de 4 entradas.",
+    "explicacion": "El error MET1_W indica que una traza de Metal1 tiene un ancho menor al mínimo permitido de 0.23um. En el PDK XH018, Metal1 usado para conexiones locales a contactos debe tener al menos 230nm de ancho. Anchos menores no son fabricables y pueden causar circuitos abiertos en el chip físico.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la traza de Metal1 con 'Select'. Verifica su ancho en el panel de propiedades (Edit > Properties). Usa Edit > Stretch o redibuja la traza asegurando un ancho mínimo de 0.23um. Para buses de alimentación como vcc! y gnd!, el ancho mínimo recomendado es 0.34um.",
+    "error_comun": "Confundir el ancho mínimo de Metal1 para señales (0.23um) con el ancho recomendado para alimentación (0.34um). Usar el valor incorrecto puede generar electromigración en trazas de potencia."
+  },
+  {
+    "id": "DEF-002",
+    "error_raw": "MET1_W: WIDTH < 0.34",
+    "celda": "General",
+    "capa": "Metal1",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, las trazas de Metal1 usadas para buses de alimentación (vcc!, gnd!) tienen un ancho de 340nm (0.34um), según las reglas NONDEFAULTRULES DEFAULT_MET1_340 del PDK XH018.",
+    "explicacion": "El error MET1_W en trazas de alimentación indica que el ancho de Metal1 es insuficiente para conducir la corriente requerida. El PDK XH018 define una regla no-default DEFAULT_MET1_340 que establece 340nm como ancho mínimo para rutas de potencia. Este valor es mayor al mínimo absoluto de 230nm porque considera restricciones de electromigración.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la traza de Metal1 de alimentación. Usa Edit > Properties para verificar el ancho actual. Modifica el ancho a 0.34um mínimo. Si la traza fue creada con la regla de señal (0.23um), bórrala y redibújala con el ancho correcto usando la capa MET1 con width 0.34um.",
+    "error_comun": "Aplicar el ancho de señal (0.23um) a trazas de alimentación. Esto puede pasar la verificación DRC básica de width pero fallar en verificaciones de electromigración (EM) del PDK."
+  },
+  {
+    "id": "DEF-003",
+    "error_raw": "MET2_W: WIDTH < 0.28",
+    "celda": "General",
+    "capa": "Metal2",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, el ancho mínimo de Metal2, Metal3 y Metal4 es 280nm (0.28um), según las reglas NONDEFAULTRULES del PDK XH018 aplicadas en compuertas de 4 entradas.",
+    "explicacion": "El error MET2_W indica que una traza de Metal2 tiene un ancho menor a 0.28um. En el PDK XH018, los metales intermedios Metal2, Metal3 y Metal4 comparten el mismo ancho mínimo de 280nm. Este valor es ligeramente mayor al mínimo de Metal1 porque las capas superiores tienen mayor resistividad relativa y requieren mayor sección transversal.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la traza de Metal2 con 'Select'. Verifica su ancho en Edit > Properties. Modifica el ancho a un mínimo de 0.28um. Si la traza fue enrutada automáticamente, verifica que el router usó la regla correcta para la capa Metal2.",
+    "error_comun": "Aplicar el ancho mínimo de Metal1 (0.23um) a trazas de Metal2. Cada capa de metal tiene su propio ancho mínimo en el XH018."
+  },
+  {
+    "id": "DEF-004",
+    "error_raw": "POLY1_W: WIDTH < 0.18",
+    "celda": "NOT, AND, NOR",
+    "capa": "Poly",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, los pines de compuertas sobre POLY1 tienen dimensiones de 180x100nm o 230x180nm, según el archivo DEF de compuertas de 4 entradas del PDK XH018.",
+    "explicacion": "El error POLY1_W indica que una geometría de Poly tiene un ancho menor al mínimo permitido de 0.18um. En el PDK XH018, el Poly usado para definir los pines de compuerta de los transistores debe tener al menos 180nm de ancho en su dimensión principal. Anchos menores afectan la longitud de canal efectiva del transistor y no son fabricables.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la geometría de Poly con el error. Verifica sus dimensiones en Edit > Properties. Asegura que el ancho mínimo sea 0.18um. Si es un gate de transistor, considera que el largo de canal (dimensión perpendicular al flujo de corriente) también tiene su propio mínimo definido por el PDK.",
+    "error_comun": "Confundir el ancho del Poly (dimensión paralela al flujo) con el largo de canal (dimensión perpendicular). El DRC verifica ambas dimensiones con reglas distintas."
+  },
+  {
+    "id": "DEF-005",
+    "error_raw": "CONT_S: SPACE < 0.22",
+    "celda": "NOT, AND, NOR",
+    "capa": "Contact",
+    "tipo": "Spacing",
+    "contexto": "En diseños reales del curso, los contactos (CONT) tienen dimensiones de 220x220nm (0.22x0.22um), según las geometrías RECT CONT observadas en el archivo DEF de compuertas del PDK XH018.",
+    "explicacion": "El error CONT_S indica que dos contactos están más cerca de lo permitido. En el PDK XH018, el spacing mínimo entre contactos es igual al tamaño del contacto mismo (0.22um). Esto significa que la distancia de borde a borde entre dos contactos adyacentes no puede ser menor a 0.22um. Contactos demasiado próximos pueden cortocircuitarse durante el proceso de fabricación.",
+    "correccion": "En Virtuoso Layout Editor: identifica los contactos en violación usando la herramienta de DRC highlight. Selecciona uno de los contactos y muévelo usando Edit > Move hasta que la separación entre bordes sea de al menos 0.22um. Verifica que al moverlo no generes nuevas violaciones de enclosure con la capa de metal superior.",
+    "error_comun": "Medir el spacing entre centros de contactos en lugar de entre bordes. El DRC mide siempre de borde a borde, no de centro a centro."
+  },
+  {
+    "id": "DEF-006",
+    "error_raw": "MET1_ENC_CONT: ENCLOSURE < 0.005",
+    "celda": "NOT, AND, NOR",
+    "capa": "Metal1",
+    "tipo": "Enclosure",
+    "contexto": "En diseños reales del curso, los rectángulos de Metal1 sobre contactos tienen dimensiones que garantizan al menos 5nm de enclosure en cada lado, según las geometrías RECT MET1 y RECT CONT observadas en el DEF del PDK XH018.",
+    "explicacion": "El error MET1_ENC_CONT indica que el Metal1 no cubre suficientemente al contacto en alguno de sus lados. El contacto debe quedar completamente dentro del Metal1 con un margen mínimo en cada borde. En el XH018, los contactos de 220x220nm deben estar rodeados por Metal1 por al menos el margen mínimo de enclosure definido por el PDK. Si el Metal1 no cubre bien el contacto, la conexión eléctrica puede fallar.",
+    "correccion": "En Virtuoso Layout Editor: selecciona el rectángulo de Metal1 sobre el contacto problemático. Usa Edit > Stretch para extender el Metal1 en la dirección donde falta enclosure. Asegura que el contacto quede completamente dentro del área de Metal1 con el margen mínimo requerido en todos sus lados.",
+    "error_comun": "Estirar el Metal1 en una sola dirección y crear una nueva violación de enclosure en el lado opuesto. Siempre verifica los cuatro lados del contacto después de cualquier modificación."
+  },
+  {
+    "id": "DEF-007",
+    "error_raw": "DIFF_W: WIDTH < 0.34",
+    "celda": "NOT, AND, NOR",
+    "capa": "Ndiff",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, la capa DIFF usada para regiones activas de transistores NMOS tiene un ancho mínimo de 340nm (0.34um), según la regla NONDEFAULTRULES DEFAULT_DIFF_340 del PDK XH018.",
+    "explicacion": "El error DIFF_W indica que una región de difusión activa (Ndiff o Pdiff) tiene un ancho menor a 0.34um. En el PDK XH018, las regiones activas de los transistores deben tener al menos 340nm de ancho para garantizar una formación correcta del canal y una resistencia de contacto adecuada. Regiones más estrechas pueden resultar en transistores con características eléctricas fuera de especificación.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la región de DIFF con el error. Verifica sus dimensiones en Edit > Properties. Extiende la región de DIFF usando Edit > Stretch hasta alcanzar el ancho mínimo de 0.34um. Verifica que la extensión no viole reglas de spacing con otras regiones activas adyacentes.",
+    "error_comun": "Al extender el DIFF para corregir el width, generar una violación de spacing con el DIFF del transistor vecino. Siempre verifica el spacing mínimo entre regiones activas después de cualquier modificación."
+  },
+  {
+    "id": "DEF-008",
+    "error_raw": "DIFF_W: WIDTH < 0.42",
+    "celda": "NOT, AND, NOR",
+    "capa": "Pdiff",
+    "tipo": "Width",
+    "contexto": "En diseños reales del curso, la capa DIFF usada para regiones activas de transistores PMOS tiene un ancho mínimo de 420nm (0.42um), según la regla NONDEFAULTRULES DEFAULT_DIFF_420 del PDK XH018.",
+    "explicacion": "El error DIFF_W en transistores PMOS indica que la región de difusión activa es más estrecha que el mínimo de 0.42um. Los transistores PMOS en el XH018 requieren regiones activas más anchas que los NMOS (0.34um) debido a la menor movilidad de los portadores de carga positivos. Un PMOS con DIFF más estrecho tiene mayor resistencia en encendido y puede no cumplir las especificaciones eléctricas del diseño.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la región de DIFF del transistor PMOS. Verifica que el ancho sea al menos 0.42um. Usa Edit > Stretch para extender la región. Recuerda que el PMOS está en la región N-well, por lo que al extender el DIFF también debes verificar que el N-well mantenga el enclosure mínimo requerido alrededor del DIFF.",
+    "error_comun": "Aplicar el ancho mínimo de DIFF para NMOS (0.34um) a transistores PMOS. El XH018 tiene reglas de ancho mínimo distintas para DIFF según el tipo de transistor."
+  },
+  {
+    "id": "DEF-009",
+    "error_raw": "MET1_S: SPACE < 0.28, actual = 0.23um",
+    "celda": "NOT, AND, NOR",
+    "capa": "Metal1",
+    "tipo": "Spacing",
+    "contexto": "En diseños reales del curso, el spacing mínimo entre trazas de Metal1 es 0.28um según el PDK XH018. Violaciones de spacing en Metal1 son frecuentes al conectar contactos de gnd! y vcc! en layouts compactos de celdas estándar.",
+    "explicacion": "El error MET1_S indica que dos trazas de Metal1 están separadas 0.23um, por debajo del mínimo de 0.28um del XH018. En layouts compactos de celdas estándar como NOT, AND y NOR, las trazas de alimentación y señal en Metal1 pueden quedar demasiado próximas. Trazas insuficientemente separadas pueden cortocircuitarse durante el proceso de fabricación, causando falla total del circuito.",
+    "correccion": "En Virtuoso Layout Editor: usa DRC > Highlight para identificar las dos trazas en violación. Selecciona una de ellas y usa Edit > Stretch para alejarla hasta que la separación de borde a borde sea de al menos 0.28um. Si no hay espacio suficiente, considera subir una de las conexiones a Metal2 usando una vía.",
+    "error_comun": "Mover la traza equivocada y generar una nueva violación de spacing en el lado opuesto, o generar una violación de enclosure al alejar la traza de su contacto."
+  },
+  {
+    "id": "DEF-010",
+    "error_raw": "MET1_EXT_CONT: EXTENSION < 0.19",
+    "celda": "NOT, AND, NOR",
+    "capa": "Metal1",
+    "tipo": "Extension",
+    "contexto": "En diseños reales del curso, las conexiones de Metal2, Metal3 y Metal4 tienen una extensión de cable (WIREEXT) de 190nm (0.19um) según las reglas NONDEFAULTRULES del PDK XH018.",
+    "explicacion": "El error MET1_EXT_CONT indica que el Metal1 no se extiende suficientemente más allá del borde de un contacto o vía en la dirección del enrutamiento. En el XH018, las capas de metal requieren una extensión mínima de 0.19um más allá del borde de la vía o contacto para garantizar una conexión eléctrica confiable. Extensiones insuficientes pueden causar circuitos abiertos bajo variaciones del proceso de fabricación.",
+    "correccion": "En Virtuoso Layout Editor: selecciona la traza de metal que termina sobre el contacto o vía con el error. Usa Edit > Stretch para extender la traza en la dirección de enrutamiento hasta que supere el borde del contacto o vía en al menos 0.19um. Verifica que la extensión no genere violaciones de spacing con otras geometrías adyacentes.",
+    "error_comun": "Confundir la regla de extensión con la de enclosure. La extensión aplica en la dirección del enrutamiento de la traza, mientras que el enclosure aplica en todas las direcciones alrededor del contacto."
+  }
+]
