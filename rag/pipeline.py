@@ -14,6 +14,19 @@ OUT_OF_SCOPE_MARKER = "[FUERA_DE_ALCANCE]"
 _GREETINGS = {"hola", "hi", "hey", "buenas", "buenos días", "buenas tardes", "buenas noches", "buen día"}
 _HELP_TRIGGERS = {"ayuda", "help", "qué puedes hacer", "que puedes hacer", "para qué sirves", "para que sirves", "cómo funciona", "como funciona"}
 _THANKS_TRIGGERS = {"gracias", "thanks", "thank you", "perfecto", "listo", "ok", "entendido", "vale"}
+_FAREWELL_TRIGGERS = {
+    "adiós",
+    "adios",
+    "hasta luego",
+    "hasta pronto",
+    "hasta mañana",
+    "nos vemos",
+    "bye",
+    "goodbye",
+    "chao",
+    "chau",
+    "me voy",
+}
 
 _SYSTEM_CONTEXT = """Eres un asistente especializado en errores DRC del PDK XFAB XH018 (180nm).
 Ayudas a estudiantes de VLSI del TEC a entender y corregir errores DRC generados en Cadence Virtuoso.
@@ -44,12 +57,19 @@ De lo contrario, usando la información del corpus como base, responde con:
 
 def _conversational_response(user_query: str) -> str | None:
     normalized = user_query.strip().lower().rstrip("!?.,")
+    if normalized in _FAREWELL_TRIGGERS or any(t in normalized for t in _FAREWELL_TRIGGERS):
+        return (
+            "Hasta luego. Cuando tengas otro error DRC del PDK XFAB XH018, "
+            "puedes volver y lo revisamos paso a paso.\n"
+            "Escribe 'Salir' para terminar el chat."
+        )
     if normalized in _GREETINGS or any(normalized.startswith(g) for g in _GREETINGS):
         return (
             "¡Hola! Soy el asistente DRC para el PDK XFAB XH018 (180nm).\n"
             "Puedo ayudarte a entender y corregir errores DRC en tus diseños de celdas "
             "NOT, AND y NOR en Cadence Virtuoso.\n"
             "Describe el error que estás viendo en Pegasus y te explico la causa y cómo resolverlo."
+            
         )
     if any(t in normalized for t in _HELP_TRIGGERS):
         return (
@@ -57,7 +77,8 @@ def _conversational_response(user_query: str) -> str | None:
             "- Tipos de error: Spacing, Width, Enclosure, Extension/Overlap, Via/Contact\n"
             "- Capas: Metal1–Metal5, Poly, Ndiff, Pdiff, Contact, Via1–Via4\n"
             "- Celdas: NOT, AND, NOR\n"
-            "Pega el mensaje de error de Pegasus y te explico qué significa y cómo corregirlo."
+            "Pega el mensaje de error de Pegasus y te explico qué significa y cómo corregirlo.\n"
+            "Escribe 'Salir' para terminar el chat."
         )
     if any(t in normalized for t in _THANKS_TRIGGERS):
         return "¡Con gusto! Si tienes otro error DRC, aquí estoy."

@@ -29,8 +29,8 @@ Consulta del estudiante
 | PDK | XFAB XH018 (180nm) |
 | Celdas | NOT, AND, NOR |
 | Capas | NWELL, PWELL, Metal1–Metal5, Poly, Ndiff, Pdiff, Contact, Via1–Via4 |
-| Tipos de error | Spacing, Width, Enclosure, Extension/Overlap, Área mínima, Via/Contact |
-| Fuera de scope | Antenna rules, LVS, Density global, Notch |
+| Tipos de error | Spacing/Notch, Width, Enclosure, Extension/Overlap, Área mínima, Via/Contact |
+| Fuera de scope | Antenna rules, LVS, Density global |
 
 Las consultas fuera del dominio son notificadas explícitamente al usuario.
 
@@ -133,8 +133,9 @@ Se puede ingresar el error tal como aparece en el log de Pegasus, o formularlo e
 
 ```bash
 uv run python main.py --add corpus/raw/xh018-DR-v10_1_1.txt
-uv run python main.py --add corpus/raw/reglas_metal.pdf
-uv run python main.py --add corpus/annotated/not_drc_errors.json
+uv run python main.py --add corpus/annotated/nand2_drc_errors.json
+uv run python main.py --add corpus/annotated/ejemplos_anotados_DEF.json
+uv run python main.py --add corpus/annotated/xh018_drc_solutions_only_txt_codes.json
 ```
 
 Formatos soportados: `.txt`, `.pdf`, `.md`, `.json`
@@ -187,6 +188,7 @@ Los ejemplos anotados en `corpus/annotated/` deben seguir este esquema:
 ```
 
 También se acepta un archivo JSON con una lista de objetos con el mismo esquema.
+Para reglas DRC estructuradas, también se acepta un objeto con clave `rules`, usando campos como `code`, `section`, `description_en`, `value`, `unit`, `rule_type` y `solution_es`.
 
 ---
 
