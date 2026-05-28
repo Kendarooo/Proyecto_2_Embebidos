@@ -114,12 +114,20 @@ def _example_to_text(example: dict) -> str:
 
 
 def _rule_to_text(rule: dict) -> str:
+    aliases = rule.get("layer_aliases", [])
+    typical_queries = rule.get("typical_queries_es", [])
     fields = [
         ("Código", rule.get("code", "")),
         ("Sección", rule.get("section", "")),
         ("Descripción", rule.get("description_en", "")),
+        ("Descripción ES", rule.get("description_es", "")),
+        ("Aliases de capa", ", ".join(aliases) if isinstance(aliases, list) else aliases),
         ("Valor", f"{rule.get('value', '')} {rule.get('unit', '')}".strip()),
         ("Tipo", rule.get("rule_type", "")),
+        (
+            "Consultas típicas",
+            "; ".join(typical_queries) if isinstance(typical_queries, list) else typical_queries,
+        ),
         ("Solución", rule.get("solution_es", "")),
     ]
     return "\n".join(f"{label}: {value}" for label, value in fields if value)

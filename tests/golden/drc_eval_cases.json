@@ -1,0 +1,222 @@
+[
+  {
+    "id": "exact_met1_spacing_s1m1",
+    "category": "exact_rule_indexed",
+    "query": "Que significa S1M1 en Pegasus?",
+    "expected_code": "S1M1",
+    "expected_section": "MET1",
+    "expected_affected": "MET1",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.23",
+    "must_retrieve": ["S1M1"],
+    "must_contain": ["S1M1", "MET1", "0.23"],
+    "must_not_contain": ["MET2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_met1_width_w1m1",
+    "category": "exact_rule_indexed",
+    "query": "Tengo el error W1M1, como lo corrijo?",
+    "expected_code": "W1M1",
+    "expected_section": "MET1",
+    "expected_affected": "MET1",
+    "expected_type": "ancho minimo",
+    "expected_value": "0.23",
+    "must_retrieve": ["W1M1"],
+    "must_contain": ["W1M1", "MET1", "0.23"],
+    "must_not_contain": ["MET2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_met1_contact_enclosure_e1m1ct",
+    "category": "exact_rule_indexed",
+    "query": "Explica E1M1CT",
+    "expected_code": "E1M1CT",
+    "expected_section": "MET1",
+    "expected_affected": "MET1",
+    "expected_type": "enclosure minimo",
+    "expected_value": "0.005",
+    "must_retrieve": ["E1M1CT"],
+    "must_contain": ["E1M1CT", "MET1", "0.005"],
+    "must_not_contain": ["VIA2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_met1_area_a1m1",
+    "category": "exact_rule_indexed",
+    "query": "Por que sale A1M1?",
+    "expected_code": "A1M1",
+    "expected_section": "MET1",
+    "expected_affected": "MET1",
+    "expected_type": "area minima",
+    "expected_value": "0.202",
+    "must_retrieve": ["A1M1"],
+    "must_contain": ["A1M1", "MET1", "0.202"],
+    "must_not_contain": ["MET2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_contact_spacing_s1ct",
+    "category": "exact_rule_indexed",
+    "query": "S1CT spacing de contactos",
+    "expected_code": "S1CT",
+    "expected_section": "CONT",
+    "expected_affected": "CONT",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.25",
+    "must_retrieve": ["S1CT"],
+    "must_contain": ["S1CT", "CONT", "0.25"],
+    "must_not_contain": ["VIA1", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_contact_width_w1ct",
+    "category": "exact_rule_indexed",
+    "query": "Que hago con W1CT?",
+    "expected_code": "W1CT",
+    "expected_section": "CONT",
+    "expected_affected": "CONT",
+    "expected_type": "tamano fijo",
+    "expected_value": "0.22",
+    "must_retrieve": ["W1CT"],
+    "must_contain": ["W1CT", "CONT", "0.22"],
+    "must_not_contain": ["MET1", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_nimp_enclosure_e1ctin",
+    "category": "exact_rule_indexed",
+    "query": "Necesito corregir E1CTIN",
+    "expected_code": "E1CTIN",
+    "expected_section": "CONT",
+    "expected_affected": "NIMP",
+    "expected_type": "enclosure minimo",
+    "expected_value": "0.12",
+    "must_retrieve": ["E1CTIN"],
+    "must_contain": ["E1CTIN", "NIMP", "0.12"],
+    "must_not_contain": ["PIMP", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_via1_spacing_s1v1",
+    "category": "exact_rule_indexed",
+    "query": "S1V1 aparece en el DRC",
+    "expected_code": "S1V1",
+    "expected_section": "VIA1",
+    "expected_affected": "VIA1",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.26",
+    "must_retrieve": ["S1V1"],
+    "must_contain": ["S1V1", "VIA1", "0.26"],
+    "must_not_contain": ["VIA2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_via1_width_w1v1",
+    "category": "exact_rule_indexed",
+    "query": "Cual es la regla W1V1?",
+    "expected_code": "W1V1",
+    "expected_section": "VIA1",
+    "expected_affected": "VIA1",
+    "expected_type": "tamano fijo",
+    "expected_value": "0.26",
+    "must_retrieve": ["W1V1"],
+    "must_contain": ["W1V1", "VIA1", "0.26"],
+    "must_not_contain": ["VIA2", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_met2_spacing_s1m2",
+    "category": "exact_rule_indexed",
+    "query": "Como se arregla S1M2?",
+    "expected_code": "S1M2",
+    "expected_section": "MET2",
+    "expected_affected": "MET2",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.28",
+    "must_retrieve": ["S1M2"],
+    "must_contain": ["S1M2", "MET2", "0.28"],
+    "must_not_contain": ["MET1", "LVS", "antenna"]
+  },
+  {
+    "id": "exact_nwell_spacing_s1nw",
+    "category": "exact_rule_indexed",
+    "query": "Que significa S1NW?",
+    "expected_code": "S1NW",
+    "expected_section": "NWELL",
+    "expected_affected": "NWELL",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.6",
+    "must_retrieve": ["S1NW"],
+    "must_contain": ["S1NW", "NWELL", "0.6"],
+    "must_not_contain": ["LVS", "antenna"]
+  },
+  {
+    "id": "semantic_met1_spacing_without_code",
+    "category": "semantic_only",
+    "query": "Cual es el espacio minimo entre trazos de Metal1?",
+    "expected_section": "MET1",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.23",
+    "must_retrieve": ["S1M1", "MET1"],
+    "must_contain": ["MET1", "0.23"],
+    "must_not_contain": ["LVS", "antenna"]
+  },
+  {
+    "id": "semantic_contact_spacing_without_code",
+    "category": "semantic_only",
+    "query": "Tengo dos contactos muy juntos, cual es la separacion minima?",
+    "expected_section": "CONT",
+    "expected_type": "spacing minimo",
+    "expected_value": "0.25",
+    "must_retrieve": ["S1CT", "CONT"],
+    "must_contain": ["CONT", "0.25"],
+    "must_not_contain": ["LVS", "antenna"]
+  },
+  {
+    "id": "semantic_pwell_width_without_code",
+    "category": "semantic_only",
+    "query": "tengo un error del minimo ancho del pwell, que puede ser",
+    "expected_code": "W1W2",
+    "expected_section": "PWELL",
+    "expected_type": "ancho minimo",
+    "expected_value": "0.6",
+    "must_retrieve": ["W1W2", "PWELL", "0.6"],
+    "must_contain": ["W1W2", "PWELL", "0.6"],
+    "must_not_contain": ["W1W1", "0.86", "LVS", "antenna"]
+  },
+  {
+    "id": "missing_valid_code_s9zz",
+    "category": "missing_code",
+    "query": "Que significa S9ZZ?",
+    "expected_code": "S9ZZ",
+    "must_not_retrieve": ["S9ZZ"],
+    "must_not_contain": ["0.23", "0.28", "0.25", "LVS", "antenna"]
+  },
+  {
+    "id": "out_of_scope_lvs",
+    "category": "out_of_scope",
+    "query": "Como arreglo un error LVS entre schematic y layout?",
+    "must_contain": ["fuera del alcance"],
+    "must_not_contain": ["S1M1", "W1M1", "0.23"]
+  },
+  {
+    "id": "out_of_scope_python",
+    "category": "out_of_scope",
+    "query": "Como hago una lista en Python?",
+    "must_contain": ["fuera del alcance"],
+    "must_not_contain": ["MET1", "VIA1", "0.23"]
+  },
+  {
+    "id": "conversational_greeting",
+    "category": "conversational",
+    "query": "hola",
+    "must_contain": ["asistente DRC", "Salir"],
+    "must_not_contain": ["FUERA_DE_ALCANCE"]
+  },
+  {
+    "id": "conversational_help",
+    "category": "conversational",
+    "query": "ayuda",
+    "must_contain": ["errores DRC", "Salir"],
+    "must_not_contain": ["FUERA_DE_ALCANCE"]
+  },
+  {
+    "id": "conversational_farewell",
+    "category": "conversational",
+    "query": "bye",
+    "must_contain": ["Hasta luego", "Salir"],
+    "must_not_contain": ["FUERA_DE_ALCANCE"]
+  }
+]

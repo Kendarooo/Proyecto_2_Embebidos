@@ -1,4 +1,5 @@
 import re
+import unicodedata
 import requests
 from sentence_transformers import SentenceTransformer
 from chromadb.api.models.Collection import Collection
@@ -167,6 +168,54 @@ def _parse_structured_rule(code: str, snippet: str) -> dict[str, str] | None:
     }
 
 
+def _parse_first_structured_rule(chunk: str) -> dict[str, str] | None:
+    match = re.search(r"^Código:\s*([A-Z0-9]+)\s*$", chunk, flags=re.MULTILINE)
+    if not match:
+        return None
+    return _parse_structured_rule(match.group(1), chunk)
+
+
+def _normalize_for_match(text: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", text.lower())
+    return "".join(ch for ch in decomposed if not unicodedata.combining(ch))
+
+
+def _query_matches_rule(user_query: str, rule: dict[str, str]) -> bool:
+    query = _normalize_for_match(user_query)
+    affected = _normalize_for_match(rule.get("affected", ""))
+    description = _normalize_for_match(rule.get("description", ""))
+    rule_type = _normalize_for_match(rule.get("rule_type", ""))
+
+    layer_terms = {
+        "pwell": ["pwell", "p-well", "pozo p", "well p"],
+        "nwell": ["nwell", "n-well", "pozo n", "well n"],
+        "met1": ["met1", "metal1", "metal 1", "m1"],
+        "met2": ["met2", "metal2", "metal 2", "m2"],
+        "cont": ["cont", "contact", "contacto", "ct"],
+        "via1": ["via1", "via 1", "v1"],
+        "poly": ["poly", "polisilicio", "p1", "gate", "compuerta"],
+    }
+    type_terms = {
+        "ancho": ["ancho", "anchura", "width", "angosto"],
+        "spacing": ["spacing", "espacio", "separacion", "separados", "juntos"],
+        "enclosure": ["enclosure", "encerramiento", "cobertura", "cubrir"],
+        "area": ["area"],
+    }
+
+    layer_match = any(
+        any(term in query for term in terms)
+        and (key in affected or key in description)
+        for key, terms in layer_terms.items()
+    )
+    type_match = any(
+        any(term in query for term in terms)
+        and key in rule_type
+        for key, terms in type_terms.items()
+    )
+
+    return layer_match and type_match
+
+
 def _parse_table_rule(code: str, snippet: str) -> dict[str, str] | None:
     parts = [part.strip() for part in snippet.split("|")]
     if len(parts) < 4 or parts[0].upper() != code:
@@ -304,16 +353,27 @@ def process_query(
 
     rule_codes = _extract_rule_codes(user_query)
     keyword_chunks_by_code = {}
+    exact_answers = []
 
     for code in rule_codes:
         keyword_chunks = search_by_keyword(code, collection, n=8)
         keyword_chunks_by_code[code] = keyword_chunks
         exact_rule = _parse_exact_rule(code, keyword_chunks)
         if exact_rule:
-            return _format_exact_rule_answer(exact_rule)
+            exact_answers.append(_format_exact_rule_answer(exact_rule))
+
+    if exact_answers and len(exact_answers) == len(rule_codes):
+        if len(exact_answers) == 1:
+            return exact_answers[0]
+        return "\n\n---\n\n".join(exact_answers)
 
     query_embedding = generate_embedding(user_query, embedder)
     context_chunks = search_relevant_chunks(query_embedding, collection, n=3)
+
+    if not rule_codes and context_chunks:
+        semantic_rule = _parse_first_structured_rule(context_chunks[0])
+        if semantic_rule and _query_matches_rule(user_query, semantic_rule):
+            return _format_exact_rule_answer(semantic_rule)
 
     for code in rule_codes:
         keyword_chunks = keyword_chunks_by_code[code]

@@ -1,6 +1,6 @@
 {
   "source_file": "xh018-DR-v10_1_1.txt",
-  "note": "Incluye únicamente códigos de regla que aparecen explícitamente en el archivo TXT. No se agregan aliases ni códigos inferidos.",
+  "note": "Incluye códigos de regla que aparecen explícitamente en el TXT y campos semánticos derivados para mejorar recuperación en consultas naturales. No se agregan códigos de regla inferidos.",
   "rule_count": 161,
   "rules": [
     {
@@ -11,7 +11,25 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 22
+      "source_line": 22,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla W1NW define ancho mínimo para NWELL; el valor requerido es 0.86 μm.",
+      "typical_queries_es": [
+        "Qué significa W1NW?",
+        "Cómo corrijo el error W1NW?",
+        "Tengo una violación W1NW en NWELL.",
+        "Cuál es la anchura mínima de NWELL?",
+        "Error DRC de width mínimo en NWELL.",
+        "Necesito cumplir 0.86 μm en NWELL.",
+        "Cuál es el ancho mínimo de NWELL?",
+        "Tengo un trazo de NWELL muy angosto.",
+        "Tengo un error del mínimo ancho del NWELL."
+      ]
     },
     {
       "code": "S1NW",
@@ -21,7 +39,25 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 23
+      "source_line": 23,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla S1NW define espaciado mínimo para NWELL; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S1NW?",
+        "Cómo corrijo el error S1NW?",
+        "Tengo una violación S1NW en NWELL.",
+        "Cuál es la separación mínima de NWELL?",
+        "Error DRC de separacion minima en NWELL.",
+        "Necesito cumplir 0.6 μm en NWELL.",
+        "Cuál es el espacio mínimo entre trazos de NWELL?",
+        "Cuál es la separación mínima entre geometrías de NWELL?",
+        "Tengo dos figuras de NWELL muy juntas."
+      ]
     },
     {
       "code": "S2NW",
@@ -31,7 +67,33 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 24
+      "source_line": 24,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S2NW define espaciado mínimo para NWELL; el valor requerido es 1.4 μm.",
+      "typical_queries_es": [
+        "Qué significa S2NW?",
+        "Cómo corrijo el error S2NW?",
+        "Tengo una violación S2NW en NWELL.",
+        "Cuál es la separación mínima de NWELL?",
+        "Error DRC de separacion minima en NWELL.",
+        "Necesito cumplir 1.4 μm en NWELL.",
+        "Cuál es el espacio mínimo entre trazos de NWELL?",
+        "Cuál es la separación mínima entre geometrías de NWELL?",
+        "Tengo dos figuras de NWELL muy juntas."
+      ]
     },
     {
       "code": "S3NW",
@@ -41,7 +103,33 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(2.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 25
+      "source_line": 25,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S3NW define espaciado mínimo para NWELL; el valor requerido es 2.0 μm.",
+      "typical_queries_es": [
+        "Qué significa S3NW?",
+        "Cómo corrijo el error S3NW?",
+        "Tengo una violación S3NW en NWELL.",
+        "Cuál es la separación mínima de NWELL?",
+        "Error DRC de separacion minima en NWELL.",
+        "Necesito cumplir 2.0 μm en NWELL.",
+        "Cuál es el espacio mínimo entre trazos de NWELL?",
+        "Cuál es la separación mínima entre geometrías de NWELL?",
+        "Tengo dos figuras de NWELL muy juntas."
+      ]
     },
     {
       "code": "A1NW",
@@ -51,7 +139,24 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 26
+      "source_line": 26,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla A1NW define área mínima para NWELL; el valor requerido es 2.25 μm².",
+      "typical_queries_es": [
+        "Qué significa A1NW?",
+        "Cómo corrijo el error A1NW?",
+        "Tengo una violación A1NW en NWELL.",
+        "Cuál es la area minima de NWELL?",
+        "Error DRC de minimum area en NWELL.",
+        "Necesito cumplir 2.25 μm² en NWELL.",
+        "Cuál es el área mínima de NWELL?",
+        "La figura de NWELL tiene área muy pequeña."
+      ]
     },
     {
       "code": "W1W1",
@@ -61,7 +166,25 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 32
+      "source_line": 32,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla W1W1 define ancho mínimo para NWELL; el valor requerido es 0.86 μm.",
+      "typical_queries_es": [
+        "Qué significa W1W1?",
+        "Cómo corrijo el error W1W1?",
+        "Tengo una violación W1W1 en NWELL.",
+        "Cuál es la anchura mínima de NWELL?",
+        "Error DRC de width mínimo en NWELL.",
+        "Necesito cumplir 0.86 μm en NWELL.",
+        "Cuál es el ancho mínimo de NWELL?",
+        "Tengo un trazo de NWELL muy angosto.",
+        "Tengo un error del mínimo ancho del NWELL."
+      ]
     },
     {
       "code": "W1W2",
@@ -71,7 +194,25 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.6 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 33
+      "source_line": 33,
+      "layer_aliases": [
+        "PWELL",
+        "P-Well",
+        "pozo P",
+        "well P"
+      ],
+      "description_es": "La regla W1W2 define ancho mínimo para PWELL; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa W1W2?",
+        "Cómo corrijo el error W1W2?",
+        "Tengo una violación W1W2 en PWELL.",
+        "Cuál es la anchura mínima de PWELL?",
+        "Error DRC de width mínimo en PWELL.",
+        "Necesito cumplir 0.6 μm en PWELL.",
+        "Cuál es el ancho mínimo de PWELL?",
+        "Tengo un trazo de PWELL muy angosto.",
+        "Tengo un error del mínimo ancho del PWELL."
+      ]
     },
     {
       "code": "W1W3",
@@ -81,7 +222,25 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 34
+      "source_line": 34,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla W1W3 define ancho mínimo para NWELL; el valor requerido es 0.86 μm.",
+      "typical_queries_es": [
+        "Qué significa W1W3?",
+        "Cómo corrijo el error W1W3?",
+        "Tengo una violación W1W3 en NWELL.",
+        "Cuál es la anchura mínima de NWELL?",
+        "Error DRC de width mínimo en NWELL.",
+        "Necesito cumplir 0.86 μm en NWELL.",
+        "Cuál es el ancho mínimo de NWELL?",
+        "Tengo un trazo de NWELL muy angosto.",
+        "Tengo un error del mínimo ancho del NWELL."
+      ]
     },
     {
       "code": "W1W4",
@@ -91,7 +250,25 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.6 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 35
+      "source_line": 35,
+      "layer_aliases": [
+        "PWELL",
+        "P-Well",
+        "pozo P",
+        "well P"
+      ],
+      "description_es": "La regla W1W4 define ancho mínimo para PWELL; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa W1W4?",
+        "Cómo corrijo el error W1W4?",
+        "Tengo una violación W1W4 en PWELL.",
+        "Cuál es la anchura mínima de PWELL?",
+        "Error DRC de width mínimo en PWELL.",
+        "Necesito cumplir 0.6 μm en PWELL.",
+        "Cuál es el ancho mínimo de PWELL?",
+        "Tengo un trazo de PWELL muy angosto.",
+        "Tengo un error del mínimo ancho del PWELL."
+      ]
     },
     {
       "code": "A1W1",
@@ -101,7 +278,24 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 36
+      "source_line": 36,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla A1W1 define área mínima para NWELL; el valor requerido es 2.25 μm².",
+      "typical_queries_es": [
+        "Qué significa A1W1?",
+        "Cómo corrijo el error A1W1?",
+        "Tengo una violación A1W1 en NWELL.",
+        "Cuál es la area minima de NWELL?",
+        "Error DRC de minimum area en NWELL.",
+        "Necesito cumplir 2.25 μm² en NWELL.",
+        "Cuál es el área mínima de NWELL?",
+        "La figura de NWELL tiene área muy pequeña."
+      ]
     },
     {
       "code": "A1W2",
@@ -111,7 +305,24 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 37
+      "source_line": 37,
+      "layer_aliases": [
+        "PWELL",
+        "P-Well",
+        "pozo P",
+        "well P"
+      ],
+      "description_es": "La regla A1W2 define área mínima para PWELL; el valor requerido es 2.25 μm².",
+      "typical_queries_es": [
+        "Qué significa A1W2?",
+        "Cómo corrijo el error A1W2?",
+        "Tengo una violación A1W2 en PWELL.",
+        "Cuál es la area minima de PWELL?",
+        "Error DRC de minimum area en PWELL.",
+        "Necesito cumplir 2.25 μm² en PWELL.",
+        "Cuál es el área mínima de PWELL?",
+        "La figura de PWELL tiene área muy pequeña."
+      ]
     },
     {
       "code": "A1W3",
@@ -121,7 +332,24 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 38
+      "source_line": 38,
+      "layer_aliases": [
+        "NWELL",
+        "N-Well",
+        "pozo N",
+        "well N"
+      ],
+      "description_es": "La regla A1W3 define área mínima para NWELL; el valor requerido es 2.25 μm².",
+      "typical_queries_es": [
+        "Qué significa A1W3?",
+        "Cómo corrijo el error A1W3?",
+        "Tengo una violación A1W3 en NWELL.",
+        "Cuál es la area minima de NWELL?",
+        "Error DRC de minimum area en NWELL.",
+        "Necesito cumplir 2.25 μm² en NWELL.",
+        "Cuál es el área mínima de NWELL?",
+        "La figura de NWELL tiene área muy pequeña."
+      ]
     },
     {
       "code": "A1W4",
@@ -131,7 +359,24 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 39
+      "source_line": 39,
+      "layer_aliases": [
+        "PWELL",
+        "P-Well",
+        "pozo P",
+        "well P"
+      ],
+      "description_es": "La regla A1W4 define área mínima para PWELL; el valor requerido es 2.25 μm².",
+      "typical_queries_es": [
+        "Qué significa A1W4?",
+        "Cómo corrijo el error A1W4?",
+        "Tengo una violación A1W4 en PWELL.",
+        "Cuál es la area minima de PWELL?",
+        "Error DRC de minimum area en PWELL.",
+        "Necesito cumplir 2.25 μm² en PWELL.",
+        "Cuál es el área mínima de PWELL?",
+        "La figura de PWELL tiene área muy pequeña."
+      ]
     },
     {
       "code": "B1GA",
@@ -141,7 +386,25 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 44
+      "source_line": 44,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla B1GA define regla DRC para Poly; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1GA?",
+        "Cómo corrijo el error B1GA?",
+        "Tengo una violación B1GA en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir None None en Poly."
+      ]
     },
     {
       "code": "B1P1",
@@ -151,7 +414,31 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 45
+      "source_line": 45,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "NIMP",
+        "implante N",
+        "n implant",
+        "PIMP",
+        "implante P",
+        "p implant"
+      ],
+      "description_es": "La regla B1P1 define regla DRC para NIMP; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1P1?",
+        "Cómo corrijo el error B1P1?",
+        "Tengo una violación B1P1 en NIMP.",
+        "Cuál es la violación DRC de NIMP?",
+        "Error DRC de error DRC en NIMP.",
+        "Necesito cumplir None None en NIMP."
+      ]
     },
     {
       "code": "B2GA",
@@ -161,7 +448,25 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 46
+      "source_line": 46,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla B2GA define regla DRC para Poly; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B2GA?",
+        "Cómo corrijo el error B2GA?",
+        "Tengo una violación B2GA en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir None None en Poly."
+      ]
     },
     {
       "code": "BDP1",
@@ -171,7 +476,25 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 47
+      "source_line": 47,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla BDP1 define regla DRC para Poly; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa BDP1?",
+        "Cómo corrijo el error BDP1?",
+        "Tengo una violación BDP1 en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir None None en Poly."
+      ]
     },
     {
       "code": "W1P1",
@@ -181,7 +504,28 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.18 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 48
+      "source_line": 48,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla W1P1 define ancho mínimo para Poly; el valor requerido es 0.18 μm.",
+      "typical_queries_es": [
+        "Qué significa W1P1?",
+        "Cómo corrijo el error W1P1?",
+        "Tengo una violación W1P1 en Poly.",
+        "Cuál es la anchura mínima de Poly?",
+        "Error DRC de width mínimo en Poly.",
+        "Necesito cumplir 0.18 μm en Poly.",
+        "Cuál es el ancho mínimo de Poly?",
+        "Tengo un trazo de Poly muy angosto.",
+        "Tengo un error del mínimo ancho del Poly."
+      ]
     },
     {
       "code": "W2P1",
@@ -191,7 +535,28 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.21 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 49
+      "source_line": 49,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla W2P1 define ancho mínimo para Poly; el valor requerido es 0.21 μm.",
+      "typical_queries_es": [
+        "Qué significa W2P1?",
+        "Cómo corrijo el error W2P1?",
+        "Tengo una violación W2P1 en Poly.",
+        "Cuál es la anchura mínima de Poly?",
+        "Error DRC de width mínimo en Poly.",
+        "Necesito cumplir 0.21 μm en Poly.",
+        "Cuál es el ancho mínimo de Poly?",
+        "Tengo un trazo de Poly muy angosto.",
+        "Tengo un error del mínimo ancho del Poly."
+      ]
     },
     {
       "code": "S1P1",
@@ -201,7 +566,28 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.25 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 50
+      "source_line": 50,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla S1P1 define espaciado mínimo para Poly; el valor requerido es 0.25 μm.",
+      "typical_queries_es": [
+        "Qué significa S1P1?",
+        "Cómo corrijo el error S1P1?",
+        "Tengo una violación S1P1 en Poly.",
+        "Cuál es la separación mínima de Poly?",
+        "Error DRC de separacion minima en Poly.",
+        "Necesito cumplir 0.25 μm en Poly.",
+        "Cuál es el espacio mínimo entre trazos de Poly?",
+        "Cuál es la separación mínima entre geometrías de Poly?",
+        "Tengo dos figuras de Poly muy juntas."
+      ]
     },
     {
       "code": "S3P1",
@@ -211,7 +597,36 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.5 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 51
+      "source_line": 51,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S3P1 define espaciado mínimo para DIFF; el valor requerido es 0.5 μm.",
+      "typical_queries_es": [
+        "Qué significa S3P1?",
+        "Cómo corrijo el error S3P1?",
+        "Tengo una violación S3P1 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.5 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S1P1DF",
@@ -221,7 +636,36 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.1 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 52
+      "source_line": 52,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S1P1DF define espaciado mínimo para DIFF; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa S1P1DF?",
+        "Cómo corrijo el error S1P1DF?",
+        "Tengo una violación S1P1DF en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.1 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S5P1DF",
@@ -231,7 +675,36 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.5 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 53
+      "source_line": 53,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S5P1DF define espaciado mínimo para DIFF; el valor requerido es 0.5 μm.",
+      "typical_queries_es": [
+        "Qué significa S5P1DF?",
+        "Cómo corrijo el error S5P1DF?",
+        "Tengo una violación S5P1DF en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.5 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "E1DFGA",
@@ -241,7 +714,33 @@
       "unit": "μm",
       "rule_type": "extensión mínima",
       "solution_es": "Extiende la capa indicada más allá del borde del dispositivo/gate hasta cumplir la extensión mínima(0.32 μm).",
-      "source_line": 54
+      "source_line": 54,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla E1DFGA define regla DRC para DIFF; el valor requerido es 0.32 μm.",
+      "typical_queries_es": [
+        "Qué significa E1DFGA?",
+        "Cómo corrijo el error E1DFGA?",
+        "Tengo una violación E1DFGA en DIFF.",
+        "Cuál es la violación DRC de DIFF?",
+        "Error DRC de error DRC en DIFF.",
+        "Necesito cumplir 0.32 μm en DIFF."
+      ]
     },
     {
       "code": "E1P1GA",
@@ -251,7 +750,25 @@
       "unit": "μm",
       "rule_type": "extensión mínima",
       "solution_es": "Extiende la capa indicada más allá del borde del dispositivo/gate hasta cumplir la extensión mínima(0.22 μm).",
-      "source_line": 55
+      "source_line": 55,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla E1P1GA define regla DRC para Poly; el valor requerido es 0.22 μm.",
+      "typical_queries_es": [
+        "Qué significa E1P1GA?",
+        "Cómo corrijo el error E1P1GA?",
+        "Tengo una violación E1P1GA en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir 0.22 μm en Poly."
+      ]
     },
     {
       "code": "A1P1",
@@ -261,7 +778,27 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.118 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 56
+      "source_line": 56,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla A1P1 define área mínima para Poly; el valor requerido es 0.118 μm².",
+      "typical_queries_es": [
+        "Qué significa A1P1?",
+        "Cómo corrijo el error A1P1?",
+        "Tengo una violación A1P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 0.118 μm² en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "A2P1",
@@ -271,7 +808,27 @@
       "unit": "μm²",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(17000.0 μm²).",
-      "source_line": 57
+      "source_line": 57,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla A2P1 define área mínima para Poly; el valor requerido es 17000.0 μm².",
+      "typical_queries_es": [
+        "Qué significa A2P1?",
+        "Cómo corrijo el error A2P1?",
+        "Tengo una violación A2P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 17000.0 μm² en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1P1",
@@ -281,7 +838,27 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(14.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 58
+      "source_line": 58,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1P1 define área mínima para Poly; el valor requerido es 14.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1P1?",
+        "Cómo corrijo el error R1P1?",
+        "Tengo una violación R1P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 14.0 % en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2P1",
@@ -291,7 +868,27 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(200.0 ).",
-      "source_line": 59
+      "source_line": 59,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2P1 define área mínima para Poly; el valor requerido es 200.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2P1?",
+        "Cómo corrijo el error R2P1?",
+        "Tengo una violación R2P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 200.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1P1",
@@ -301,7 +898,25 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 60
+      "source_line": 60,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla Q1P1 define regla DRC para Poly; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1P1?",
+        "Cómo corrijo el error Q1P1?",
+        "Tengo una violación Q1P1 en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir None None en Poly."
+      ]
     },
     {
       "code": "B1CT",
@@ -311,7 +926,40 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 65
+      "source_line": 65,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla B1CT define regla DRC para CONT; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1CT?",
+        "Cómo corrijo el error B1CT?",
+        "Tengo una violación B1CT en CONT.",
+        "Cuál es la violación DRC de CONT?",
+        "Error DRC de error DRC en CONT.",
+        "Necesito cumplir None None en CONT."
+      ]
     },
     {
       "code": "B1CTGA",
@@ -321,7 +969,32 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 66
+      "source_line": 66,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla B1CTGA define regla DRC para CONT; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1CTGA?",
+        "Cómo corrijo el error B1CTGA?",
+        "Tengo una violación B1CTGA en CONT.",
+        "Cuál es la violación DRC de CONT?",
+        "Error DRC de error DRC en CONT.",
+        "Necesito cumplir None None en CONT."
+      ]
     },
     {
       "code": "B1CTSB",
@@ -331,7 +1004,25 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
-      "source_line": 67
+      "source_line": 67,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla B1CTSB define regla DRC para CONT; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1CTSB?",
+        "Cómo corrijo el error B1CTSB?",
+        "Tengo una violación B1CTSB en CONT.",
+        "Cuál es la violación DRC de CONT?",
+        "Error DRC de error DRC en CONT.",
+        "Necesito cumplir None None en CONT."
+      ]
     },
     {
       "code": "B3CT",
@@ -341,7 +1032,25 @@
       "unit": null,
       "rule_type": "regla DRC",
       "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
-      "source_line": 68
+      "source_line": 68,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla B3CT define regla DRC para CONT; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B3CT?",
+        "Cómo corrijo el error B3CT?",
+        "Tengo una violación B3CT en CONT.",
+        "Cuál es la violación DRC de CONT?",
+        "Error DRC de error DRC en CONT.",
+        "Necesito cumplir None None en CONT."
+      ]
     },
     {
       "code": "W2CT",
@@ -351,7 +1060,28 @@
       "unit": "μm",
       "rule_type": "ancho fijo",
       "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.22 μm). Usa la geometría/celda recomendada del PDK.",
-      "source_line": 69
+      "source_line": 69,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla W2CT define ancho mínimo para CONT; el valor requerido es 0.22 μm.",
+      "typical_queries_es": [
+        "Qué significa W2CT?",
+        "Cómo corrijo el error W2CT?",
+        "Tengo una violación W2CT en CONT.",
+        "Cuál es la anchura mínima de CONT?",
+        "Error DRC de width mínimo en CONT.",
+        "Necesito cumplir 0.22 μm en CONT.",
+        "Cuál es el ancho mínimo de CONT?",
+        "Tengo un trazo de CONT muy angosto.",
+        "Tengo un error del mínimo ancho del CONT."
+      ]
     },
     {
       "code": "W1CT",
@@ -361,7 +1091,33 @@
       "unit": "µm x µm",
       "rule_type": "tamaño fijo",
       "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.22 x0.22 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
-      "source_line": 70
+      "source_line": 70,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla W1CT define tamaño fijo para CONT; el valor requerido es 0.22 x0.22 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W1CT?",
+        "Cómo corrijo el error W1CT?",
+        "Tengo una violación W1CT en CONT.",
+        "Cuál es la dimension fija de CONT?",
+        "Error DRC de medida fija en CONT.",
+        "Necesito cumplir 0.22 x0.22 µm x µm en CONT."
+      ]
     },
     {
       "code": "S1CT",
@@ -371,7 +1127,28 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.25 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 71
+      "source_line": 71,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla S1CT define espaciado mínimo para CONT; el valor requerido es 0.25 μm.",
+      "typical_queries_es": [
+        "Qué significa S1CT?",
+        "Cómo corrijo el error S1CT?",
+        "Tengo una violación S1CT en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.25 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "S2CT",
@@ -381,7 +1158,28 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 72
+      "source_line": 72,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla S2CT define espaciado mínimo para CONT; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa S2CT?",
+        "Cómo corrijo el error S2CT?",
+        "Tengo una violación S2CT en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.28 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "S3CT",
@@ -391,7 +1189,28 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.39 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 73
+      "source_line": 73,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla S3CT define espaciado mínimo para CONT; el valor requerido es 0.39 μm.",
+      "typical_queries_es": [
+        "Qué significa S3CT?",
+        "Cómo corrijo el error S3CT?",
+        "Tengo una violación S3CT en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.39 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "S4CT",
@@ -401,7 +1220,28 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.67 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 74
+      "source_line": 74,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla S4CT define espaciado mínimo para CONT; el valor requerido es 0.67 μm.",
+      "typical_queries_es": [
+        "Qué significa S4CT?",
+        "Cómo corrijo el error S4CT?",
+        "Tengo una violación S4CT en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.67 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "S1CTDF",
@@ -411,7 +1251,36 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.2 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 75
+      "source_line": 75,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S1CTDF define espaciado mínimo para CONT; el valor requerido es 0.2 μm.",
+      "typical_queries_es": [
+        "Qué significa S1CTDF?",
+        "Cómo corrijo el error S1CTDF?",
+        "Tengo una violación S1CTDF en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.2 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "S1CTP1",
@@ -421,7 +1290,35 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.16 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 76
+      "source_line": 76,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla S1CTP1 define espaciado mínimo para CONT; el valor requerido es 0.16 μm.",
+      "typical_queries_es": [
+        "Qué significa S1CTP1?",
+        "Cómo corrijo el error S1CTP1?",
+        "Tengo una violación S1CTP1 en CONT.",
+        "Cuál es la separación mínima de CONT?",
+        "Error DRC de separacion minima en CONT.",
+        "Necesito cumplir 0.16 μm en CONT.",
+        "Cuál es el espacio mínimo entre trazos de CONT?",
+        "Cuál es la separación mínima entre geometrías de CONT?",
+        "Tengo dos figuras de CONT muy juntas."
+      ]
     },
     {
       "code": "E1CTIN",
@@ -431,7 +1328,38 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.12 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 77
+      "source_line": 77,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff",
+        "NIMP",
+        "implante N",
+        "n implant"
+      ],
+      "description_es": "La regla E1CTIN define encerramiento mínimo para NIMP; el valor requerido es 0.12 μm.",
+      "typical_queries_es": [
+        "Qué significa E1CTIN?",
+        "Cómo corrijo el error E1CTIN?",
+        "Tengo una violación E1CTIN en NIMP.",
+        "Cuál es la enclosure mínimo de NIMP?",
+        "Error DRC de cobertura mínima en NIMP.",
+        "Necesito cumplir 0.12 μm en NIMP.",
+        "Cuánto debe cubrir NIMP al elemento marcado?",
+        "Error de enclosure en NIMP."
+      ]
     },
     {
       "code": "E1CTIP",
@@ -441,7 +1369,38 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.12 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 78
+      "source_line": 78,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff",
+        "PIMP",
+        "implante P",
+        "p implant"
+      ],
+      "description_es": "La regla E1CTIP define encerramiento mínimo para PIMP; el valor requerido es 0.12 μm.",
+      "typical_queries_es": [
+        "Qué significa E1CTIP?",
+        "Cómo corrijo el error E1CTIP?",
+        "Tengo una violación E1CTIP en PIMP.",
+        "Cuál es la enclosure mínimo de PIMP?",
+        "Error DRC de cobertura mínima en PIMP.",
+        "Necesito cumplir 0.12 μm en PIMP.",
+        "Cuánto debe cubrir PIMP al elemento marcado?",
+        "Error de enclosure en PIMP."
+      ]
     },
     {
       "code": "E1DFCT",
@@ -451,7 +1410,35 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 79
+      "source_line": 79,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla E1DFCT define encerramiento mínimo para CONT; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E1DFCT?",
+        "Cómo corrijo el error E1DFCT?",
+        "Tengo una violación E1DFCT en CONT.",
+        "Cuál es la enclosure mínimo de CONT?",
+        "Error DRC de cobertura mínima en CONT.",
+        "Necesito cumplir 0.1 μm en CONT.",
+        "Cuánto debe cubrir CONT al elemento marcado?",
+        "Error de enclosure en CONT."
+      ]
     },
     {
       "code": "E1P1CT",
@@ -461,7 +1448,34 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 80
+      "source_line": 80,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla E1P1CT define encerramiento mínimo para CONT; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E1P1CT?",
+        "Cómo corrijo el error E1P1CT?",
+        "Tengo una violación E1P1CT en CONT.",
+        "Cuál es la enclosure mínimo de CONT?",
+        "Error DRC de cobertura mínima en CONT.",
+        "Necesito cumplir 0.1 μm en CONT.",
+        "Cuánto debe cubrir CONT al elemento marcado?",
+        "Error de enclosure en CONT."
+      ]
     },
     {
       "code": "R1CT",
@@ -471,7 +1485,34 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(10.0 ).",
-      "source_line": 81
+      "source_line": 81,
+      "layer_aliases": [
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1CT define área mínima para CONT; el valor requerido es 10.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1CT?",
+        "Cómo corrijo el error R1CT?",
+        "Tengo una violación R1CT en CONT.",
+        "Cuál es la area minima de CONT?",
+        "Error DRC de minimum area en CONT.",
+        "Necesito cumplir 10.0 None en CONT.",
+        "Cuál es el área mínima de CONT?",
+        "La figura de CONT tiene área muy pequeña."
+      ]
     },
     {
       "code": "B1CTM1",
@@ -481,7 +1522,30 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
-      "source_line": 86
+      "source_line": 86,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla B1CTM1 define regla DRC para CONT; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1CTM1?",
+        "Cómo corrijo el error B1CTM1?",
+        "Tengo una violación B1CTM1 en CONT.",
+        "Cuál es la violación DRC de CONT?",
+        "Error DRC de error DRC en CONT.",
+        "Necesito cumplir None None en CONT."
+      ]
     },
     {
       "code": "B1M1",
@@ -491,7 +1555,23 @@
       "unit": null,
       "rule_type": "slotting requerido",
       "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
-      "source_line": 87
+      "source_line": 87,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla B1M1 define regla DRC para Metal1; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1M1?",
+        "Cómo corrijo el error B1M1?",
+        "Tengo una violación B1M1 en Metal1.",
+        "Cuál es la violación DRC de Metal1?",
+        "Error DRC de error DRC en Metal1.",
+        "Necesito cumplir None None en Metal1."
+      ]
     },
     {
       "code": "W1M1",
@@ -501,7 +1581,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.23 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 88
+      "source_line": 88,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla W1M1 define ancho mínimo para Metal1; el valor requerido es 0.23 μm.",
+      "typical_queries_es": [
+        "Qué significa W1M1?",
+        "Cómo corrijo el error W1M1?",
+        "Tengo una violación W1M1 en Metal1.",
+        "Cuál es la anchura mínima de Metal1?",
+        "Error DRC de width mínimo en Metal1.",
+        "Necesito cumplir 0.23 μm en Metal1.",
+        "Cuál es el ancho mínimo de Metal1?",
+        "Tengo un trazo de Metal1 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal1."
+      ]
     },
     {
       "code": "W4M1",
@@ -511,7 +1610,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 89
+      "source_line": 89,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla W4M1 define ancho mínimo para Metal1; el valor requerido es 10.0 μm.",
+      "typical_queries_es": [
+        "Qué significa W4M1?",
+        "Cómo corrijo el error W4M1?",
+        "Tengo una violación W4M1 en Metal1.",
+        "Cuál es la anchura mínima de Metal1?",
+        "Error DRC de width mínimo en Metal1.",
+        "Necesito cumplir 10.0 μm en Metal1.",
+        "Cuál es el ancho mínimo de Metal1?",
+        "Tengo un trazo de Metal1 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal1."
+      ]
     },
     {
       "code": "W5M1",
@@ -521,7 +1639,23 @@
       "unit": "µm x µm",
       "rule_type": "tamaño máximo de región",
       "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
-      "source_line": 90
+      "source_line": 90,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla W5M1 define tamaño fijo para Metal1; el valor requerido es 17.0 x17.0 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W5M1?",
+        "Cómo corrijo el error W5M1?",
+        "Tengo una violación W5M1 en Metal1.",
+        "Cuál es la dimension fija de Metal1?",
+        "Error DRC de medida fija en Metal1.",
+        "Necesito cumplir 17.0 x17.0 µm x µm en Metal1."
+      ]
     },
     {
       "code": "S1M1",
@@ -531,7 +1665,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.23 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 91
+      "source_line": 91,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla S1M1 define espaciado mínimo para Metal1; el valor requerido es 0.23 μm.",
+      "typical_queries_es": [
+        "Qué significa S1M1?",
+        "Cómo corrijo el error S1M1?",
+        "Tengo una violación S1M1 en Metal1.",
+        "Cuál es la separación mínima de Metal1?",
+        "Error DRC de separacion minima en Metal1.",
+        "Necesito cumplir 0.23 μm en Metal1.",
+        "Cuál es el espacio mínimo entre trazos de Metal1?",
+        "Cuál es la separación mínima entre geometrías de Metal1?",
+        "Tengo dos figuras de Metal1 muy juntas."
+      ]
     },
     {
       "code": "S4M1",
@@ -541,7 +1694,34 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.38 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 92
+      "source_line": 92,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S4M1 define espaciado mínimo para DIFF; el valor requerido es 0.38 μm.",
+      "typical_queries_es": [
+        "Qué significa S4M1?",
+        "Cómo corrijo el error S4M1?",
+        "Tengo una violación S4M1 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.38 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S2M1",
@@ -551,7 +1731,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 93
+      "source_line": 93,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla S2M1 define espaciado mínimo para Metal1; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S2M1?",
+        "Cómo corrijo el error S2M1?",
+        "Tengo una violación S2M1 en Metal1.",
+        "Cuál es la separación mínima de Metal1?",
+        "Error DRC de separacion minima en Metal1.",
+        "Necesito cumplir 0.6 μm en Metal1.",
+        "Cuál es el espacio mínimo entre trazos de Metal1?",
+        "Cuál es la separación mínima entre geometrías de Metal1?",
+        "Tengo dos figuras de Metal1 muy juntas."
+      ]
     },
     {
       "code": "E1M1CT",
@@ -561,7 +1760,32 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.005 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 94
+      "source_line": 94,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla E1M1CT define encerramiento mínimo para CONT; el valor requerido es 0.005 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M1CT?",
+        "Cómo corrijo el error E1M1CT?",
+        "Tengo una violación E1M1CT en CONT.",
+        "Cuál es la enclosure mínimo de CONT?",
+        "Error DRC de cobertura mínima en CONT.",
+        "Necesito cumplir 0.005 μm en CONT.",
+        "Cuánto debe cubrir CONT al elemento marcado?",
+        "Error de enclosure en CONT."
+      ]
     },
     {
       "code": "E2M1CT",
@@ -571,7 +1795,32 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 95
+      "source_line": 95,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla E2M1CT define encerramiento mínimo para CONT; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M1CT?",
+        "Cómo corrijo el error E2M1CT?",
+        "Tengo una violación E2M1CT en CONT.",
+        "Cuál es la enclosure mínimo de CONT?",
+        "Error DRC de cobertura mínima en CONT.",
+        "Necesito cumplir 0.06 μm en CONT.",
+        "Cuánto debe cubrir CONT al elemento marcado?",
+        "Error de enclosure en CONT."
+      ]
     },
     {
       "code": "E3M1CT",
@@ -581,7 +1830,32 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.07 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 96
+      "source_line": 96,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "CONT",
+        "Contact",
+        "Contacto",
+        "contactos",
+        "CT",
+        "DIFFCON",
+        "contacto de difusion"
+      ],
+      "description_es": "La regla E3M1CT define encerramiento mínimo para CONT; el valor requerido es 0.07 μm.",
+      "typical_queries_es": [
+        "Qué significa E3M1CT?",
+        "Cómo corrijo el error E3M1CT?",
+        "Tengo una violación E3M1CT en CONT.",
+        "Cuál es la enclosure mínimo de CONT?",
+        "Error DRC de cobertura mínima en CONT.",
+        "Necesito cumplir 0.07 μm en CONT.",
+        "Cuánto debe cubrir CONT al elemento marcado?",
+        "Error de enclosure en CONT."
+      ]
     },
     {
       "code": "A1M1",
@@ -591,7 +1865,25 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 97
+      "source_line": 97,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla A1M1 define área mínima para Metal1; el valor requerido es 0.202 μm².",
+      "typical_queries_es": [
+        "Qué significa A1M1?",
+        "Cómo corrijo el error A1M1?",
+        "Tengo una violación A1M1 en Metal1.",
+        "Cuál es la area minima de Metal1?",
+        "Error DRC de minimum area en Metal1.",
+        "Necesito cumplir 0.202 μm² en Metal1.",
+        "Cuál es el área mínima de Metal1?",
+        "La figura de Metal1 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M1",
@@ -601,7 +1893,25 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 98
+      "source_line": 98,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla R1M1 define área mínima para Metal1; el valor requerido es 30.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1M1?",
+        "Cómo corrijo el error R1M1?",
+        "Tengo una violación R1M1 en Metal1.",
+        "Cuál es la area minima de Metal1?",
+        "Error DRC de minimum area en Metal1.",
+        "Necesito cumplir 30.0 % en Metal1.",
+        "Cuál es el área mínima de Metal1?",
+        "La figura de Metal1 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M1",
@@ -611,7 +1921,25 @@
       "unit": "%",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
-      "source_line": 99
+      "source_line": 99,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla R2M1 define área mínima para Metal1; el valor requerido es 65.0 %.",
+      "typical_queries_es": [
+        "Qué significa R2M1?",
+        "Cómo corrijo el error R2M1?",
+        "Tengo una violación R2M1 en Metal1.",
+        "Cuál es la area minima de Metal1?",
+        "Error DRC de minimum area en Metal1.",
+        "Necesito cumplir 65.0 % en Metal1.",
+        "Cuál es el área mínima de Metal1?",
+        "La figura de Metal1 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M1P1",
@@ -621,7 +1949,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 100
+      "source_line": 100,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1M1P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1M1P1?",
+        "Cómo corrijo el error R1M1P1?",
+        "Tengo una violación R1M1P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M1P1",
@@ -631,7 +1984,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 101
+      "source_line": 101,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2M1P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2M1P1?",
+        "Cómo corrijo el error R2M1P1?",
+        "Tengo una violación R2M1P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1M1",
@@ -641,7 +2019,23 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 102
+      "source_line": 102,
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1"
+      ],
+      "description_es": "La regla Q1M1 define regla DRC para Metal1; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1M1?",
+        "Cómo corrijo el error Q1M1?",
+        "Tengo una violación Q1M1 en Metal1.",
+        "Cuál es la violación DRC de Metal1?",
+        "Error DRC de error DRC en Metal1.",
+        "Necesito cumplir None None en Metal1."
+      ]
     },
     {
       "code": "B1V1",
@@ -655,7 +2049,31 @@
       "also_appears_at_lines": [
         125
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla B1V1 define regla DRC para Metal1; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1V1?",
+        "Cómo corrijo el error B1V1?",
+        "Tengo una violación B1V1 en Metal1.",
+        "Cuál es la violación DRC de Metal1?",
+        "Error DRC de error DRC en Metal1.",
+        "Necesito cumplir None None en Metal1."
+      ]
     },
     {
       "code": "B2V1",
@@ -669,7 +2087,21 @@
       "also_appears_at_lines": [
         126
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla B2V1 define regla DRC para Via 1; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B2V1?",
+        "Cómo corrijo el error B2V1?",
+        "Tengo una violación B2V1 en Via 1.",
+        "Cuál es la violación DRC de Via 1?",
+        "Error DRC de error DRC en Via 1.",
+        "Necesito cumplir None None en Via 1."
+      ]
     },
     {
       "code": "W2V1",
@@ -683,7 +2115,24 @@
       "also_appears_at_lines": [
         127
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla W2V1 define ancho mínimo para Via 1; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa W2V1?",
+        "Cómo corrijo el error W2V1?",
+        "Tengo una violación W2V1 en Via 1.",
+        "Cuál es la anchura mínima de Via 1?",
+        "Error DRC de width mínimo en Via 1.",
+        "Necesito cumplir 0.26 μm en Via 1.",
+        "Cuál es el ancho mínimo de Via 1?",
+        "Tengo un trazo de Via 1 muy angosto.",
+        "Tengo un error del mínimo ancho del Via 1."
+      ]
     },
     {
       "code": "W1V1",
@@ -697,7 +2146,21 @@
       "also_appears_at_lines": [
         128
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla W1V1 define tamaño fijo para Via 1; el valor requerido es 0.26 x0.26 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W1V1?",
+        "Cómo corrijo el error W1V1?",
+        "Tengo una violación W1V1 en Via 1.",
+        "Cuál es la dimension fija de Via 1?",
+        "Error DRC de medida fija en Via 1.",
+        "Necesito cumplir 0.26 x0.26 µm x µm en Via 1."
+      ]
     },
     {
       "code": "S1V1",
@@ -711,7 +2174,24 @@
       "also_appears_at_lines": [
         129
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla S1V1 define espaciado mínimo para Via 1; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa S1V1?",
+        "Cómo corrijo el error S1V1?",
+        "Tengo una violación S1V1 en Via 1.",
+        "Cuál es la separación mínima de Via 1?",
+        "Error DRC de separacion minima en Via 1.",
+        "Necesito cumplir 0.26 μm en Via 1.",
+        "Cuál es el espacio mínimo entre trazos de Via 1?",
+        "Cuál es la separación mínima entre geometrías de Via 1?",
+        "Tengo dos figuras de Via 1 muy juntas."
+      ]
     },
     {
       "code": "S3V1",
@@ -725,7 +2205,24 @@
       "also_appears_at_lines": [
         130
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla S3V1 define espaciado mínimo para Via 1; el valor requerido es 1.0 μm.",
+      "typical_queries_es": [
+        "Qué significa S3V1?",
+        "Cómo corrijo el error S3V1?",
+        "Tengo una violación S3V1 en Via 1.",
+        "Cuál es la separación mínima de Via 1?",
+        "Error DRC de separacion minima en Via 1.",
+        "Necesito cumplir 1.0 μm en Via 1.",
+        "Cuál es el espacio mínimo entre trazos de Via 1?",
+        "Cuál es la separación mínima entre geometrías de Via 1?",
+        "Tengo dos figuras de Via 1 muy juntas."
+      ]
     },
     {
       "code": "E1M1V1",
@@ -739,7 +2236,28 @@
       "also_appears_at_lines": [
         131
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E1M1V1 define encerramiento mínimo para Metal1; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M1V1?",
+        "Cómo corrijo el error E1M1V1?",
+        "Tengo una violación E1M1V1 en Metal1.",
+        "Cuál es la enclosure mínimo de Metal1?",
+        "Error DRC de cobertura mínima en Metal1.",
+        "Necesito cumplir 0.01 μm en Metal1.",
+        "Cuánto debe cubrir Metal1 al elemento marcado?",
+        "Error de enclosure en Metal1."
+      ]
     },
     {
       "code": "E1M2V1",
@@ -753,7 +2271,28 @@
       "also_appears_at_lines": [
         132
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E1M2V1 define encerramiento mínimo para Metal2; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M2V1?",
+        "Cómo corrijo el error E1M2V1?",
+        "Tengo una violación E1M2V1 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.01 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "E2M1V1",
@@ -767,7 +2306,28 @@
       "also_appears_at_lines": [
         133
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E2M1V1 define encerramiento mínimo para Metal1; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M1V1?",
+        "Cómo corrijo el error E2M1V1?",
+        "Tengo una violación E2M1V1 en Metal1.",
+        "Cuál es la enclosure mínimo de Metal1?",
+        "Error DRC de cobertura mínima en Metal1.",
+        "Necesito cumplir 0.06 μm en Metal1.",
+        "Cuánto debe cubrir Metal1 al elemento marcado?",
+        "Error de enclosure en Metal1."
+      ]
     },
     {
       "code": "E2M2V1",
@@ -781,7 +2341,28 @@
       "also_appears_at_lines": [
         134
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E2M2V1 define encerramiento mínimo para Metal2; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M2V1?",
+        "Cómo corrijo el error E2M2V1?",
+        "Tengo una violación E2M2V1 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.06 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "E4M1V1",
@@ -795,7 +2376,28 @@
       "also_appears_at_lines": [
         135
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET1",
+        "Metal1",
+        "Metal 1",
+        "M1",
+        "capa metal 1",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E4M1V1 define encerramiento mínimo para Metal1; el valor requerido es 0.07 μm.",
+      "typical_queries_es": [
+        "Qué significa E4M1V1?",
+        "Cómo corrijo el error E4M1V1?",
+        "Tengo una violación E4M1V1 en Metal1.",
+        "Cuál es la enclosure mínimo de Metal1?",
+        "Error DRC de cobertura mínima en Metal1.",
+        "Necesito cumplir 0.07 μm en Metal1.",
+        "Cuánto debe cubrir Metal1 al elemento marcado?",
+        "Error de enclosure en Metal1."
+      ]
     },
     {
       "code": "E7M2V1",
@@ -809,7 +2411,28 @@
       "also_appears_at_lines": [
         136
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla E7M2V1 define encerramiento mínimo para Metal2; el valor requerido es 0.07 μm.",
+      "typical_queries_es": [
+        "Qué significa E7M2V1?",
+        "Cómo corrijo el error E7M2V1?",
+        "Tengo una violación E7M2V1 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.07 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "R1V1",
@@ -823,7 +2446,30 @@
       "also_appears_at_lines": [
         137
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1V1 define área mínima para Poly; el valor requerido es 20.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1V1?",
+        "Cómo corrijo el error R1V1?",
+        "Tengo una violación R1V1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 20.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q20V1",
@@ -837,7 +2483,21 @@
       "also_appears_at_lines": [
         138
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "VIA1",
+        "Via 1",
+        "vía 1"
+      ],
+      "description_es": "La regla Q20V1 define regla DRC para Via 1; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q20V1?",
+        "Cómo corrijo el error Q20V1?",
+        "Tengo una violación Q20V1 en Via 1.",
+        "Cuál es la violación DRC de Via 1?",
+        "Error DRC de error DRC en Via 1.",
+        "Necesito cumplir None None en Via 1."
+      ]
     },
     {
       "code": "B1M2",
@@ -847,7 +2507,23 @@
       "unit": null,
       "rule_type": "slotting requerido",
       "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
-      "source_line": 143
+      "source_line": 143,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla B1M2 define regla DRC para Metal2; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1M2?",
+        "Cómo corrijo el error B1M2?",
+        "Tengo una violación B1M2 en Metal2.",
+        "Cuál es la violación DRC de Metal2?",
+        "Error DRC de error DRC en Metal2.",
+        "Necesito cumplir None None en Metal2."
+      ]
     },
     {
       "code": "W1M2",
@@ -857,7 +2533,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 144
+      "source_line": 144,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla W1M2 define ancho mínimo para Metal2; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa W1M2?",
+        "Cómo corrijo el error W1M2?",
+        "Tengo una violación W1M2 en Metal2.",
+        "Cuál es la anchura mínima de Metal2?",
+        "Error DRC de width mínimo en Metal2.",
+        "Necesito cumplir 0.28 μm en Metal2.",
+        "Cuál es el ancho mínimo de Metal2?",
+        "Tengo un trazo de Metal2 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal2."
+      ]
     },
     {
       "code": "W4M2",
@@ -867,7 +2562,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 145
+      "source_line": 145,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla W4M2 define ancho mínimo para Metal2; el valor requerido es 10.0 μm.",
+      "typical_queries_es": [
+        "Qué significa W4M2?",
+        "Cómo corrijo el error W4M2?",
+        "Tengo una violación W4M2 en Metal2.",
+        "Cuál es la anchura mínima de Metal2?",
+        "Error DRC de width mínimo en Metal2.",
+        "Necesito cumplir 10.0 μm en Metal2.",
+        "Cuál es el ancho mínimo de Metal2?",
+        "Tengo un trazo de Metal2 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal2."
+      ]
     },
     {
       "code": "W5M2",
@@ -877,7 +2591,23 @@
       "unit": "µm x µm",
       "rule_type": "tamaño máximo de región",
       "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
-      "source_line": 146
+      "source_line": 146,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla W5M2 define tamaño fijo para Metal2; el valor requerido es 17.0 x17.0 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W5M2?",
+        "Cómo corrijo el error W5M2?",
+        "Tengo una violación W5M2 en Metal2.",
+        "Cuál es la dimension fija de Metal2?",
+        "Error DRC de medida fija en Metal2.",
+        "Necesito cumplir 17.0 x17.0 µm x µm en Metal2."
+      ]
     },
     {
       "code": "S1M2",
@@ -887,7 +2617,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 147
+      "source_line": 147,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla S1M2 define espaciado mínimo para Metal2; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa S1M2?",
+        "Cómo corrijo el error S1M2?",
+        "Tengo una violación S1M2 en Metal2.",
+        "Cuál es la separación mínima de Metal2?",
+        "Error DRC de separacion minima en Metal2.",
+        "Necesito cumplir 0.28 μm en Metal2.",
+        "Cuál es el espacio mínimo entre trazos de Metal2?",
+        "Cuál es la separación mínima entre geometrías de Metal2?",
+        "Tengo dos figuras de Metal2 muy juntas."
+      ]
     },
     {
       "code": "S4M2",
@@ -897,7 +2646,34 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 148
+      "source_line": 148,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S4M2 define espaciado mínimo para DIFF; el valor requerido es 0.4 μm.",
+      "typical_queries_es": [
+        "Qué significa S4M2?",
+        "Cómo corrijo el error S4M2?",
+        "Tengo una violación S4M2 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.4 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S2M2",
@@ -907,7 +2683,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 149
+      "source_line": 149,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla S2M2 define espaciado mínimo para Metal2; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S2M2?",
+        "Cómo corrijo el error S2M2?",
+        "Tengo una violación S2M2 en Metal2.",
+        "Cuál es la separación mínima de Metal2?",
+        "Error DRC de separacion minima en Metal2.",
+        "Necesito cumplir 0.6 μm en Metal2.",
+        "Cuál es el espacio mínimo entre trazos de Metal2?",
+        "Cuál es la separación mínima entre geometrías de Metal2?",
+        "Tengo dos figuras de Metal2 muy juntas."
+      ]
     },
     {
       "code": "A1M2",
@@ -917,7 +2712,25 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 150
+      "source_line": 150,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla A1M2 define área mínima para Metal2; el valor requerido es 0.202 μm².",
+      "typical_queries_es": [
+        "Qué significa A1M2?",
+        "Cómo corrijo el error A1M2?",
+        "Tengo una violación A1M2 en Metal2.",
+        "Cuál es la area minima de Metal2?",
+        "Error DRC de minimum area en Metal2.",
+        "Necesito cumplir 0.202 μm² en Metal2.",
+        "Cuál es el área mínima de Metal2?",
+        "La figura de Metal2 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M2",
@@ -927,7 +2740,25 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 151
+      "source_line": 151,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla R1M2 define área mínima para Metal2; el valor requerido es 30.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1M2?",
+        "Cómo corrijo el error R1M2?",
+        "Tengo una violación R1M2 en Metal2.",
+        "Cuál es la area minima de Metal2?",
+        "Error DRC de minimum area en Metal2.",
+        "Necesito cumplir 30.0 % en Metal2.",
+        "Cuál es el área mínima de Metal2?",
+        "La figura de Metal2 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M2",
@@ -937,7 +2768,25 @@
       "unit": "%",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
-      "source_line": 152
+      "source_line": 152,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla R2M2 define área mínima para Metal2; el valor requerido es 65.0 %.",
+      "typical_queries_es": [
+        "Qué significa R2M2?",
+        "Cómo corrijo el error R2M2?",
+        "Tengo una violación R2M2 en Metal2.",
+        "Cuál es la area minima de Metal2?",
+        "Error DRC de minimum area en Metal2.",
+        "Necesito cumplir 65.0 % en Metal2.",
+        "Cuál es el área mínima de Metal2?",
+        "La figura de Metal2 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M2P1",
@@ -947,7 +2796,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 153
+      "source_line": 153,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1M2P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1M2P1?",
+        "Cómo corrijo el error R1M2P1?",
+        "Tengo una violación R1M2P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M2P1",
@@ -957,7 +2831,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 154
+      "source_line": 154,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2M2P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2M2P1?",
+        "Cómo corrijo el error R2M2P1?",
+        "Tengo una violación R2M2P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1M2",
@@ -967,7 +2866,23 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 155
+      "source_line": 155,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2"
+      ],
+      "description_es": "La regla Q1M2 define regla DRC para Metal2; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1M2?",
+        "Cómo corrijo el error Q1M2?",
+        "Tengo una violación Q1M2 en Metal2.",
+        "Cuál es la violación DRC de Metal2?",
+        "Error DRC de error DRC en Metal2.",
+        "Necesito cumplir None None en Metal2."
+      ]
     },
     {
       "code": "W3DF",
@@ -981,7 +2896,36 @@
       "also_appears_at_lines": [
         165
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla W3DF define ancho mínimo para Poly; el valor requerido es 0.22 μm.",
+      "typical_queries_es": [
+        "Qué significa W3DF?",
+        "Cómo corrijo el error W3DF?",
+        "Tengo una violación W3DF en Poly.",
+        "Cuál es la anchura mínima de Poly?",
+        "Error DRC de width mínimo en Poly.",
+        "Necesito cumplir 0.22 μm en Poly.",
+        "Cuál es el ancho mínimo de Poly?",
+        "Tengo un trazo de Poly muy angosto.",
+        "Tengo un error del mínimo ancho del Poly."
+      ]
     },
     {
       "code": "W6P1",
@@ -991,7 +2935,25 @@
       "unit": "μm",
       "rule_type": "regla DRC",
       "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
-      "source_line": 161
+      "source_line": 161,
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla W6P1 define regla DRC para Poly; el valor requerido es 0.35 μm.",
+      "typical_queries_es": [
+        "Qué significa W6P1?",
+        "Cómo corrijo el error W6P1?",
+        "Tengo una violación W6P1 en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir 0.35 μm en Poly."
+      ]
     },
     {
       "code": "W7P1",
@@ -1005,7 +2967,25 @@
       "also_appears_at_lines": [
         166
       ],
-      "also_appears_in_sections": []
+      "also_appears_in_sections": [],
+      "layer_aliases": [
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla W7P1 define regla DRC para Poly; el valor requerido es 0.3 μm.",
+      "typical_queries_es": [
+        "Qué significa W7P1?",
+        "Cómo corrijo el error W7P1?",
+        "Tengo una violación W7P1 en Poly.",
+        "Cuál es la violación DRC de Poly?",
+        "Error DRC de error DRC en Poly.",
+        "Necesito cumplir 0.3 μm en Poly."
+      ]
     },
     {
       "code": "B1V2",
@@ -1015,7 +2995,31 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
-      "source_line": 171
+      "source_line": 171,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla B1V2 define regla DRC para Metal2; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1V2?",
+        "Cómo corrijo el error B1V2?",
+        "Tengo una violación B1V2 en Metal2.",
+        "Cuál es la violación DRC de Metal2?",
+        "Error DRC de error DRC en Metal2.",
+        "Necesito cumplir None None en Metal2."
+      ]
     },
     {
       "code": "B2V2",
@@ -1025,7 +3029,21 @@
       "unit": null,
       "rule_type": "regla DRC",
       "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
-      "source_line": 172
+      "source_line": 172,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla B2V2 define regla DRC para Via 2; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B2V2?",
+        "Cómo corrijo el error B2V2?",
+        "Tengo una violación B2V2 en Via 2.",
+        "Cuál es la violación DRC de Via 2?",
+        "Error DRC de error DRC en Via 2.",
+        "Necesito cumplir None None en Via 2."
+      ]
     },
     {
       "code": "W2V2",
@@ -1035,7 +3053,24 @@
       "unit": "μm",
       "rule_type": "ancho fijo",
       "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.26 μm). Usa la geometría/celda recomendada del PDK.",
-      "source_line": 173
+      "source_line": 173,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla W2V2 define ancho mínimo para Via 2; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa W2V2?",
+        "Cómo corrijo el error W2V2?",
+        "Tengo una violación W2V2 en Via 2.",
+        "Cuál es la anchura mínima de Via 2?",
+        "Error DRC de width mínimo en Via 2.",
+        "Necesito cumplir 0.26 μm en Via 2.",
+        "Cuál es el ancho mínimo de Via 2?",
+        "Tengo un trazo de Via 2 muy angosto.",
+        "Tengo un error del mínimo ancho del Via 2."
+      ]
     },
     {
       "code": "W1V2",
@@ -1045,7 +3080,21 @@
       "unit": "µm x µm",
       "rule_type": "tamaño fijo",
       "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.26 x0.26 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
-      "source_line": 174
+      "source_line": 174,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla W1V2 define tamaño fijo para Via 2; el valor requerido es 0.26 x0.26 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W1V2?",
+        "Cómo corrijo el error W1V2?",
+        "Tengo una violación W1V2 en Via 2.",
+        "Cuál es la dimension fija de Via 2?",
+        "Error DRC de medida fija en Via 2.",
+        "Necesito cumplir 0.26 x0.26 µm x µm en Via 2."
+      ]
     },
     {
       "code": "S1V2",
@@ -1055,7 +3104,24 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.26 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 175
+      "source_line": 175,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla S1V2 define espaciado mínimo para Via 2; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa S1V2?",
+        "Cómo corrijo el error S1V2?",
+        "Tengo una violación S1V2 en Via 2.",
+        "Cuál es la separación mínima de Via 2?",
+        "Error DRC de separacion minima en Via 2.",
+        "Necesito cumplir 0.26 μm en Via 2.",
+        "Cuál es el espacio mínimo entre trazos de Via 2?",
+        "Cuál es la separación mínima entre geometrías de Via 2?",
+        "Tengo dos figuras de Via 2 muy juntas."
+      ]
     },
     {
       "code": "S9V2",
@@ -1065,7 +3131,24 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 176
+      "source_line": 176,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla S9V2 define espaciado mínimo para Via 2; el valor requerido es 1.0 μm.",
+      "typical_queries_es": [
+        "Qué significa S9V2?",
+        "Cómo corrijo el error S9V2?",
+        "Tengo una violación S9V2 en Via 2.",
+        "Cuál es la separación mínima de Via 2?",
+        "Error DRC de separacion minima en Via 2.",
+        "Necesito cumplir 1.0 μm en Via 2.",
+        "Cuál es el espacio mínimo entre trazos de Via 2?",
+        "Cuál es la separación mínima entre geometrías de Via 2?",
+        "Tengo dos figuras de Via 2 muy juntas."
+      ]
     },
     {
       "code": "E1M2V2",
@@ -1075,7 +3158,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 177
+      "source_line": 177,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E1M2V2 define encerramiento mínimo para Metal2; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M2V2?",
+        "Cómo corrijo el error E1M2V2?",
+        "Tengo una violación E1M2V2 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.01 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "E1M3V2",
@@ -1085,7 +3189,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 178
+      "source_line": 178,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E1M3V2 define encerramiento mínimo para Metal3; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M3V2?",
+        "Cómo corrijo el error E1M3V2?",
+        "Tengo una violación E1M3V2 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.01 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "E2M2V2",
@@ -1095,7 +3220,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 179
+      "source_line": 179,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E2M2V2 define encerramiento mínimo para Metal2; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M2V2?",
+        "Cómo corrijo el error E2M2V2?",
+        "Tengo una violación E2M2V2 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.06 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "E2M3V2",
@@ -1105,7 +3251,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 180
+      "source_line": 180,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E2M3V2 define encerramiento mínimo para Metal3; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M3V2?",
+        "Cómo corrijo el error E2M3V2?",
+        "Tengo una violación E2M3V2 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.06 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "E3M3V2",
@@ -1115,7 +3282,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 181
+      "source_line": 181,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E3M3V2 define encerramiento mínimo para Metal3; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E3M3V2?",
+        "Cómo corrijo el error E3M3V2?",
+        "Tengo una violación E3M3V2 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.1 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "E8M2V2",
@@ -1125,7 +3313,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 182
+      "source_line": 182,
+      "layer_aliases": [
+        "MET2",
+        "Metal2",
+        "Metal 2",
+        "M2",
+        "capa metal 2",
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla E8M2V2 define encerramiento mínimo para Metal2; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E8M2V2?",
+        "Cómo corrijo el error E8M2V2?",
+        "Tengo una violación E8M2V2 en Metal2.",
+        "Cuál es la enclosure mínimo de Metal2?",
+        "Error DRC de cobertura mínima en Metal2.",
+        "Necesito cumplir 0.1 μm en Metal2.",
+        "Cuánto debe cubrir Metal2 al elemento marcado?",
+        "Error de enclosure en Metal2."
+      ]
     },
     {
       "code": "R1V2",
@@ -1135,7 +3344,30 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(20.0 ).",
-      "source_line": 183
+      "source_line": 183,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1V2 define área mínima para Poly; el valor requerido es 20.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1V2?",
+        "Cómo corrijo el error R1V2?",
+        "Tengo una violación R1V2 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 20.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q20V2",
@@ -1145,7 +3377,21 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Revisa el uso de la capa/elemento opcional indicado por la regla y cámbialo por la variante correcta del PDK si está mal aplicado.",
-      "source_line": 184
+      "source_line": 184,
+      "layer_aliases": [
+        "VIA2",
+        "Via 2",
+        "vía 2"
+      ],
+      "description_es": "La regla Q20V2 define regla DRC para Via 2; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q20V2?",
+        "Cómo corrijo el error Q20V2?",
+        "Tengo una violación Q20V2 en Via 2.",
+        "Cuál es la violación DRC de Via 2?",
+        "Error DRC de error DRC en Via 2.",
+        "Necesito cumplir None None en Via 2."
+      ]
     },
     {
       "code": "B1M3",
@@ -1155,7 +3401,23 @@
       "unit": null,
       "rule_type": "slotting requerido",
       "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
-      "source_line": 189
+      "source_line": 189,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla B1M3 define regla DRC para Metal3; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1M3?",
+        "Cómo corrijo el error B1M3?",
+        "Tengo una violación B1M3 en Metal3.",
+        "Cuál es la violación DRC de Metal3?",
+        "Error DRC de error DRC en Metal3.",
+        "Necesito cumplir None None en Metal3."
+      ]
     },
     {
       "code": "W1M3",
@@ -1165,7 +3427,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 190
+      "source_line": 190,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla W1M3 define ancho mínimo para Metal3; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa W1M3?",
+        "Cómo corrijo el error W1M3?",
+        "Tengo una violación W1M3 en Metal3.",
+        "Cuál es la anchura mínima de Metal3?",
+        "Error DRC de width mínimo en Metal3.",
+        "Necesito cumplir 0.28 μm en Metal3.",
+        "Cuál es el ancho mínimo de Metal3?",
+        "Tengo un trazo de Metal3 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal3."
+      ]
     },
     {
       "code": "W4M3",
@@ -1175,7 +3456,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 191
+      "source_line": 191,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla W4M3 define ancho mínimo para Metal3; el valor requerido es 10.0 μm.",
+      "typical_queries_es": [
+        "Qué significa W4M3?",
+        "Cómo corrijo el error W4M3?",
+        "Tengo una violación W4M3 en Metal3.",
+        "Cuál es la anchura mínima de Metal3?",
+        "Error DRC de width mínimo en Metal3.",
+        "Necesito cumplir 10.0 μm en Metal3.",
+        "Cuál es el ancho mínimo de Metal3?",
+        "Tengo un trazo de Metal3 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal3."
+      ]
     },
     {
       "code": "W5M3",
@@ -1185,7 +3485,23 @@
       "unit": "µm x µm",
       "rule_type": "tamaño máximo de región",
       "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
-      "source_line": 192
+      "source_line": 192,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla W5M3 define tamaño fijo para Metal3; el valor requerido es 17.0 x17.0 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W5M3?",
+        "Cómo corrijo el error W5M3?",
+        "Tengo una violación W5M3 en Metal3.",
+        "Cuál es la dimension fija de Metal3?",
+        "Error DRC de medida fija en Metal3.",
+        "Necesito cumplir 17.0 x17.0 µm x µm en Metal3."
+      ]
     },
     {
       "code": "S1M3",
@@ -1195,7 +3511,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 193
+      "source_line": 193,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla S1M3 define espaciado mínimo para Metal3; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa S1M3?",
+        "Cómo corrijo el error S1M3?",
+        "Tengo una violación S1M3 en Metal3.",
+        "Cuál es la separación mínima de Metal3?",
+        "Error DRC de separacion minima en Metal3.",
+        "Necesito cumplir 0.28 μm en Metal3.",
+        "Cuál es el espacio mínimo entre trazos de Metal3?",
+        "Cuál es la separación mínima entre geometrías de Metal3?",
+        "Tengo dos figuras de Metal3 muy juntas."
+      ]
     },
     {
       "code": "S4M3",
@@ -1205,7 +3540,34 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 194
+      "source_line": 194,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S4M3 define espaciado mínimo para DIFF; el valor requerido es 0.4 μm.",
+      "typical_queries_es": [
+        "Qué significa S4M3?",
+        "Cómo corrijo el error S4M3?",
+        "Tengo una violación S4M3 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.4 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S2M3",
@@ -1215,7 +3577,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 195
+      "source_line": 195,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla S2M3 define espaciado mínimo para Metal3; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S2M3?",
+        "Cómo corrijo el error S2M3?",
+        "Tengo una violación S2M3 en Metal3.",
+        "Cuál es la separación mínima de Metal3?",
+        "Error DRC de separacion minima en Metal3.",
+        "Necesito cumplir 0.6 μm en Metal3.",
+        "Cuál es el espacio mínimo entre trazos de Metal3?",
+        "Cuál es la separación mínima entre geometrías de Metal3?",
+        "Tengo dos figuras de Metal3 muy juntas."
+      ]
     },
     {
       "code": "A1M3",
@@ -1225,7 +3606,25 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 196
+      "source_line": 196,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla A1M3 define área mínima para Metal3; el valor requerido es 0.202 μm².",
+      "typical_queries_es": [
+        "Qué significa A1M3?",
+        "Cómo corrijo el error A1M3?",
+        "Tengo una violación A1M3 en Metal3.",
+        "Cuál es la area minima de Metal3?",
+        "Error DRC de minimum area en Metal3.",
+        "Necesito cumplir 0.202 μm² en Metal3.",
+        "Cuál es el área mínima de Metal3?",
+        "La figura de Metal3 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M3",
@@ -1235,7 +3634,25 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 197
+      "source_line": 197,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla R1M3 define área mínima para Metal3; el valor requerido es 30.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1M3?",
+        "Cómo corrijo el error R1M3?",
+        "Tengo una violación R1M3 en Metal3.",
+        "Cuál es la area minima de Metal3?",
+        "Error DRC de minimum area en Metal3.",
+        "Necesito cumplir 30.0 % en Metal3.",
+        "Cuál es el área mínima de Metal3?",
+        "La figura de Metal3 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M3",
@@ -1245,7 +3662,25 @@
       "unit": "%",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
-      "source_line": 198
+      "source_line": 198,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla R2M3 define área mínima para Metal3; el valor requerido es 65.0 %.",
+      "typical_queries_es": [
+        "Qué significa R2M3?",
+        "Cómo corrijo el error R2M3?",
+        "Tengo una violación R2M3 en Metal3.",
+        "Cuál es la area minima de Metal3?",
+        "Error DRC de minimum area en Metal3.",
+        "Necesito cumplir 65.0 % en Metal3.",
+        "Cuál es el área mínima de Metal3?",
+        "La figura de Metal3 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M3P1",
@@ -1255,7 +3690,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 199
+      "source_line": 199,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1M3P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1M3P1?",
+        "Cómo corrijo el error R1M3P1?",
+        "Tengo una violación R1M3P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M3P1",
@@ -1265,7 +3725,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 200
+      "source_line": 200,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2M3P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2M3P1?",
+        "Cómo corrijo el error R2M3P1?",
+        "Tengo una violación R2M3P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1M3",
@@ -1275,7 +3760,23 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 201
+      "source_line": 201,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3"
+      ],
+      "description_es": "La regla Q1M3 define regla DRC para Metal3; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1M3?",
+        "Cómo corrijo el error Q1M3?",
+        "Tengo una violación Q1M3 en Metal3.",
+        "Cuál es la violación DRC de Metal3?",
+        "Error DRC de error DRC en Metal3.",
+        "Necesito cumplir None None en Metal3."
+      ]
     },
     {
       "code": "B1V3",
@@ -1285,7 +3786,31 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
-      "source_line": 207
+      "source_line": 207,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla B1V3 define regla DRC para Metal3; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1V3?",
+        "Cómo corrijo el error B1V3?",
+        "Tengo una violación B1V3 en Metal3.",
+        "Cuál es la violación DRC de Metal3?",
+        "Error DRC de error DRC en Metal3.",
+        "Necesito cumplir None None en Metal3."
+      ]
     },
     {
       "code": "B2V3",
@@ -1295,7 +3820,21 @@
       "unit": null,
       "rule_type": "regla DRC",
       "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
-      "source_line": 208
+      "source_line": 208,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla B2V3 define regla DRC para Via 3; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B2V3?",
+        "Cómo corrijo el error B2V3?",
+        "Tengo una violación B2V3 en Via 3.",
+        "Cuál es la violación DRC de Via 3?",
+        "Error DRC de error DRC en Via 3.",
+        "Necesito cumplir None None en Via 3."
+      ]
     },
     {
       "code": "W2V3",
@@ -1305,7 +3844,24 @@
       "unit": "μm",
       "rule_type": "ancho fijo",
       "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.26 μm). Usa la geometría/celda recomendada del PDK.",
-      "source_line": 209
+      "source_line": 209,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla W2V3 define ancho mínimo para Via 3; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa W2V3?",
+        "Cómo corrijo el error W2V3?",
+        "Tengo una violación W2V3 en Via 3.",
+        "Cuál es la anchura mínima de Via 3?",
+        "Error DRC de width mínimo en Via 3.",
+        "Necesito cumplir 0.26 μm en Via 3.",
+        "Cuál es el ancho mínimo de Via 3?",
+        "Tengo un trazo de Via 3 muy angosto.",
+        "Tengo un error del mínimo ancho del Via 3."
+      ]
     },
     {
       "code": "W1V3",
@@ -1315,7 +3871,21 @@
       "unit": "µm x µm",
       "rule_type": "tamaño fijo",
       "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.26 x0.26 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
-      "source_line": 210
+      "source_line": 210,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla W1V3 define tamaño fijo para Via 3; el valor requerido es 0.26 x0.26 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W1V3?",
+        "Cómo corrijo el error W1V3?",
+        "Tengo una violación W1V3 en Via 3.",
+        "Cuál es la dimension fija de Via 3?",
+        "Error DRC de medida fija en Via 3.",
+        "Necesito cumplir 0.26 x0.26 µm x µm en Via 3."
+      ]
     },
     {
       "code": "S1V3",
@@ -1325,7 +3895,24 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.26 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 211
+      "source_line": 211,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla S1V3 define espaciado mínimo para Via 3; el valor requerido es 0.26 μm.",
+      "typical_queries_es": [
+        "Qué significa S1V3?",
+        "Cómo corrijo el error S1V3?",
+        "Tengo una violación S1V3 en Via 3.",
+        "Cuál es la separación mínima de Via 3?",
+        "Error DRC de separacion minima en Via 3.",
+        "Necesito cumplir 0.26 μm en Via 3.",
+        "Cuál es el espacio mínimo entre trazos de Via 3?",
+        "Cuál es la separación mínima entre geometrías de Via 3?",
+        "Tengo dos figuras de Via 3 muy juntas."
+      ]
     },
     {
       "code": "S9V3",
@@ -1335,7 +3922,24 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 212
+      "source_line": 212,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla S9V3 define espaciado mínimo para Via 3; el valor requerido es 1.0 μm.",
+      "typical_queries_es": [
+        "Qué significa S9V3?",
+        "Cómo corrijo el error S9V3?",
+        "Tengo una violación S9V3 en Via 3.",
+        "Cuál es la separación mínima de Via 3?",
+        "Error DRC de separacion minima en Via 3.",
+        "Necesito cumplir 1.0 μm en Via 3.",
+        "Cuál es el espacio mínimo entre trazos de Via 3?",
+        "Cuál es la separación mínima entre geometrías de Via 3?",
+        "Tengo dos figuras de Via 3 muy juntas."
+      ]
     },
     {
       "code": "E1M3V3",
@@ -1345,7 +3949,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 213
+      "source_line": 213,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E1M3V3 define encerramiento mínimo para Metal3; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M3V3?",
+        "Cómo corrijo el error E1M3V3?",
+        "Tengo una violación E1M3V3 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.01 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "E1M4V3",
@@ -1355,7 +3980,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 214
+      "source_line": 214,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E1M4V3 define encerramiento mínimo para Metal4; el valor requerido es 0.01 μm.",
+      "typical_queries_es": [
+        "Qué significa E1M4V3?",
+        "Cómo corrijo el error E1M4V3?",
+        "Tengo una violación E1M4V3 en Metal4.",
+        "Cuál es la enclosure mínimo de Metal4?",
+        "Error DRC de cobertura mínima en Metal4.",
+        "Necesito cumplir 0.01 μm en Metal4.",
+        "Cuánto debe cubrir Metal4 al elemento marcado?",
+        "Error de enclosure en Metal4."
+      ]
     },
     {
       "code": "E2M3V3",
@@ -1365,7 +4011,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 215
+      "source_line": 215,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E2M3V3 define encerramiento mínimo para Metal3; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M3V3?",
+        "Cómo corrijo el error E2M3V3?",
+        "Tengo una violación E2M3V3 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.06 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "E2M4V3",
@@ -1375,7 +4042,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 216
+      "source_line": 216,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E2M4V3 define encerramiento mínimo para Metal4; el valor requerido es 0.06 μm.",
+      "typical_queries_es": [
+        "Qué significa E2M4V3?",
+        "Cómo corrijo el error E2M4V3?",
+        "Tengo una violación E2M4V3 en Metal4.",
+        "Cuál es la enclosure mínimo de Metal4?",
+        "Error DRC de cobertura mínima en Metal4.",
+        "Necesito cumplir 0.06 μm en Metal4.",
+        "Cuánto debe cubrir Metal4 al elemento marcado?",
+        "Error de enclosure en Metal4."
+      ]
     },
     {
       "code": "E4M4V3",
@@ -1385,7 +4073,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 217
+      "source_line": 217,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E4M4V3 define encerramiento mínimo para Metal4; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E4M4V3?",
+        "Cómo corrijo el error E4M4V3?",
+        "Tengo una violación E4M4V3 en Metal4.",
+        "Cuál es la enclosure mínimo de Metal4?",
+        "Error DRC de cobertura mínima en Metal4.",
+        "Necesito cumplir 0.1 μm en Metal4.",
+        "Cuánto debe cubrir Metal4 al elemento marcado?",
+        "Error de enclosure en Metal4."
+      ]
     },
     {
       "code": "E8M3V3",
@@ -1395,7 +4104,28 @@
       "unit": "μm",
       "rule_type": "enclosure mínimo",
       "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
-      "source_line": 218
+      "source_line": 218,
+      "layer_aliases": [
+        "MET3",
+        "Metal3",
+        "Metal 3",
+        "M3",
+        "capa metal 3",
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla E8M3V3 define encerramiento mínimo para Metal3; el valor requerido es 0.1 μm.",
+      "typical_queries_es": [
+        "Qué significa E8M3V3?",
+        "Cómo corrijo el error E8M3V3?",
+        "Tengo una violación E8M3V3 en Metal3.",
+        "Cuál es la enclosure mínimo de Metal3?",
+        "Error DRC de cobertura mínima en Metal3.",
+        "Necesito cumplir 0.1 μm en Metal3.",
+        "Cuánto debe cubrir Metal3 al elemento marcado?",
+        "Error de enclosure en Metal3."
+      ]
     },
     {
       "code": "R1V3",
@@ -1405,7 +4135,30 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(20.0 ).",
-      "source_line": 219
+      "source_line": 219,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1V3 define área mínima para Poly; el valor requerido es 20.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1V3?",
+        "Cómo corrijo el error R1V3?",
+        "Tengo una violación R1V3 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 20.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q20V3",
@@ -1415,7 +4168,21 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Revisa el uso de la capa/elemento opcional indicado por la regla y cámbialo por la variante correcta del PDK si está mal aplicado.",
-      "source_line": 220
+      "source_line": 220,
+      "layer_aliases": [
+        "VIA3",
+        "Via 3",
+        "vía 3"
+      ],
+      "description_es": "La regla Q20V3 define regla DRC para Via 3; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q20V3?",
+        "Cómo corrijo el error Q20V3?",
+        "Tengo una violación Q20V3 en Via 3.",
+        "Cuál es la violación DRC de Via 3?",
+        "Error DRC de error DRC en Via 3.",
+        "Necesito cumplir None None en Via 3."
+      ]
     },
     {
       "code": "B1M4",
@@ -1425,7 +4192,23 @@
       "unit": null,
       "rule_type": "slotting requerido",
       "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
-      "source_line": 225
+      "source_line": 225,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla B1M4 define regla DRC para Metal4; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1M4?",
+        "Cómo corrijo el error B1M4?",
+        "Tengo una violación B1M4 en Metal4.",
+        "Cuál es la violación DRC de Metal4?",
+        "Error DRC de error DRC en Metal4.",
+        "Necesito cumplir None None en Metal4."
+      ]
     },
     {
       "code": "W1M4",
@@ -1435,7 +4218,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 226
+      "source_line": 226,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla W1M4 define ancho mínimo para Metal4; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa W1M4?",
+        "Cómo corrijo el error W1M4?",
+        "Tengo una violación W1M4 en Metal4.",
+        "Cuál es la anchura mínima de Metal4?",
+        "Error DRC de width mínimo en Metal4.",
+        "Necesito cumplir 0.28 μm en Metal4.",
+        "Cuál es el ancho mínimo de Metal4?",
+        "Tengo un trazo de Metal4 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal4."
+      ]
     },
     {
       "code": "W4M4",
@@ -1445,7 +4247,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 227
+      "source_line": 227,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla W4M4 define ancho mínimo para Metal4; el valor requerido es 10.0 μm.",
+      "typical_queries_es": [
+        "Qué significa W4M4?",
+        "Cómo corrijo el error W4M4?",
+        "Tengo una violación W4M4 en Metal4.",
+        "Cuál es la anchura mínima de Metal4?",
+        "Error DRC de width mínimo en Metal4.",
+        "Necesito cumplir 10.0 μm en Metal4.",
+        "Cuál es el ancho mínimo de Metal4?",
+        "Tengo un trazo de Metal4 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal4."
+      ]
     },
     {
       "code": "W5M4",
@@ -1455,7 +4276,23 @@
       "unit": "µm x µm",
       "rule_type": "tamaño máximo de región",
       "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
-      "source_line": 228
+      "source_line": 228,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla W5M4 define tamaño fijo para Metal4; el valor requerido es 17.0 x17.0 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W5M4?",
+        "Cómo corrijo el error W5M4?",
+        "Tengo una violación W5M4 en Metal4.",
+        "Cuál es la dimension fija de Metal4?",
+        "Error DRC de medida fija en Metal4.",
+        "Necesito cumplir 17.0 x17.0 µm x µm en Metal4."
+      ]
     },
     {
       "code": "S1M4",
@@ -1465,7 +4302,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 229
+      "source_line": 229,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla S1M4 define espaciado mínimo para Metal4; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa S1M4?",
+        "Cómo corrijo el error S1M4?",
+        "Tengo una violación S1M4 en Metal4.",
+        "Cuál es la separación mínima de Metal4?",
+        "Error DRC de separacion minima en Metal4.",
+        "Necesito cumplir 0.28 μm en Metal4.",
+        "Cuál es el espacio mínimo entre trazos de Metal4?",
+        "Cuál es la separación mínima entre geometrías de Metal4?",
+        "Tengo dos figuras de Metal4 muy juntas."
+      ]
     },
     {
       "code": "S4M4",
@@ -1475,7 +4331,34 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 230
+      "source_line": 230,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S4M4 define espaciado mínimo para DIFF; el valor requerido es 0.4 μm.",
+      "typical_queries_es": [
+        "Qué significa S4M4?",
+        "Cómo corrijo el error S4M4?",
+        "Tengo una violación S4M4 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.4 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S2M4",
@@ -1485,7 +4368,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 231
+      "source_line": 231,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla S2M4 define espaciado mínimo para Metal4; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S2M4?",
+        "Cómo corrijo el error S2M4?",
+        "Tengo una violación S2M4 en Metal4.",
+        "Cuál es la separación mínima de Metal4?",
+        "Error DRC de separacion minima en Metal4.",
+        "Necesito cumplir 0.6 μm en Metal4.",
+        "Cuál es el espacio mínimo entre trazos de Metal4?",
+        "Cuál es la separación mínima entre geometrías de Metal4?",
+        "Tengo dos figuras de Metal4 muy juntas."
+      ]
     },
     {
       "code": "A1M4",
@@ -1495,7 +4397,25 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 232
+      "source_line": 232,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla A1M4 define área mínima para Metal4; el valor requerido es 0.202 μm².",
+      "typical_queries_es": [
+        "Qué significa A1M4?",
+        "Cómo corrijo el error A1M4?",
+        "Tengo una violación A1M4 en Metal4.",
+        "Cuál es la area minima de Metal4?",
+        "Error DRC de minimum area en Metal4.",
+        "Necesito cumplir 0.202 μm² en Metal4.",
+        "Cuál es el área mínima de Metal4?",
+        "La figura de Metal4 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M4",
@@ -1505,7 +4425,25 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 233
+      "source_line": 233,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla R1M4 define área mínima para Metal4; el valor requerido es 30.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1M4?",
+        "Cómo corrijo el error R1M4?",
+        "Tengo una violación R1M4 en Metal4.",
+        "Cuál es la area minima de Metal4?",
+        "Error DRC de minimum area en Metal4.",
+        "Necesito cumplir 30.0 % en Metal4.",
+        "Cuál es el área mínima de Metal4?",
+        "La figura de Metal4 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M4",
@@ -1515,7 +4453,25 @@
       "unit": "%",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
-      "source_line": 234
+      "source_line": 234,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla R2M4 define área mínima para Metal4; el valor requerido es 65.0 %.",
+      "typical_queries_es": [
+        "Qué significa R2M4?",
+        "Cómo corrijo el error R2M4?",
+        "Tengo una violación R2M4 en Metal4.",
+        "Cuál es la area minima de Metal4?",
+        "Error DRC de minimum area en Metal4.",
+        "Necesito cumplir 65.0 % en Metal4.",
+        "Cuál es el área mínima de Metal4?",
+        "La figura de Metal4 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M4P1",
@@ -1525,7 +4481,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 235
+      "source_line": 235,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1M4P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1M4P1?",
+        "Cómo corrijo el error R1M4P1?",
+        "Tengo una violación R1M4P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M4P1",
@@ -1535,7 +4516,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 236
+      "source_line": 236,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2M4P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2M4P1?",
+        "Cómo corrijo el error R2M4P1?",
+        "Tengo una violación R2M4P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1M4",
@@ -1545,7 +4551,23 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 237
+      "source_line": 237,
+      "layer_aliases": [
+        "MET4",
+        "Metal4",
+        "Metal 4",
+        "M4",
+        "capa metal 4"
+      ],
+      "description_es": "La regla Q1M4 define regla DRC para Metal4; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1M4?",
+        "Cómo corrijo el error Q1M4?",
+        "Tengo una violación Q1M4 en Metal4.",
+        "Cuál es la violación DRC de Metal4?",
+        "Error DRC de error DRC en Metal4.",
+        "Necesito cumplir None None en Metal4."
+      ]
     },
     {
       "code": "B1M5",
@@ -1555,7 +4577,23 @@
       "unit": null,
       "rule_type": "slotting requerido",
       "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
-      "source_line": 242
+      "source_line": 242,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla B1M5 define regla DRC para Metal5; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa B1M5?",
+        "Cómo corrijo el error B1M5?",
+        "Tengo una violación B1M5 en Metal5.",
+        "Cuál es la violación DRC de Metal5?",
+        "Error DRC de error DRC en Metal5.",
+        "Necesito cumplir None None en Metal5."
+      ]
     },
     {
       "code": "W1M5",
@@ -1565,7 +4603,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 243
+      "source_line": 243,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla W1M5 define ancho mínimo para Metal5; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa W1M5?",
+        "Cómo corrijo el error W1M5?",
+        "Tengo una violación W1M5 en Metal5.",
+        "Cuál es la anchura mínima de Metal5?",
+        "Error DRC de width mínimo en Metal5.",
+        "Necesito cumplir 0.28 μm en Metal5.",
+        "Cuál es el ancho mínimo de Metal5?",
+        "Tengo un trazo de Metal5 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal5."
+      ]
     },
     {
       "code": "W4M5",
@@ -1575,7 +4632,26 @@
       "unit": "μm",
       "rule_type": "ancho mínimo",
       "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
-      "source_line": 244
+      "source_line": 244,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla W4M5 define ancho mínimo para Metal5; el valor requerido es 10.0 μm.",
+      "typical_queries_es": [
+        "Qué significa W4M5?",
+        "Cómo corrijo el error W4M5?",
+        "Tengo una violación W4M5 en Metal5.",
+        "Cuál es la anchura mínima de Metal5?",
+        "Error DRC de width mínimo en Metal5.",
+        "Necesito cumplir 10.0 μm en Metal5.",
+        "Cuál es el ancho mínimo de Metal5?",
+        "Tengo un trazo de Metal5 muy angosto.",
+        "Tengo un error del mínimo ancho del Metal5."
+      ]
     },
     {
       "code": "W5M5",
@@ -1585,7 +4661,23 @@
       "unit": "µm x µm",
       "rule_type": "tamaño máximo de región",
       "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
-      "source_line": 245
+      "source_line": 245,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla W5M5 define tamaño fijo para Metal5; el valor requerido es 17.0 x17.0 µm x µm.",
+      "typical_queries_es": [
+        "Qué significa W5M5?",
+        "Cómo corrijo el error W5M5?",
+        "Tengo una violación W5M5 en Metal5.",
+        "Cuál es la dimension fija de Metal5?",
+        "Error DRC de medida fija en Metal5.",
+        "Necesito cumplir 17.0 x17.0 µm x µm en Metal5."
+      ]
     },
     {
       "code": "S1M5",
@@ -1595,7 +4687,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 246
+      "source_line": 246,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla S1M5 define espaciado mínimo para Metal5; el valor requerido es 0.28 μm.",
+      "typical_queries_es": [
+        "Qué significa S1M5?",
+        "Cómo corrijo el error S1M5?",
+        "Tengo una violación S1M5 en Metal5.",
+        "Cuál es la separación mínima de Metal5?",
+        "Error DRC de separacion minima en Metal5.",
+        "Necesito cumplir 0.28 μm en Metal5.",
+        "Cuál es el espacio mínimo entre trazos de Metal5?",
+        "Cuál es la separación mínima entre geometrías de Metal5?",
+        "Tengo dos figuras de Metal5 muy juntas."
+      ]
     },
     {
       "code": "S4M5",
@@ -1605,7 +4716,34 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 247
+      "source_line": 247,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5",
+        "DIFF",
+        "Diffusion",
+        "difusion",
+        "difusión",
+        "active",
+        "activo",
+        "Ndiff",
+        "Pdiff"
+      ],
+      "description_es": "La regla S4M5 define espaciado mínimo para DIFF; el valor requerido es 0.4 μm.",
+      "typical_queries_es": [
+        "Qué significa S4M5?",
+        "Cómo corrijo el error S4M5?",
+        "Tengo una violación S4M5 en DIFF.",
+        "Cuál es la separación mínima de DIFF?",
+        "Error DRC de separacion minima en DIFF.",
+        "Necesito cumplir 0.4 μm en DIFF.",
+        "Cuál es el espacio mínimo entre trazos de DIFF?",
+        "Cuál es la separación mínima entre geometrías de DIFF?",
+        "Tengo dos figuras de DIFF muy juntas."
+      ]
     },
     {
       "code": "S2M5",
@@ -1615,7 +4753,26 @@
       "unit": "μm",
       "rule_type": "spacing mínimo",
       "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
-      "source_line": 248
+      "source_line": 248,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla S2M5 define espaciado mínimo para Metal5; el valor requerido es 0.6 μm.",
+      "typical_queries_es": [
+        "Qué significa S2M5?",
+        "Cómo corrijo el error S2M5?",
+        "Tengo una violación S2M5 en Metal5.",
+        "Cuál es la separación mínima de Metal5?",
+        "Error DRC de separacion minima en Metal5.",
+        "Necesito cumplir 0.6 μm en Metal5.",
+        "Cuál es el espacio mínimo entre trazos de Metal5?",
+        "Cuál es la separación mínima entre geometrías de Metal5?",
+        "Tengo dos figuras de Metal5 muy juntas."
+      ]
     },
     {
       "code": "A1M5",
@@ -1625,7 +4782,25 @@
       "unit": "μm²",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 249
+      "source_line": 249,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla A1M5 define área mínima para Metal5; el valor requerido es 0.202 μm².",
+      "typical_queries_es": [
+        "Qué significa A1M5?",
+        "Cómo corrijo el error A1M5?",
+        "Tengo una violación A1M5 en Metal5.",
+        "Cuál es la area minima de Metal5?",
+        "Error DRC de minimum area en Metal5.",
+        "Necesito cumplir 0.202 μm² en Metal5.",
+        "Cuál es el área mínima de Metal5?",
+        "La figura de Metal5 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M5",
@@ -1635,7 +4810,25 @@
       "unit": "%",
       "rule_type": "área mínima",
       "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
-      "source_line": 250
+      "source_line": 250,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla R1M5 define área mínima para Metal5; el valor requerido es 30.0 %.",
+      "typical_queries_es": [
+        "Qué significa R1M5?",
+        "Cómo corrijo el error R1M5?",
+        "Tengo una violación R1M5 en Metal5.",
+        "Cuál es la area minima de Metal5?",
+        "Error DRC de minimum area en Metal5.",
+        "Necesito cumplir 30.0 % en Metal5.",
+        "Cuál es el área mínima de Metal5?",
+        "La figura de Metal5 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M5",
@@ -1645,7 +4838,25 @@
       "unit": "%",
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
-      "source_line": 251
+      "source_line": 251,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla R2M5 define área mínima para Metal5; el valor requerido es 65.0 %.",
+      "typical_queries_es": [
+        "Qué significa R2M5?",
+        "Cómo corrijo el error R2M5?",
+        "Tengo una violación R2M5 en Metal5.",
+        "Cuál es la area minima de Metal5?",
+        "Error DRC de minimum area en Metal5.",
+        "Necesito cumplir 65.0 % en Metal5.",
+        "Cuál es el área mínima de Metal5?",
+        "La figura de Metal5 tiene área muy pequeña."
+      ]
     },
     {
       "code": "R1M5P1",
@@ -1655,7 +4866,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 252
+      "source_line": 252,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R1M5P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R1M5P1?",
+        "Cómo corrijo el error R1M5P1?",
+        "Tengo una violación R1M5P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "R2M5P1",
@@ -1665,7 +4901,32 @@
       "unit": null,
       "rule_type": "área máxima",
       "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
-      "source_line": 253
+      "source_line": 253,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5",
+        "P1",
+        "Poly",
+        "Polysilicon",
+        "polisilicio",
+        "poly1",
+        "gate",
+        "compuerta"
+      ],
+      "description_es": "La regla R2M5P1 define área mínima para Poly; el valor requerido es 400.0 None.",
+      "typical_queries_es": [
+        "Qué significa R2M5P1?",
+        "Cómo corrijo el error R2M5P1?",
+        "Tengo una violación R2M5P1 en Poly.",
+        "Cuál es la area minima de Poly?",
+        "Error DRC de minimum area en Poly.",
+        "Necesito cumplir 400.0 None en Poly.",
+        "Cuál es el área mínima de Poly?",
+        "La figura de Poly tiene área muy pequeña."
+      ]
     },
     {
       "code": "Q1M5",
@@ -1675,7 +4936,24 @@
       "unit": null,
       "rule_type": "prohibición / regla booleana",
       "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
-      "source_line": 254
+      "source_line": 254,
+      "layer_aliases": [
+        "MET5",
+        "Metal5",
+        "Metal 5",
+        "M5",
+        "capa metal 5"
+      ],
+      "description_es": "La regla Q1M5 define regla DRC para Metal5; el valor requerido es None None.",
+      "typical_queries_es": [
+        "Qué significa Q1M5?",
+        "Cómo corrijo el error Q1M5?",
+        "Tengo una violación Q1M5 en Metal5.",
+        "Cuál es la violación DRC de Metal5?",
+        "Error DRC de error DRC en Metal5.",
+        "Necesito cumplir None None en Metal5."
+      ]
     }
-  ]
+  ],
+  "enrichment": "Campos añadidos: layer_aliases, description_es y typical_queries_es. Estos campos son texto auxiliar para embeddings; no cambian los valores normativos del PDK."
 }
