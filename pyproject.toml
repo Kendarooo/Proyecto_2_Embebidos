@@ -1,0 +1,12 @@
+[project]
+name = "drc-assistant"
+version = "0.1.0"
+description = "Asistente DRC local para errores de diseño VLSI en PDK XFAB XH018"
+requires-python = ">=3.10"
+dependencies = [
+    "sentence-transformers==3.4.1",
+    "chromadb==0.6.3",
+    "requests==2.32.3",
+    "pypdf>=4.0.0",
+]
+

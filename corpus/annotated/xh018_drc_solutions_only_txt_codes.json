@@ -1,0 +1,1681 @@
+{
+  "source_file": "xh018-DR-v10_1_1.txt",
+  "note": "Incluye únicamente códigos de regla que aparecen explícitamente en el archivo TXT. No se agregan aliases ni códigos inferidos.",
+  "rule_count": 161,
+  "rules": [
+    {
+      "code": "W1NW",
+      "section": "NWELL",
+      "description_en": "Minimum NWELL width (except nedia)",
+      "value": "0.86",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 22
+    },
+    {
+      "code": "S1NW",
+      "section": "NWELL",
+      "description_en": "Minimum NWELL spacing/notch",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 23
+    },
+    {
+      "code": "S2NW",
+      "section": "NWELL",
+      "description_en": "Minimum NWELL spacing (different net)",
+      "value": "1.4",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 24
+    },
+    {
+      "code": "S3NW",
+      "section": "NWELL",
+      "description_en": "Minimum NWELL spacing (different net)",
+      "value": "2.0",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(2.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 25
+    },
+    {
+      "code": "A1NW",
+      "section": "NWELL",
+      "description_en": "Minimum NWELL area",
+      "value": "2.25",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 26
+    },
+    {
+      "code": "W1W1",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum NWELL1 width (except nedia)",
+      "value": "0.86",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 32
+    },
+    {
+      "code": "W1W2",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum PWELL1 width",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.6 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 33
+    },
+    {
+      "code": "W1W3",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum NWELL2 width",
+      "value": "0.86",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.86 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 34
+    },
+    {
+      "code": "W1W4",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum PWELL2 width",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.6 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 35
+    },
+    {
+      "code": "A1W1",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum NWELL1 area",
+      "value": "2.25",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 36
+    },
+    {
+      "code": "A1W2",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum PWELL1 area",
+      "value": "2.25",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 37
+    },
+    {
+      "code": "A1W3",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum NWELL2 area",
+      "value": "2.25",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 38
+    },
+    {
+      "code": "A1W4",
+      "section": "NWELL1, NWELL2, PWELL1, PWELL2",
+      "description_en": "Minimum PWELL2 area",
+      "value": "2.25",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(2.25 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 39
+    },
+    {
+      "code": "B1GA",
+      "section": "POLY1",
+      "description_en": "90 degree bent GATE is not allowed",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 44
+    },
+    {
+      "code": "B1P1",
+      "section": "POLY1",
+      "description_en": "(POLY1 and SBLK and not (HRES or MRES)) without NIMP or PIMP is not allowed (except dpol, davl#)",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 45
+    },
+    {
+      "code": "B2GA",
+      "section": "POLY1",
+      "description_en": "Illegal GATE construct",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 46
+    },
+    {
+      "code": "BDP1",
+      "section": "POLY1",
+      "description_en": "Not allowed to be used by customers",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en POLY1 y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 47
+    },
+    {
+      "code": "W1P1",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 width",
+      "value": "0.18",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.18 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 48
+    },
+    {
+      "code": "W2P1",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 width (for 45 degree bent GATE)",
+      "value": "0.21",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.21 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 49
+    },
+    {
+      "code": "S1P1",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 spacing/notch",
+      "value": "0.25",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.25 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 50
+    },
+    {
+      "code": "S3P1",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 spacing (different net, tag_60v)",
+      "value": "0.5",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.5 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 51
+    },
+    {
+      "code": "S1P1DF",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 spacing to DIFF",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.1 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 52
+    },
+    {
+      "code": "S5P1DF",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 spacing to DIFF (different net, tag_60v)",
+      "value": "0.5",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.5 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 53
+    },
+    {
+      "code": "E1DFGA",
+      "section": "POLY1",
+      "description_en": "Minimum DIFF extension beyond GATE (except davl#)",
+      "value": "0.32",
+      "unit": "μm",
+      "rule_type": "extensión mínima",
+      "solution_es": "Extiende la capa indicada más allá del borde del dispositivo/gate hasta cumplir la extensión mínima(0.32 μm).",
+      "source_line": 54
+    },
+    {
+      "code": "E1P1GA",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 extension beyond GATE (except davl#)",
+      "value": "0.22",
+      "unit": "μm",
+      "rule_type": "extensión mínima",
+      "solution_es": "Extiende la capa indicada más allá del borde del dispositivo/gate hasta cumplir la extensión mínima(0.22 μm).",
+      "source_line": 55
+    },
+    {
+      "code": "A1P1",
+      "section": "POLY1",
+      "description_en": "Minimum POLY1 area",
+      "value": "0.118",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.118 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 56
+    },
+    {
+      "code": "A2P1",
+      "section": "POLY1",
+      "description_en": "Maximum (POLY1 and not SBLK) area",
+      "value": "17000.0",
+      "unit": "μm²",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(17000.0 μm²).",
+      "source_line": 57
+    },
+    {
+      "code": "R1P1",
+      "section": "POLY1",
+      "description_en": "Minimum ratio of POLY1 area to EXTENT area",
+      "value": "14.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(14.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 58
+    },
+    {
+      "code": "R2P1",
+      "section": "POLY1",
+      "description_en": "Maximum ratio of POLY1 area to connected GATE area",
+      "value": "200.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(200.0 ).",
+      "source_line": 59
+    },
+    {
+      "code": "Q1P1",
+      "section": "POLY1",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 60
+    },
+    {
+      "code": "B1CT",
+      "section": "CONT",
+      "description_en": "CONT without NDIFF or PDIFF or POLY1 is not allowed (except dsb#, CATDIFF of davlb#)",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 65
+    },
+    {
+      "code": "B1CTGA",
+      "section": "CONT",
+      "description_en": "CONT overlap of GATE is not allowed (except davl#)",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 66
+    },
+    {
+      "code": "B1CTSB",
+      "section": "CONT",
+      "description_en": "CONT overlap of SBLK is not allowed",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Elimina o modifica la geometría prohibida por la regla. Revisa el marcador DRC en CONT y cambia la forma/conexión para que ya no use esa construcción no permitida.",
+      "source_line": 67
+    },
+    {
+      "code": "B3CT",
+      "section": "CONT",
+      "description_en": "CONT stripes are only allowed to bend at 135 degrees",
+      "value": null,
+      "unit": null,
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 68
+    },
+    {
+      "code": "W2CT",
+      "section": "CONT",
+      "description_en": "Fixed CONT stripe width",
+      "value": "0.22",
+      "unit": "μm",
+      "rule_type": "ancho fijo",
+      "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.22 μm). Usa la geometría/celda recomendada del PDK.",
+      "source_line": 69
+    },
+    {
+      "code": "W1CT",
+      "section": "CONT",
+      "description_en": "Fixed CONT size (except dphoc#, dphod#, DIFF within PHODIO)",
+      "value": "0.22 x0.22",
+      "unit": "µm x µm",
+      "rule_type": "tamaño fijo",
+      "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.22 x0.22 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
+      "source_line": 70
+    },
+    {
+      "code": "S1CT",
+      "section": "CONT",
+      "description_en": "Minimum CONT spacing",
+      "value": "0.25",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.25 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 71
+    },
+    {
+      "code": "S2CT",
+      "section": "CONT",
+      "description_en": "Minimum CONT spacing (for contact arrays containing more than 4x4 elements)",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 72
+    },
+    {
+      "code": "S3CT",
+      "section": "CONT",
+      "description_en": "Minimum CONT stripe to CONT spacing",
+      "value": "0.39",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.39 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 73
+    },
+    {
+      "code": "S4CT",
+      "section": "CONT",
+      "description_en": "Minimum CONT stripe spacing/notch",
+      "value": "0.67",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.67 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 74
+    },
+    {
+      "code": "S1CTDF",
+      "section": "CONT",
+      "description_en": "Minimum CONT spacing to DIFF",
+      "value": "0.2",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.2 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 75
+    },
+    {
+      "code": "S1CTP1",
+      "section": "CONT",
+      "description_en": "Minimum CONT spacing to POLY1 (except davl#)",
+      "value": "0.16",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.16 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 76
+    },
+    {
+      "code": "E1CTIN",
+      "section": "CONT",
+      "description_en": "Minimum NIMP enclosure of DIFFCON",
+      "value": "0.12",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.12 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 77
+    },
+    {
+      "code": "E1CTIP",
+      "section": "CONT",
+      "description_en": "Minimum PIMP enclosure of DIFFCON",
+      "value": "0.12",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.12 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 78
+    },
+    {
+      "code": "E1DFCT",
+      "section": "CONT",
+      "description_en": "Minimum DIFF enclosure of CONT",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 79
+    },
+    {
+      "code": "E1P1CT",
+      "section": "CONT",
+      "description_en": "Minimum POLY1 enclosure of CONT (except davl#)",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 80
+    },
+    {
+      "code": "R1CT",
+      "section": "CONT",
+      "description_en": "Maximum ratio of CONT area to connected GATE area",
+      "value": "10.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(10.0 ).",
+      "source_line": 81
+    },
+    {
+      "code": "B1CTM1",
+      "section": "MET1",
+      "description_en": "CONT must be covered by MET1",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
+      "source_line": 86
+    },
+    {
+      "code": "B1M1",
+      "section": "MET1",
+      "description_en": "All MET1 tracks > 35µm wide to be slotted (except Pads)",
+      "value": null,
+      "unit": null,
+      "rule_type": "slotting requerido",
+      "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
+      "source_line": 87
+    },
+    {
+      "code": "W1M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 width",
+      "value": "0.23",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.23 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 88
+    },
+    {
+      "code": "W4M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 width joining wide MET1 track (> 35 μm)",
+      "value": "10.0",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 89
+    },
+    {
+      "code": "W5M1",
+      "section": "MET1",
+      "description_en": "Maximum MET1 region size",
+      "value": "17.0 x17.0",
+      "unit": "µm x µm",
+      "rule_type": "tamaño máximo de región",
+      "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
+      "source_line": 90
+    },
+    {
+      "code": "S1M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 spacing/notch",
+      "value": "0.23",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.23 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 91
+    },
+    {
+      "code": "S4M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 spacing (different net, tag_60v)",
+      "value": "0.38",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.38 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 92
+    },
+    {
+      "code": "S2M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 spacing to WIDE_MET1",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 93
+    },
+    {
+      "code": "E1M1CT",
+      "section": "MET1",
+      "description_en": "Minimum MET1 enclosure of CONT",
+      "value": "0.005",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.005 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 94
+    },
+    {
+      "code": "E2M1CT",
+      "section": "MET1",
+      "description_en": "Minimum MET1 enclosure of CONT (in one direction of CONT corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 95
+    },
+    {
+      "code": "E3M1CT",
+      "section": "MET1",
+      "description_en": "Minimum MET1 enclosure of CONT stripe",
+      "value": "0.07",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.07 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 96
+    },
+    {
+      "code": "A1M1",
+      "section": "MET1",
+      "description_en": "Minimum MET1 area",
+      "value": "0.202",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 97
+    },
+    {
+      "code": "R1M1",
+      "section": "MET1",
+      "description_en": "Minimum ratio of MET1 area to EXTENT area",
+      "value": "30.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 98
+    },
+    {
+      "code": "R2M1",
+      "section": "MET1",
+      "description_en": "Maximum ratio of MET1 area to EXTENT area",
+      "value": "65.0",
+      "unit": "%",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
+      "source_line": 99
+    },
+    {
+      "code": "R1M1P1",
+      "section": "MET1",
+      "description_en": "Maximum ratio of MET1 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 100
+    },
+    {
+      "code": "R2M1P1",
+      "section": "MET1",
+      "description_en": "Maximum ratio of MET1 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 101
+    },
+    {
+      "code": "Q1M1",
+      "section": "MET1",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 102
+    },
+    {
+      "code": "B1V1",
+      "section": "VIA1",
+      "description_en": "VIA1 must be covered by MET1 and MET2",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
+      "source_line": 107,
+      "also_appears_at_lines": [
+        125
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "B2V1",
+      "section": "VIA1",
+      "description_en": "VIA1 stripes are only allowed to bend at 135 degrees",
+      "value": null,
+      "unit": null,
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 108,
+      "also_appears_at_lines": [
+        126
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "W2V1",
+      "section": "VIA1",
+      "description_en": "Fixed VIA1 stripe width",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "ancho fijo",
+      "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.26 μm). Usa la geometría/celda recomendada del PDK.",
+      "source_line": 109,
+      "also_appears_at_lines": [
+        127
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "W1V1",
+      "section": "VIA1",
+      "description_en": "Fixed VIA1 size (except dphoc#, dphod#, OPTOVIA1, PHODIO)",
+      "value": "0.26 x0.26",
+      "unit": "µm x µm",
+      "rule_type": "tamaño fijo",
+      "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.26 x0.26 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
+      "source_line": 110,
+      "also_appears_at_lines": [
+        128
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "S1V1",
+      "section": "VIA1",
+      "description_en": "Minimum VIA1 spacing",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.26 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 111,
+      "also_appears_at_lines": [
+        129
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "S3V1",
+      "section": "VIA1",
+      "description_en": "Minimum VIA1 stripe to VIA1 spacing",
+      "value": "1.0",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 112,
+      "also_appears_at_lines": [
+        130
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E1M1V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET1 enclosure of VIA1",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 113,
+      "also_appears_at_lines": [
+        131
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E1M2V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET2 enclosure of VIA1",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 114,
+      "also_appears_at_lines": [
+        132
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E2M1V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET1 enclosure of VIA1 (in one direction of VIA1 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 115,
+      "also_appears_at_lines": [
+        133
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E2M2V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET2 enclosure of VIA1 (in one direction of VIA1 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 116,
+      "also_appears_at_lines": [
+        134
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E4M1V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET1 enclosure of VIA1 stripe",
+      "value": "0.07",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.07 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 117,
+      "also_appears_at_lines": [
+        135
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "E7M2V1",
+      "section": "VIA1",
+      "description_en": "Minimum MET2 enclosure of VIA1 stripe",
+      "value": "0.07",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.07 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 118,
+      "also_appears_at_lines": [
+        136
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "R1V1",
+      "section": "VIA1",
+      "description_en": "Maximum ratio of VIA1 area to connected GATE area",
+      "value": "20.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(20.0 ).",
+      "source_line": 119,
+      "also_appears_at_lines": [
+        137
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "Q20V1",
+      "section": "VIA1",
+      "description_en": "Check for the right usage of OPTOVIA1",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Revisa el uso de la capa/elemento opcional indicado por la regla y cámbialo por la variante correcta del PDK si está mal aplicado.",
+      "source_line": 120,
+      "also_appears_at_lines": [
+        138
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "B1M2",
+      "section": "MET2",
+      "description_en": "All MET2 tracks > 35μm wide to be slotted (except Pads, dphoc0, dphod0)",
+      "value": null,
+      "unit": null,
+      "rule_type": "slotting requerido",
+      "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
+      "source_line": 143
+    },
+    {
+      "code": "W1M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 width",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 144
+    },
+    {
+      "code": "W4M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 width joining wide MET2 track (> 35 μm)",
+      "value": "10.0",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 145
+    },
+    {
+      "code": "W5M2",
+      "section": "MET2",
+      "description_en": "Maximum MET2 region size",
+      "value": "17.0 x17.0",
+      "unit": "µm x µm",
+      "rule_type": "tamaño máximo de región",
+      "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
+      "source_line": 146
+    },
+    {
+      "code": "S1M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 spacing/notch",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 147
+    },
+    {
+      "code": "S4M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 spacing (different net, tag_60v)",
+      "value": "0.4",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 148
+    },
+    {
+      "code": "S2M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 spacing to WIDE_MET2",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 149
+    },
+    {
+      "code": "A1M2",
+      "section": "MET2",
+      "description_en": "Minimum MET2 area",
+      "value": "0.202",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 150
+    },
+    {
+      "code": "R1M2",
+      "section": "MET2",
+      "description_en": "Minimum ratio of MET2 area to EXTENT area",
+      "value": "30.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 151
+    },
+    {
+      "code": "R2M2",
+      "section": "MET2",
+      "description_en": "Maximum ratio of MET2 area to EXTENT area",
+      "value": "65.0",
+      "unit": "%",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
+      "source_line": 152
+    },
+    {
+      "code": "R1M2P1",
+      "section": "MET2",
+      "description_en": "Maximum ratio of MET2 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 153
+    },
+    {
+      "code": "R2M2P1",
+      "section": "MET2",
+      "description_en": "Maximum ratio of MET2 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 154
+    },
+    {
+      "code": "Q1M2",
+      "section": "MET2",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 155
+    },
+    {
+      "code": "W3DF",
+      "section": "ne3, pe3",
+      "description_en": "Minimum GATE width",
+      "value": "0.22",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.22 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 160,
+      "also_appears_at_lines": [
+        165
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "W6P1",
+      "section": "ne3, pe3",
+      "description_en": "Minimum GATE length",
+      "value": "0.35",
+      "unit": "μm",
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 161
+    },
+    {
+      "code": "W7P1",
+      "section": "ne3, pe3",
+      "description_en": "Minimum GATE length",
+      "value": "0.3",
+      "unit": "μm",
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 162,
+      "also_appears_at_lines": [
+        166
+      ],
+      "also_appears_in_sections": []
+    },
+    {
+      "code": "B1V2",
+      "section": "VIA2",
+      "description_en": "VIA2 must be covered by MET2 and MET3",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
+      "source_line": 171
+    },
+    {
+      "code": "B2V2",
+      "section": "VIA2",
+      "description_en": "VIA2 stripes are only allowed to bend at 135 degrees",
+      "value": null,
+      "unit": null,
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 172
+    },
+    {
+      "code": "W2V2",
+      "section": "VIA2",
+      "description_en": "Fixed VIA2 stripe width",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "ancho fijo",
+      "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.26 μm). Usa la geometría/celda recomendada del PDK.",
+      "source_line": 173
+    },
+    {
+      "code": "W1V2",
+      "section": "VIA2",
+      "description_en": "Fixed VIA2 size (except dphoc#, dphod#, OPTOVIA2, PHODIO)",
+      "value": "0.26 x0.26",
+      "unit": "µm x µm",
+      "rule_type": "tamaño fijo",
+      "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.26 x0.26 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
+      "source_line": 174
+    },
+    {
+      "code": "S1V2",
+      "section": "VIA2",
+      "description_en": "Minimum VIA2 spacing",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.26 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 175
+    },
+    {
+      "code": "S9V2",
+      "section": "VIA2",
+      "description_en": "Minimum VIA2 stripe to VIA2 spacing",
+      "value": "1.0",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 176
+    },
+    {
+      "code": "E1M2V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET2 enclosure of VIA2",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 177
+    },
+    {
+      "code": "E1M3V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET3 enclosure of VIA2",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 178
+    },
+    {
+      "code": "E2M2V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET2 enclosure of VIA2 (in one direction of VIA2 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 179
+    },
+    {
+      "code": "E2M3V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET3 enclosure of VIA2 (in one direction of VIA2 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 180
+    },
+    {
+      "code": "E3M3V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET3 enclosure of VIA2 stripe",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 181
+    },
+    {
+      "code": "E8M2V2",
+      "section": "VIA2",
+      "description_en": "Minimum MET2 enclosure of VIA2 stripe",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 182
+    },
+    {
+      "code": "R1V2",
+      "section": "VIA2",
+      "description_en": "Maximum ratio of VIA2 area to connected GATE area",
+      "value": "20.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(20.0 ).",
+      "source_line": 183
+    },
+    {
+      "code": "Q20V2",
+      "section": "VIA2",
+      "description_en": "Check for the right usage of OPTOVIA2",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Revisa el uso de la capa/elemento opcional indicado por la regla y cámbialo por la variante correcta del PDK si está mal aplicado.",
+      "source_line": 184
+    },
+    {
+      "code": "B1M3",
+      "section": "MET3",
+      "description_en": "All MET3 tracks > 35μm wide to be slotted (except Pads)",
+      "value": null,
+      "unit": null,
+      "rule_type": "slotting requerido",
+      "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
+      "source_line": 189
+    },
+    {
+      "code": "W1M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 width",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 190
+    },
+    {
+      "code": "W4M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 width joining wide MET3 track (> 35 μm)",
+      "value": "10.0",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 191
+    },
+    {
+      "code": "W5M3",
+      "section": "MET3",
+      "description_en": "Maximum MET3 region size",
+      "value": "17.0 x17.0",
+      "unit": "µm x µm",
+      "rule_type": "tamaño máximo de región",
+      "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
+      "source_line": 192
+    },
+    {
+      "code": "S1M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 spacing/notch",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 193
+    },
+    {
+      "code": "S4M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 spacing (different net, tag_60v)",
+      "value": "0.4",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 194
+    },
+    {
+      "code": "S2M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 spacing to WIDE_MET3",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 195
+    },
+    {
+      "code": "A1M3",
+      "section": "MET3",
+      "description_en": "Minimum MET3 area",
+      "value": "0.202",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 196
+    },
+    {
+      "code": "R1M3",
+      "section": "MET3",
+      "description_en": "Minimum ratio of MET3 area to EXTENT area",
+      "value": "30.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 197
+    },
+    {
+      "code": "R2M3",
+      "section": "MET3",
+      "description_en": "Maximum ratio of MET3 area to EXTENT area",
+      "value": "65.0",
+      "unit": "%",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
+      "source_line": 198
+    },
+    {
+      "code": "R1M3P1",
+      "section": "MET3",
+      "description_en": "Maximum ratio of MET3 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 199
+    },
+    {
+      "code": "R2M3P1",
+      "section": "MET3",
+      "description_en": "Maximum ratio of MET3 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 200
+    },
+    {
+      "code": "Q1M3",
+      "section": "MET3",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 201
+    },
+    {
+      "code": "B1V3",
+      "section": "VIA3",
+      "description_en": "VIA3 must be covered by MET3 and MET4",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Asegura cobertura completa: agranda las capas que deben cubrir el elemento marcado o mueve el elemento hasta que quede totalmente dentro de las capas requeridas.",
+      "source_line": 207
+    },
+    {
+      "code": "B2V3",
+      "section": "VIA3",
+      "description_en": "VIA3 stripes are only allowed to bend at 135 degrees",
+      "value": null,
+      "unit": null,
+      "rule_type": "regla DRC",
+      "solution_es": "Abre el marcador DRC, identifica las capas involucradas y corrige la geometría según la descripción y el valor de la regla.",
+      "source_line": 208
+    },
+    {
+      "code": "W2V3",
+      "section": "VIA3",
+      "description_en": "Fixed VIA3 stripe width",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "ancho fijo",
+      "solution_es": "Ajusta el ancho del stripe marcado al ancho fijo requerido(0.26 μm). Usa la geometría/celda recomendada del PDK.",
+      "source_line": 209
+    },
+    {
+      "code": "W1V3",
+      "section": "VIA3",
+      "description_en": "Fixed VIA3 size (except dphoc#, dphod#, OPTOVIA3, PHODIO)",
+      "value": "0.26 x0.26",
+      "unit": "µm x µm",
+      "rule_type": "tamaño fijo",
+      "solution_es": "Cambia el elemento marcado para que tenga exactamente el tamaño fijo requerido(0.26 x0.26 µm x µm). Si es contacto/vía, reemplázalo por la celda o instancia correcta del PDK.",
+      "source_line": 210
+    },
+    {
+      "code": "S1V3",
+      "section": "VIA3",
+      "description_en": "Minimum VIA3 spacing",
+      "value": "0.26",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.26 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 211
+    },
+    {
+      "code": "S9V3",
+      "section": "VIA3",
+      "description_en": "Minimum VIA3 stripe to VIA3 spacing",
+      "value": "1.0",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(1.0 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 212
+    },
+    {
+      "code": "E1M3V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET3 enclosure of VIA3",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 213
+    },
+    {
+      "code": "E1M4V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET4 enclosure of VIA3",
+      "value": "0.01",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.01 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 214
+    },
+    {
+      "code": "E2M3V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET3 enclosure of VIA3 (in one direction of VIA3 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 215
+    },
+    {
+      "code": "E2M4V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET4 enclosure of VIA3 (in one direction of VIA3 corner)",
+      "value": "0.06",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.06 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 216
+    },
+    {
+      "code": "E4M4V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET4 enclosure of VIA3 stripe",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 217
+    },
+    {
+      "code": "E8M3V3",
+      "section": "VIA3",
+      "description_en": "Minimum MET3 enclosure of VIA3 stripe",
+      "value": "0.1",
+      "unit": "μm",
+      "rule_type": "enclosure mínimo",
+      "solution_es": "Agranda la capa que debe encerrar el elemento marcado hasta cumplir el enclosure mínimo(0.1 μm). Mantén el contacto/vía dentro de la capa correspondiente.",
+      "source_line": 218
+    },
+    {
+      "code": "R1V3",
+      "section": "VIA3",
+      "description_en": "Maximum ratio of VIA3 area to connected GATE area",
+      "value": "20.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(20.0 ).",
+      "source_line": 219
+    },
+    {
+      "code": "Q20V3",
+      "section": "VIA3",
+      "description_en": "Check for the right usage of OPTOVIA3",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Revisa el uso de la capa/elemento opcional indicado por la regla y cámbialo por la variante correcta del PDK si está mal aplicado.",
+      "source_line": 220
+    },
+    {
+      "code": "B1M4",
+      "section": "MET4",
+      "description_en": "All MET4 tracks > 35μm wide to be slotted (except Pads)",
+      "value": null,
+      "unit": null,
+      "rule_type": "slotting requerido",
+      "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
+      "source_line": 225
+    },
+    {
+      "code": "W1M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 width",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 226
+    },
+    {
+      "code": "W4M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 width joining wide MET4 track (> 35 μm)",
+      "value": "10.0",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 227
+    },
+    {
+      "code": "W5M4",
+      "section": "MET4",
+      "description_en": "Maximum MET4 region size",
+      "value": "17.0 x17.0",
+      "unit": "µm x µm",
+      "rule_type": "tamaño máximo de región",
+      "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
+      "source_line": 228
+    },
+    {
+      "code": "S1M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 spacing/notch",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 229
+    },
+    {
+      "code": "S4M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 spacing (different net, tag_60v)",
+      "value": "0.4",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 230
+    },
+    {
+      "code": "S2M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 spacing to WIDE_MET4",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 231
+    },
+    {
+      "code": "A1M4",
+      "section": "MET4",
+      "description_en": "Minimum MET4 area",
+      "value": "0.202",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 232
+    },
+    {
+      "code": "R1M4",
+      "section": "MET4",
+      "description_en": "Minimum ratio of MET4 area to EXTENT area",
+      "value": "30.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 233
+    },
+    {
+      "code": "R2M4",
+      "section": "MET4",
+      "description_en": "Maximum ratio of MET4 area to EXTENT area",
+      "value": "65.0",
+      "unit": "%",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
+      "source_line": 234
+    },
+    {
+      "code": "R1M4P1",
+      "section": "MET4",
+      "description_en": "Maximum ratio of MET4 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 235
+    },
+    {
+      "code": "R2M4P1",
+      "section": "MET4",
+      "description_en": "Maximum ratio of MET4 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 236
+    },
+    {
+      "code": "Q1M4",
+      "section": "MET4",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 237
+    },
+    {
+      "code": "B1M5",
+      "section": "MET5",
+      "description_en": "All MET5 tracks > 35μm wide to be slotted (except Pads)",
+      "value": null,
+      "unit": null,
+      "rule_type": "slotting requerido",
+      "solution_es": "Agrega slots a la pista metálica ancha marcada según las reglas del PDK, o reduce el ancho si no necesita ser una pista ancha.",
+      "source_line": 242
+    },
+    {
+      "code": "W1M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 width",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(0.28 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 243
+    },
+    {
+      "code": "W4M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 width joining wide MET5 track (> 35 μm)",
+      "value": "10.0",
+      "unit": "μm",
+      "rule_type": "ancho mínimo",
+      "solution_es": "Aumenta el ancho de la geometría marcada hasta cumplir el mínimo(10.0 μm). Evita segmentos angostos, puntas o cuellos más estrechos que el valor permitido.",
+      "source_line": 244
+    },
+    {
+      "code": "W5M5",
+      "section": "MET5",
+      "description_en": "Maximum MET5 region size",
+      "value": "17.0 x17.0",
+      "unit": "µm x µm",
+      "rule_type": "tamaño máximo de región",
+      "solution_es": "Divide la región metálica grande o agrega segmentación/slotting para que ninguna región exceda el tamaño máximo(17.0 x17.0 µm x µm).",
+      "source_line": 245
+    },
+    {
+      "code": "S1M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 spacing/notch",
+      "value": "0.28",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.28 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 246
+    },
+    {
+      "code": "S4M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 spacing (different net, tag_60v)",
+      "value": "0.4",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.4 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 247
+    },
+    {
+      "code": "S2M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 spacing to WIDE_MET5",
+      "value": "0.6",
+      "unit": "μm",
+      "rule_type": "spacing mínimo",
+      "solution_es": "Separa las geometrías marcadas hasta cumplir la distancia mínima(0.6 μm). Usa Ruler/K en Virtuoso y corrige solo las figuras involucradas; si no hay espacio, rerutea por otra zona o por otra capa.",
+      "source_line": 248
+    },
+    {
+      "code": "A1M5",
+      "section": "MET5",
+      "description_en": "Minimum MET5 area",
+      "value": "0.202",
+      "unit": "μm²",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(0.202 μm²). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 249
+    },
+    {
+      "code": "R1M5",
+      "section": "MET5",
+      "description_en": "Minimum ratio of MET5 area to EXTENT area",
+      "value": "30.0",
+      "unit": "%",
+      "rule_type": "área mínima",
+      "solution_es": "Aumenta el área de la figura marcada hasta cumplir el área mínima(30.0 %). Puedes ensancharla o alargarla sin crear nuevos errores de spacing.",
+      "source_line": 250
+    },
+    {
+      "code": "R2M5",
+      "section": "MET5",
+      "description_en": "Maximum ratio of MET5 area to EXTENT area",
+      "value": "65.0",
+      "unit": "%",
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(65.0 %).",
+      "source_line": 251
+    },
+    {
+      "code": "R1M5P1",
+      "section": "MET5",
+      "description_en": "Maximum ratio of MET5 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 252
+    },
+    {
+      "code": "R2M5P1",
+      "section": "MET5",
+      "description_en": "Maximum ratio of MET5 area to connected GATE area",
+      "value": "400.0",
+      "unit": null,
+      "rule_type": "área máxima",
+      "solution_es": "Reduce o divide la geometría marcada para no exceder el área máxima(400.0 ).",
+      "source_line": 253
+    },
+    {
+      "code": "Q1M5",
+      "section": "MET5",
+      "description_en": "Resistor terminal net without VLABEL",
+      "value": null,
+      "unit": null,
+      "rule_type": "prohibición / regla booleana",
+      "solution_es": "Agrega la capa o condición faltante indicada por la regla, o elimina el elemento si no corresponde. Verifica que el objeto marcado esté asociado con las capas válidas.",
+      "source_line": 254
+    }
+  ]
+}

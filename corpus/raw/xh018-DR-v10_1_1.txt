@@ -1,0 +1,254 @@
+General → 2.6 Geometric relations and rule code
+
+
+# General requirements
+
+Grid | 0.005 μm
+Recommended working grid | 0.01 μm
+Corners | 90°, 135°
+Data extrema including Peripheral Ring and Scribe Lane Note: Data extrema requirements cover demands of the mask generation procedure and the wafer manufacturing process only. | multiple of 1 μm
+It is MANDATORY that all layout data, including path edges (centre line & width defined), lie on the minimum grid. Designers are recommended to work with a 0.01µm grid because the data edges can be 0.005µm when 0.01µm is used for the centre line of ‘paths'.
+45 degree data must not be used for:
+minimum width lines;
+minimum spaced lines;
+or for components with a critical tolerance;
+since ‘snapping to grid’ can occur at mask generation. Self intersecting polygons must be avoided.
+Off-grid data points are checked by X-FAB at GDS tape-in. Off-grid elements will be snapped on-grid for mask generation.
+Layer and Device rules
+
+#### NWELL
+
+Name | Description | Value | Unit
+W1NW | Minimum NWELL width (except nedia) | 0.86 | μm
+S1NW | Minimum NWELL spacing/notch | 0.6 | μm
+S2NW | Minimum NWELL spacing (different net) | 1.4 | μm
+S3NW | Minimum NWELL spacing (different net) | 2.0 | μm
+A1NW | Minimum NWELL area | 2.25 | μm²
+
+#### NWELL1, NWELL2, PWELL1, PWELL2
+
+These rules are related to a combination of design layers (refer to section "2.4 Definitions").
+Name | Description | Value | Unit
+W1W1 | Minimum NWELL1 width (except nedia) | 0.86 | μm
+W1W2 | Minimum PWELL1 width | 0.6 | μm
+W1W3 | Minimum NWELL2 width | 0.86 | μm
+W1W4 | Minimum PWELL2 width | 0.6 | μm
+A1W1 | Minimum NWELL1 area | 2.25 | μm²
+A1W2 | Minimum PWELL1 area | 2.25 | μm²
+A1W3 | Minimum NWELL2 area | 2.25 | μm²
+A1W4 | Minimum PWELL2 area | 2.25 | μm²
+
+#### POLY1
+
+Name | Description | Value | Unit
+B1GA | 90 degree bent GATE is not allowed | - | -
+B1P1 | (POLY1 and SBLK and not (HRES or MRES)) without NIMP or PIMP is not allowed (except dpol, davl#) | - | -
+B2GA | Illegal GATE construct | - | -
+BDP1 | Not allowed to be used by customers | - | -
+W1P1 | Minimum POLY1 width | 0.18 | μm
+W2P1 | Minimum POLY1 width (for 45 degree bent GATE) | 0.21 | μm
+S1P1 | Minimum POLY1 spacing/notch | 0.25 | μm
+S3P1 | Minimum POLY1 spacing (different net, tag_60v) | 0.5 | μm
+S1P1DF | Minimum POLY1 spacing to DIFF | 0.1 | μm
+S5P1DF | Minimum POLY1 spacing to DIFF (different net, tag_60v) | 0.5 | μm
+E1DFGA | Minimum DIFF extension beyond GATE (except davl#) | 0.32 | μm
+E1P1GA | Minimum POLY1 extension beyond GATE (except davl#) | 0.22 | μm
+A1P1 | Minimum POLY1 area | 0.118 | μm²
+A2P1 | Maximum (POLY1 and not SBLK) area | 17000.0 | μm²
+R1P1 | Minimum ratio of POLY1 area to EXTENT area | 14.0 | %
+R2P1 | Maximum ratio of POLY1 area to connected GATE area | 200.0 | -
+Q1P1 | Resistor terminal net without VLABEL | - | -
+
+#### CONT
+
+Name | Description | Value | Unit
+B1CT | CONT without NDIFF or PDIFF or POLY1 is not allowed (except dsb#, CATDIFF of davlb#) | - | -
+B1CTGA | CONT overlap of GATE is not allowed (except davl#) | - | -
+B1CTSB | CONT overlap of SBLK is not allowed | - | -
+B3CT | CONT stripes are only allowed to bend at 135 degrees | - | -
+W2CT | Fixed CONT stripe width | 0.22 | μm
+W1CT | Fixed CONT size (except dphoc#, dphod#, DIFF within PHODIO) | 0.22 x0.22 | µm x µm
+S1CT | Minimum CONT spacing | 0.25 | μm
+S2CT | Minimum CONT spacing (for contact arrays containing more than 4x4 elements) | 0.28 | μm
+S3CT | Minimum CONT stripe to CONT spacing | 0.39 | μm
+S4CT | Minimum CONT stripe spacing/notch | 0.67 | μm
+S1CTDF | Minimum CONT spacing to DIFF | 0.2 | μm
+S1CTP1 | Minimum CONT spacing to POLY1 (except davl#) | 0.16 | μm
+E1CTIN | Minimum NIMP enclosure of DIFFCON | 0.12 | μm
+E1CTIP | Minimum PIMP enclosure of DIFFCON | 0.12 | μm
+E1DFCT | Minimum DIFF enclosure of CONT | 0.1 | μm
+E1P1CT | Minimum POLY1 enclosure of CONT (except davl#) | 0.1 | μm
+R1CT | Maximum ratio of CONT area to connected GATE area | 10.0 | -
+
+#### MET1
+
+Name | Description | Value | Unit
+B1CTM1 | CONT must be covered by MET1 | - | -
+B1M1 | All MET1 tracks > 35µm wide to be slotted (except Pads) | - | -
+W1M1 | Minimum MET1 width | 0.23 | μm
+W4M1 | Minimum MET1 width joining wide MET1 track (> 35 μm) | 10.0 | μm
+W5M1 | Maximum MET1 region size | 17.0 x17.0 | µm x µm
+S1M1 | Minimum MET1 spacing/notch | 0.23 | μm
+S4M1 | Minimum MET1 spacing (different net, tag_60v) | 0.38 | μm
+S2M1 | Minimum MET1 spacing to WIDE_MET1 | 0.6 | μm
+E1M1CT | Minimum MET1 enclosure of CONT | 0.005 | μm
+E2M1CT | Minimum MET1 enclosure of CONT (in one direction of CONT corner) | 0.06 | μm
+E3M1CT | Minimum MET1 enclosure of CONT stripe | 0.07 | μm
+A1M1 | Minimum MET1 area | 0.202 | μm²
+R1M1 | Minimum ratio of MET1 area to EXTENT area | 30.0 | %
+R2M1 | Maximum ratio of MET1 area to EXTENT area | 65.0 | %
+R1M1P1 | Maximum ratio of MET1 area to connected GATE area | 400.0 | -
+R2M1P1 | Maximum ratio of MET1 area to connected GATE area | 400.0 | -
+Q1M1 | Resistor terminal net without VLABEL | - | -
+
+#### VIA1
+
+Name | Description | Value | Unit
+B1V1 | VIA1 must be covered by MET1 and MET2 | - | -
+B2V1 | VIA1 stripes are only allowed to bend at 135 degrees | - | -
+W2V1 | Fixed VIA1 stripe width | 0.26 | μm
+W1V1 | Fixed VIA1 size (except dphoc#, dphod#, OPTOVIA1, PHODIO) | 0.26 x0.26 | µm x µm
+S1V1 | Minimum VIA1 spacing | 0.26 | μm
+S3V1 | Minimum VIA1 stripe to VIA1 spacing | 1.0 | μm
+E1M1V1 | Minimum MET1 enclosure of VIA1 | 0.01 | μm
+E1M2V1 | Minimum MET2 enclosure of VIA1 | 0.01 | μm
+E2M1V1 | Minimum MET1 enclosure of VIA1 (in one direction of VIA1 corner) | 0.06 | μm
+E2M2V1 | Minimum MET2 enclosure of VIA1 (in one direction of VIA1 corner) | 0.06 | μm
+E4M1V1 | Minimum MET1 enclosure of VIA1 stripe | 0.07 | μm
+E7M2V1 | Minimum MET2 enclosure of VIA1 stripe | 0.07 | μm
+R1V1 | Maximum ratio of VIA1 area to connected GATE area | 20.0 | -
+Q20V1 | Check for the right usage of OPTOVIA1 | - | -
+
+#### VIA1
+
+Name | Description | Value | Unit
+B1V1 | VIA1 must be covered by MET1 and MET2 | - | -
+B2V1 | VIA1 stripes are only allowed to bend at 135 degrees | - | -
+W2V1 | Fixed VIA1 stripe width | 0.26 | μm
+W1V1 | Fixed VIA1 size (except dphoc#, dphod#, OPTOVIA1, PHODIO) | 0.26 x0.26 | µm x µm
+S1V1 | Minimum VIA1 spacing | 0.26 | μm
+S3V1 | Minimum VIA1 stripe to VIA1 spacing | 1.0 | μm
+E1M1V1 | Minimum MET1 enclosure of VIA1 | 0.01 | μm
+E1M2V1 | Minimum MET2 enclosure of VIA1 | 0.01 | μm
+E2M1V1 | Minimum MET1 enclosure of VIA1 (in one direction of VIA1 corner) | 0.06 | μm
+E2M2V1 | Minimum MET2 enclosure of VIA1 (in one direction of VIA1 corner) | 0.06 | μm
+E4M1V1 | Minimum MET1 enclosure of VIA1 stripe | 0.07 | μm
+E7M2V1 | Minimum MET2 enclosure of VIA1 stripe | 0.07 | μm
+R1V1 | Maximum ratio of VIA1 area to connected GATE area | 20.0 | -
+Q20V1 | Check for the right usage of OPTOVIA1 | - | -
+
+#### MET2
+
+Name | Description | Value | Unit
+B1M2 | All MET2 tracks > 35μm wide to be slotted (except Pads, dphoc0, dphod0) | - | -
+W1M2 | Minimum MET2 width | 0.28 | μm
+W4M2 | Minimum MET2 width joining wide MET2 track (> 35 μm) | 10.0 | μm
+W5M2 | Maximum MET2 region size | 17.0 x17.0 | µm x µm
+S1M2 | Minimum MET2 spacing/notch | 0.28 | μm
+S4M2 | Minimum MET2 spacing (different net, tag_60v) | 0.4 | μm
+S2M2 | Minimum MET2 spacing to WIDE_MET2 | 0.6 | μm
+A1M2 | Minimum MET2 area | 0.202 | μm²
+R1M2 | Minimum ratio of MET2 area to EXTENT area | 30.0 | %
+R2M2 | Maximum ratio of MET2 area to EXTENT area | 65.0 | %
+R1M2P1 | Maximum ratio of MET2 area to connected GATE area | 400.0 | -
+R2M2P1 | Maximum ratio of MET2 area to connected GATE area | 400.0 | -
+Q1M2 | Resistor terminal net without VLABEL | - | -
+
+##### ne3, pe3
+
+Name | Description | Value | Unit
+W3DF | Minimum GATE width | 0.22 | μm
+W6P1 | Minimum GATE length | 0.35 | μm
+W7P1 | Minimum GATE length | 0.3 | μm
+
+Name | Description | Value | Unit
+W3DF | Minimum GATE width | 0.22 | μm
+W7P1 | Minimum GATE length | 0.3 | μm
+
+#### VIA2
+
+Name | Description | Value | Unit
+B1V2 | VIA2 must be covered by MET2 and MET3 | - | -
+B2V2 | VIA2 stripes are only allowed to bend at 135 degrees | - | -
+W2V2 | Fixed VIA2 stripe width | 0.26 | μm
+W1V2 | Fixed VIA2 size (except dphoc#, dphod#, OPTOVIA2, PHODIO) | 0.26 x0.26 | µm x µm
+S1V2 | Minimum VIA2 spacing | 0.26 | μm
+S9V2 | Minimum VIA2 stripe to VIA2 spacing | 1.0 | μm
+E1M2V2 | Minimum MET2 enclosure of VIA2 | 0.01 | μm
+E1M3V2 | Minimum MET3 enclosure of VIA2 | 0.01 | μm
+E2M2V2 | Minimum MET2 enclosure of VIA2 (in one direction of VIA2 corner) | 0.06 | μm
+E2M3V2 | Minimum MET3 enclosure of VIA2 (in one direction of VIA2 corner) | 0.06 | μm
+E3M3V2 | Minimum MET3 enclosure of VIA2 stripe | 0.1 | μm
+E8M2V2 | Minimum MET2 enclosure of VIA2 stripe | 0.1 | μm
+R1V2 | Maximum ratio of VIA2 area to connected GATE area | 20.0 | -
+Q20V2 | Check for the right usage of OPTOVIA2 | - | -
+
+#### MET3
+
+Name | Description | Value | Unit
+B1M3 | All MET3 tracks > 35μm wide to be slotted (except Pads) | - | -
+W1M3 | Minimum MET3 width | 0.28 | μm
+W4M3 | Minimum MET3 width joining wide MET3 track (> 35 μm) | 10.0 | μm
+W5M3 | Maximum MET3 region size | 17.0 x17.0 | µm x µm
+S1M3 | Minimum MET3 spacing/notch | 0.28 | μm
+S4M3 | Minimum MET3 spacing (different net, tag_60v) | 0.4 | μm
+S2M3 | Minimum MET3 spacing to WIDE_MET3 | 0.6 | μm
+A1M3 | Minimum MET3 area | 0.202 | μm²
+R1M3 | Minimum ratio of MET3 area to EXTENT area | 30.0 | %
+R2M3 | Maximum ratio of MET3 area to EXTENT area | 65.0 | %
+R1M3P1 | Maximum ratio of MET3 area to connected GATE area | 400.0 | -
+R2M3P1 | Maximum ratio of MET3 area to connected GATE area | 400.0 | -
+Q1M3 | Resistor terminal net without VLABEL | - | -
+
+
+#### VIA3
+
+Name | Description | Value | Unit
+B1V3 | VIA3 must be covered by MET3 and MET4 | - | -
+B2V3 | VIA3 stripes are only allowed to bend at 135 degrees | - | -
+W2V3 | Fixed VIA3 stripe width | 0.26 | μm
+W1V3 | Fixed VIA3 size (except dphoc#, dphod#, OPTOVIA3, PHODIO) | 0.26 x0.26 | µm x µm
+S1V3 | Minimum VIA3 spacing | 0.26 | μm
+S9V3 | Minimum VIA3 stripe to VIA3 spacing | 1.0 | μm
+E1M3V3 | Minimum MET3 enclosure of VIA3 | 0.01 | μm
+E1M4V3 | Minimum MET4 enclosure of VIA3 | 0.01 | μm
+E2M3V3 | Minimum MET3 enclosure of VIA3 (in one direction of VIA3 corner) | 0.06 | μm
+E2M4V3 | Minimum MET4 enclosure of VIA3 (in one direction of VIA3 corner) | 0.06 | μm
+E4M4V3 | Minimum MET4 enclosure of VIA3 stripe | 0.1 | μm
+E8M3V3 | Minimum MET3 enclosure of VIA3 stripe | 0.1 | μm
+R1V3 | Maximum ratio of VIA3 area to connected GATE area | 20.0 | -
+Q20V3 | Check for the right usage of OPTOVIA3 | - | -
+
+#### MET4
+
+Name | Description | Value | Unit
+B1M4 | All MET4 tracks > 35μm wide to be slotted (except Pads) | - | -
+W1M4 | Minimum MET4 width | 0.28 | μm
+W4M4 | Minimum MET4 width joining wide MET4 track (> 35 μm) | 10.0 | μm
+W5M4 | Maximum MET4 region size | 17.0 x17.0 | µm x µm
+S1M4 | Minimum MET4 spacing/notch | 0.28 | μm
+S4M4 | Minimum MET4 spacing (different net, tag_60v) | 0.4 | μm
+S2M4 | Minimum MET4 spacing to WIDE_MET4 | 0.6 | μm
+A1M4 | Minimum MET4 area | 0.202 | μm²
+R1M4 | Minimum ratio of MET4 area to EXTENT area | 30.0 | %
+R2M4 | Maximum ratio of MET4 area to EXTENT area | 65.0 | %
+R1M4P1 | Maximum ratio of MET4 area to connected GATE area | 400.0 | -
+R2M4P1 | Maximum ratio of MET4 area to connected GATE area | 400.0 | -
+Q1M4 | Resistor terminal net without VLABEL | - | -
+
+#### MET5
+
+Name | Description | Value | Unit
+B1M5 | All MET5 tracks > 35μm wide to be slotted (except Pads) | - | -
+W1M5 | Minimum MET5 width | 0.28 | μm
+W4M5 | Minimum MET5 width joining wide MET5 track (> 35 μm) | 10.0 | μm
+W5M5 | Maximum MET5 region size | 17.0 x17.0 | µm x µm
+S1M5 | Minimum MET5 spacing/notch | 0.28 | μm
+S4M5 | Minimum MET5 spacing (different net, tag_60v) | 0.4 | μm
+S2M5 | Minimum MET5 spacing to WIDE_MET5 | 0.6 | μm
+A1M5 | Minimum MET5 area | 0.202 | μm²
+R1M5 | Minimum ratio of MET5 area to EXTENT area | 30.0 | %
+R2M5 | Maximum ratio of MET5 area to EXTENT area | 65.0 | %
+R1M5P1 | Maximum ratio of MET5 area to connected GATE area | 400.0 | -
+R2M5P1 | Maximum ratio of MET5 area to connected GATE area | 400.0 | -
+Q1M5 | Resistor terminal net without VLABEL | - | -
