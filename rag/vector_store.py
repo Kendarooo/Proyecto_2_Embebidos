@@ -3,6 +3,12 @@ import hashlib
 import chromadb
 from chromadb.api.models.Collection import Collection
 
+try:
+    import chromadb.telemetry.product.posthog as _posthog
+    _posthog.Posthog.capture = lambda *a, **kw: None
+except Exception:
+    pass
+
 
 def init_vector_store(path: str) -> Collection:
     """
@@ -77,6 +83,21 @@ def search_relevant_chunks(
         include=["documents"],
     )
     return results["documents"][0]
+
+
+def search_by_keyword(keyword: str, collection: Collection, n: int = 3) -> list[str]:
+    """
+    Búsqueda exacta por substring en el texto de los chunks.
+    Útil para códigos de regla DRC (ej. S1M1) que los embeddings semánticos no recuperan bien.
+    """
+    if collection.count() == 0:
+        return []
+
+    results = collection.get(
+        where_document={"$contains": keyword},
+        include=["documents"],
+    )
+    return results["documents"][:n]
 
 
 # ---------------------------------------------------------------------------

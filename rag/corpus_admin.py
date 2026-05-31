@@ -3,7 +3,7 @@ import hashlib
 from sentence_transformers import SentenceTransformer
 from chromadb.api.models.Collection import Collection
 
-from rag.chunker import load_document, chunk_text
+from rag.chunker import load_document, chunk_text, load_chunks
 from rag.embeddings import generate_embedding
 from rag.vector_store import index_chunks, delete_by_source
 
@@ -19,8 +19,7 @@ def add_document(
     Carga un documento, lo trocea, genera embeddings e indexa en ChromaDB.
     Chunks duplicados (mismo SHA-1) se omiten automáticamente.
     """
-    text = load_document(file_path)
-    chunks = chunk_text(text, chunk_size=chunk_size, overlap=overlap)
+    chunks = load_chunks(file_path, chunk_size=chunk_size, overlap=overlap)
 
     if not chunks:
         print(f"Advertencia: el documento '{file_path}' no produjo chunks.")
