@@ -1,0 +1,53 @@
+[Unit]
+Description=DRC Assistant — Carga Docker e indexado inicial del corpus
+After=docker.service ollama.service
+Requires=docker.service
+ConditionPathExists=!/opt/drc-assistant/data/.corpus_indexed
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=root
+
+# Esperar a que Ollama esté listo
+ExecStartPre=/bin/sh -c 'until curl -sf http://localhost:11434/api/tags; do sleep 2; done'
+
+# Cargar la imagen Docker desde el tar
+ExecStart=/usr/bin/docker load -i /opt/drc-assistant/drc-assistant-arm64.tar
+
+# Eliminar el tar para liberar ~3 GB
+ExecStart=/bin/rm -f /opt/drc-assistant/drc-assistant-arm64.tar
+
+# Indexar cada archivo del corpus (modo offline)
+ExecStart=/usr/bin/docker run --rm \
+    --network host \
+    -e HF_HUB_OFFLINE=1 \
+    -e TRANSFORMERS_OFFLINE=1 \
+    -v /opt/drc-assistant/data:/opt/drc-assistant/data \
+    -v /opt/drc-assistant/corpus:/opt/drc-assistant/corpus \
+    drc-assistant:1.0 \
+    --add /opt/drc-assistant/corpus/raw/xh018-DR-v10_1_1.txt
+
+ExecStart=/usr/bin/docker run --rm \
+    --network host \
+    -e HF_HUB_OFFLINE=1 \
+    -e TRANSFORMERS_OFFLINE=1 \
+    -v /opt/drc-assistant/data:/opt/drc-assistant/data \
+    -v /opt/drc-assistant/corpus:/opt/drc-assistant/corpus \
+    drc-assistant:1.0 \
+    --add /opt/drc-assistant/corpus/raw/147464.pdf
+
+ExecStart=/usr/bin/docker run --rm \
+    --network host \
+    -e HF_HUB_OFFLINE=1 \
+    -e TRANSFORMERS_OFFLINE=1 \
+    -v /opt/drc-assistant/data:/opt/drc-assistant/data \
+    -v /opt/drc-assistant/corpus:/opt/drc-assistant/corpus \
+    drc-assistant:1.0 \
+    --add /opt/drc-assistant/corpus/annotated/nand2_drc_errors.json
+
+# Marcar como indexado
+ExecStart=/bin/touch /opt/drc-assistant/data/.corpus_indexed
+
+[Install]
+WantedBy=multi-user.target

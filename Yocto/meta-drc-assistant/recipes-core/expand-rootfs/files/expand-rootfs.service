@@ -1,0 +1,16 @@
+[Unit]
+Description=Expandir rootfs al tamaño completo de la SD/eMMC
+DefaultDependencies=no
+Before=local-fs.target
+After=systemd-remount-fs.service
+ConditionPathExists=!/var/lib/.rootfs_expanded
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/expand-rootfs.sh
+ExecStartPost=/bin/touch /var/lib/.rootfs_expanded
+ExecStartPost=/bin/systemctl disable expand-rootfs.service
+
+[Install]
+WantedBy=local-fs.target

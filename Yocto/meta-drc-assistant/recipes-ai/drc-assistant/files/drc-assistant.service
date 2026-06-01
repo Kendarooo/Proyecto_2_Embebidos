@@ -1,0 +1,25 @@
+[Unit]
+Description=DRC Assistant RAG Application
+After=docker.service ollama.service drc-first-run.service
+Requires=docker.service ollama.service
+Wants=drc-first-run.service
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=10
+ExecStart=/usr/bin/docker run \
+    --name drc-assistant \
+    --network host \
+    -e HF_HUB_OFFLINE=1 \
+    -e TRANSFORMERS_OFFLINE=1 \
+    -v /opt/drc-assistant/data:/opt/drc-assistant/data \
+    -v /opt/drc-assistant/corpus:/opt/drc-assistant/corpus \
+    -v /opt/drc-assistant/logs:/opt/drc-assistant/logs \
+    --entrypoint /bin/sh \
+    drc-assistant:1.0 -c "tail -f /dev/null"
+ExecStop=/usr/bin/docker stop drc-assistant
+
+[Install]
+WantedBy=multi-user.target
