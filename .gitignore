@@ -55,3 +55,5 @@ temp/
 # uv — el lockfile sí se versiona, el entorno no
 .venv/
 # uv.lock se commitea para reproducibilidad
+*.tar
+*.whl
